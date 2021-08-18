@@ -6,41 +6,37 @@ root-url: 'https://raw.githubusercontent.com/DS4PS/cpp-527-fall-2020/master/revi
 
 
 session: 
-- week0:
-  date: 'WED Jan 13th'
-  video: 'https://asu.zoom.us/rec/share/4zQ3sQd1c7yDHbNJH1mrZOeZsCMcaSnQ9aTt2_FfWXO06IqH-LbSc4bJLw1caCVb.TL8bqIGYOgghYtoE'
-  password: 'mT&DO50G' 
 - week1:
-  date:  'MON Jan 18th'  
-  video: 'https://asu.zoom.us/rec/share/Br8CXNL3zGrOT3Q3Mh50a4yX4Ou8wYjLTt5OygN79Iff8WyxKbRIOVnF8QlCgWtT.WYOR5eNks9LQjcny'
-  password: '9sRV?4qE'
+  date:  ''  
+  video: ''
+  password: ''
   sample-code: 'week-01-control-structures.R' 
   session-code: 'week-01-control-structures.Rhistory' 
 - week2:
-  date:  'MON Jan 25th'  
-  video: 'https://asu.zoom.us/rec/play/Q9CyZUKZxak1VM9-XNR01FAWN5UmLqFMEkurQGatnWtWLZNKm4AhjtX9EtAcmrea_RU2o5LSmEONpM53.eELpVMPB9fTnomWn?autoplay=true'
-  password: 'Pdr50qk?'
+  date:  ''  
+  video: ''
+  password: ''
   sample-code: 'week-02-loops.R' 
   session-code: 'week-02-loops.Rhistory' 
 - week3:
-  date:  'MON Feb 1st'  
-  video: 'https://asu.zoom.us/rec/share/E8_HGNyoIpIKyoDJr44JKyZTzHICg-N-bq5isfOzxLafDTHzjWpKh3Aak8hYYdrZ.HooapZ31bjZtxV2m'
-  password: '0HE2A^9a'
+  date:  ''  
+  video: ''
+  password: ''
   sample-code: 'week-03-regular-expressions.R' 
 - week4:
-  date:  'MON Feb 8th'  
-  video: 'https://asu.zoom.us/rec/share/DWh2hctRpj0OZ2wRtOEgfWNXXW-qvuVV00FKetPssVr3efZQENfpKWidkLdJwo0b.w9I_6lH4zs0UZUgc'
-  password: 'cJJK8?At'
+  date:  ''  
+  video: ''
+  password: ''
   sample-code: 'week-03-regular-expressions.R'
   session-code: 'week-03-regular-expressions.Rhistory'
 - week5:
-  date:  'MON Feb 15th'  
-  video: 'https://asu.zoom.us/rec/share/0hKwdV5lCGgSx7qltv-HaeEX5suF9Au8NC9SO3VfvjQNdZdFqX11jcPLD_EC-FPu.gXhP-A1scIAeDVsB'
-  password: '^Z.Z1C98'
+  date:  ''  
+  video: ''
+  password: ''
 - week6:
-  date:  'MON Feb 22nd'  
-  video: 'https://asu.zoom.us/rec/share/4O-U70zF1-um0Ba9F_cfqEEPYygbVFAhn2yEJky4dXV6rKGoJiUHQrtgHCkKq_s4.I3qbnU7Welh36TCV'
-  password: '+6#.Fik0'
+  date:  ''  
+  video: ''
+  password: ''
   sample-code: 'week-06-data-apis.R'
 
 ---
