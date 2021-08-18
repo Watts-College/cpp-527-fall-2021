@@ -67,11 +67,11 @@ Live review sessions will be held each week in order to:
 
 <br>
 
-<!--
 
-> **Add to your calendar:** <a target="_blank" href=""><img border="0" src="https://www.google.com/calendar/images/ext/gc_button1_en.gif"></a>
 
-––>
+<!--  **Add to your calendar:** <a target="_blank" href=""><img border="0" src="https://www.google.com/calendar/images/ext/gc_button1_en.gif"></a>  ––>
+
+
 
 
 <br> 
