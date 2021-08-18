@@ -65,13 +65,15 @@ Live review sessions will be held each week in order to:
 
 
 > **MONDAYS**    
-> **5pm AZ time** 
+> **12pm AZ time** 
 
 <a href='https://asu.zoom.us/j/87540573400' target=""> <button class="zoom">JOIN ZOOM MEETING</button></a>
 
 <br>
 
-> **Add to your calendar:** <a target="_blank" href="https://calendar.google.com/event?action=TEMPLATE&amp;tmeid=bTk0cWF2N2liZjJkbm4ybDlydmZsazR2ZjRfMjAyMTAxMTlUMDAwMDAwWiBqZGxlY3lAbQ&amp;tmsrc=jdlecy%40gmail.com&amp;scp=ALL"><img border="0" src="https://www.google.com/calendar/images/ext/gc_button1_en.gif"></a>
+<! ––
+> **Add to your calendar:** <a target="_blank" href=""><img border="0" src="https://www.google.com/calendar/images/ext/gc_button1_en.gif"></a>
+ ––>
 
 
 <br> 
@@ -85,8 +87,7 @@ For those that cannot attend recordings of each session will be posted below.
 
 Feel free to schedule virtual office hours as well.   
 
-* Kirsten McGiver: [AVAILABILITY](https://calendly.com/kc-mcgiver/office-hours?month=2021-01)
-* Jesse Lecy: [AVAILABILITY](https://calendly.com/lecy/30min)
+* Jesse Lecy: [AVAILABILITY](https://calendly.com/lecy/)
 
 
 <br> 
