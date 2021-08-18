@@ -1,0 +1,463 @@
+---
+title: 'Lab 01 - Control Structures'
+output:
+  html_document:
+    theme: readable
+    df_print: paged
+    highlight: tango
+    toc: yes
+    toc_float: no
+    css: 'lab-instructions.css'
+    include:
+      after_body: footer.html
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message=F, warning=F, eval=F)
+library( dplyr )
+library( pander )
+```
+
+
+<br>
+
+
+---
+
+<br>
+
+For this lab you will design solution to the [Monty Hall Problem](http://www.montyhallproblem.com/).
+
+When the mathematical solution is beyond your reach, a good tractable way to approach these types of analytical problems is to write a program to solve it for you. In this case, we can create a simulation that allows us to play the game thousands of times, and record the results for the two strategies – staying with the initial door or switching (we already know that switching is superior).
+
+You will need to design a virtual game by creating a function for each step of the game. The virtual game will be played by running the functions in order in a script (which we will use next week to create a simulation to test strategies in the game). 
+
+1.	One function that sets up the game (three doors, one car, two goats).
+2.	One function that selects a door for your first guess.
+3.	One function that reveals a goat for the host.
+4.	One function that makes your final pick (depending upon if you intend to stay or switch).
+5.	One function that decides if you win the car or not.
+
+
+The five functions form the basic steps of the virtual game. 
+
+For your homework, submit your knitted markdown file with the following:
+
+* Your five functions, each in its own code chunk.
+* Psuedo-code that explains the logic of each function. 
+* Below each include another chunk that tests the function using appropriate arguments and input data. 
+
+Note that you will need to think carefully about input arguments and return values for each function. Some function do not need arguments. 
+
+The first function that creates a new game, for example, does not require any additional information other than a new game is required. It will randomly assign the two goats and one car to the three doors in the game and return the game set-up. 
+
+For the final function, however, in order to determine if the player has won we need information about the door they have selected and the game set-up in order to evaluate whether they win the car or the goat. 
+
+
+---
+
+
+# Game Functions 
+
+
+Here is some code to get you started. 
+
+
+
+
+
+## STEP 1 - CREATE A NEW GAME
+
+
+This function sets up a new game.  
+
+**Psuedocode**
+
+```
+# step 1: create a vector of 3 doors: 2 goats and 1 car
+# step 2: randomize the position of the car for a new game
+# step 3: return the new game vector 
+
+# note that no external information is needed
+# so no arguments are passed to the vector 
+```
+```{r}
+create_game <- function( )
+{
+    a.game <- sample( x=c("goat","goat","car"), size=3, replace=F )
+    return( a.game )
+} 
+
+```
+
+
+
+**Test of Function:**
+
+Note that when functions utilize randomization it is helpful to test functions multiple times to make sure randomization is working properly. In this case we are randomizing the position of the car in each new game. 
+
+```{r}
+# try three times to see randomization 
+create_game()  
+create_game() 
+create_game() 
+```
+
+
+
+
+
+
+
+
+
+## STEP 2 - CONTESTANT SELECTS A DOOR 
+
+
+
+The contestant makes their first selection. Write a function to select one door at random. 
+
+**Psuedocode** 
+
+```
+# step 1: create a vector of doors numbered 1,2,3
+# step 2: randomly select ONE of the doors 
+# step 3: return the selection 
+
+# since the contestant will not know the position 
+# of the car when they select a door we do not 
+# need to share information about the game set-up
+# before the selection is made 
+```
+
+```{r}
+select_door <- function( )
+{
+
+  doors <- c(1,2,3) 
+  a.pick <- # YOUR CODE HERE...
+  return( a.pick )  # number between 1 and 3
+
+}
+```
+
+
+```{r}
+# test the function
+select_door()
+select_door()
+select_door()
+```
+
+
+
+
+
+## STEP 3 - HOST OPENS GOAT DOOR
+
+
+Note to call this function you need information from previous functions. 
+
+The host will always open a door with a goat behind it. But it can't be a door the contestant has already selected. So it must be a door that is not a car and not a current contestant selection. 
+
+Note that if the contestant selects the car on the first guess the host can open either door, but if the contestant selects a goat the host only has one option. 
+
+
+```{r}
+open_goat_door <- function( game, a.pick )
+{
+
+   # YOUR CODE HERE...
+
+   return( opened.door ) # number between 1 and 3
+
+}
+```
+
+
+
+```{r}
+# test it
+
+this.game <- create_game()
+
+this.game
+
+my.initial.pick <- select_door()
+
+my.initial.pick
+
+open_goat_door( this.game, my.initial.pick )
+
+```
+
+
+
+
+## STEP 4 - CHANGE DOORS
+
+
+The contestant is given the option to change from their initial selection to the other door that is still closed. The function will represent the game-playing strategy as the argument **stay=TRUE** or **stay=FALSE**. 
+
+
+```{r}
+change_door <- function( stay=T, opened.door, a.pick )
+{
+
+   # YOUR CODE HERE...
+
+   return( final.pick )  # number between 1 and 3
+
+}
+```
+
+
+
+```{r}
+# test it
+
+opened.door <- open_goat_door( this.game, my.initial.pick )
+
+change_door( stay=T, 
+             opened.door=opened.door, 
+             a.pick=my.initial.pick )
+change_door( stay=F, 
+             opened.door=opened.door, 
+             a.pick=my.initial.pick )
+
+my.final.pick <- change_door( stay=F, 
+                              opened.door=opened.door, 
+                              a.pick=my.initial.pick )
+
+this.game
+my.initial.pick
+my.final.pick 
+```
+
+
+<br>
+
+
+## STEP 5 - DETERMINE IF CONTENSTANT HAS WON
+
+
+```{r, eval=F}
+determine_winner <- function( final.pick, game )
+{
+
+   if( ...YOUR CODE HERE... )
+   {
+      return( "WIN" )
+   }
+   if( ...YOUR CODE HERE... )
+   {
+      return( "LOSE" )
+   }
+
+}
+```
+
+
+```{r}
+# test code
+
+this.game
+my.initial.pick
+
+my.final.pick <- change_door( stay=T, 
+                              opened.door=opened.door, 
+                              a.pick=my.initial.pick )
+
+determine_winner( final.pick=my.final.pick, 
+                  game=this.game )
+
+my.final.pick <- change_door( stay=F, 
+                              opened.door=opened.door, 
+                              a.pick=my.initial.pick )
+
+determine_winner( final.pick=my.final.pick, 
+                  game=this.game )
+```
+
+
+<br>
+
+## TESTING YOUR CODE
+
+Note that each step includes an extra chunk that allows you to run the code you just wrote to see if it works. 
+
+These are examples of unit tests.
+
+**A UNIT TEST** is code that is written to check if your code is running properly. 
+
+If you are building new functions or conducting complex analysis **it is never sufficient to check that the code runs without producing an error.** You need to check that the code is producing the correct or expected results. 
+
+This requires actually knowing what a right answer looks like. Unit tests typically test the code using multiple examples of input data that is well-understood and the answers are known. It will also include **edge cases**, scenarios where the data may contain extreme or unexpected values or data types. 
+
+For example, we will often use log transformations to minimize the influence of extremely outliers in regression analysis. Before applying the transformation, however, we need to be sure the log transformation is defines for all values of our data. 
+
+```{r}
+log( 10000 )  # fine
+log(  1000 )  # fine
+log(   100 )  # fine 
+log(    10 )  # fine 
+log(     1 )  # fine 
+log(     0 )  # uh oh
+log(   -10 )  # not defined 
+```
+
+Technically the log function is defined at zero, but instead of removing outliers we have not introduced an even bigger one (negative infinity). 
+
+And if we try to apply the log to negative numbers it is not defined so we are basically systematically deleting all of the cases that have negative values for that variable, thus likely introducing bias. 
+
+So log transformations, it turns out, are not great when our quantitative data is not all positive and non-zero (we can actually add 1 to the vector to deal with the cases that are zero, but negative values still cause problems). 
+
+If it's been awhile since you have worked with logs and you are trying to understand their behavior **the code chunk above is a great example of the type of unit test you would write to make sure you are not corrupting your data** through the variable transformation. 
+
+It includes typical values for your variable (x=10 to x=10000), and also edge cases (x=0 or x<0). When working with numeric variables the min, the max, and zero are all possible edge cases. 
+
+---
+
+In this game edge cases might be things like picking a car on the first try. 
+
+The function below prints out all of the details of a single game - the initial game set-up, the initial and final door selections, and whether the contestant won. 
+
+You are checking whether your functions work by inspecting the results to see if the code follows all of the rules: 
+
+1. The host can't open a car door or the current pick. 
+2. If the contestant has a strategy of SWITCH does the door selection change? 
+3. If the contestant has a strategy of STAY does the door selection remain the same? 
+4. The second pick can't be the first pick or the open door. 
+5. The game outcome is determined by evaluating whether the final selection was a door with a car behind it. 
+
+Since the game utilizes randomization to create the game set-up and pick the doors you should run this check several times and inspect results to ensure your solutions are robust to different scenarios. 
+
+**TEST THE GAME** 
+
+
+```{r}
+# your game "recipe" 
+this.game <- create_game()
+my.initial.pick <- select_door()
+opened.goat.door <- open_goat_door( this.game, my.initial.pick )
+
+# save results for both strategies for the game
+my.final.pick.stay <- change_door( stay=T, 
+                                   opened.door=opened.goat.door, 
+                                   a.pick=my.initial.pick )
+my.final.pick.switch <- change_door( stay=F, 
+                                     opened.door=opened.goat.door, 
+                                     a.pick=my.initial.pick )
+
+# print game details and if you won
+
+# if you stayed:
+paste0( "GAME SETUP" )
+this.game
+paste0( "My initial selection: ", my.initial.pick )
+paste0( "The opened goat door: ", opened.goat.door )
+paste0( "My final selection: ", my.final.pick.stay )
+paste0( "GAME OUTCOME:" )
+determine_winner( final.pick=my.final.pick.stay, 
+                  game=this.game )
+
+# if you switched:
+paste0( "GAME SETUP" )
+this.game
+paste0( "My initial selection: ", my.initial.pick )
+paste0( "The opened goat door: ", opened.goat.door )
+paste0( "My final selection: ", my.final.pick.switch )
+paste0( "GAME OUTCOME:" )
+determine_winner( final.pick=my.final.pick.switch, 
+                  game=this.game )
+```
+
+
+<br>
+<br>
+
+
+# Challenge Questions
+
+<br>
+
+Try these out. If you can figure out a solution include it with your submission and post it to YellowDig to get bonus admiration points from your classmates. 
+
+
+
+## PART 01:
+
+Let's change the rules a little to make outcomes more interesting. Create a board with 5 doors and 2 cars. After the contestant makes an initial selection the host will open one car door and one goat door. If the contestant decides to switch they then have to select from the two remaining doors.
+
+How does this new board change the pay-off from the game? Is switching still the best strategy? 
+
+
+<br>
+
+## PART 02:
+
+We are building functions to play a game in a static world. There are always three doors, one car, and two goats. 
+
+What happens if we are in a dynamic world? 
+
+The game can have three or more doors (in a game with two doors there would be no switching so there is no strategy to study). 
+
+And we can also have one or more cars up to N-2 (N being the number of doors, there always need to be at least two goats so that the host can open a goat door, even if the contestant selected a goat in the first round). 
+
+How would you change the code to build this game? 
+
+Note that in the first game the user would only have to specify their strategy (stay or switch). Here the user would have to specify the game size, the number of cars, and their strategy. So game size and number of cars would be added as arguments to the **build_game()** function. 
+
+
+
+
+-----
+
+
+<br>
+
+# Submission Instructions
+
+When you have completed your assignment, knit your RMD file to generate your rendered HTML file. Platforms like BlackBoard and Canvas often disallow you from submitting HTML files when there is embedded computer code, so create a zipped folder with both the RMD and HTML files.
+
+Login to Canvas at <http://canvas.asu.edu> and navigate to the assignments tab in the course repository. Upload your zipped folder to the appropriate lab submission link.
+
+Remember to:
+
+* name your files according to the convention: **Lab-##-LastName.Rmd**
+* show your solution, include your code.
+* do not print excessive output (like a full data set).
+* follow appropriate style guidelines (spaces between arguments, etc.).
+
+See [Google's R Style Guide](https://google.github.io/styleguide/Rguide.xml) for examples.
+
+
+---
+
+<br>
+
+**Markdown Trouble?**
+
+If you are having problems with your RMD file, visit the [**RMD File Styles and Knitting Tips**](https://ds4ps.org/cpp-526-spr-2020/labs/r-markdown-files.html) manual.
+
+
+**Notes on Knitting**
+
+Note that when you knit a file, it starts from a blank slate. You might have packages loaded or datasets active on your local machine, so you can run code chunks fine. But when you knit you might get errors that functions cannot be located or datasets don't exist. Be sure that you have included chunks to load these in your RMD file.
+
+Your RMD file will not knit if you have errors in your code. If you get stuck on a question, just add `eval=F` to the code chunk and it will be ignored when you knit your file. That way I can give you credit for attempting the question and provide guidance on fixing the problem.
+
+
+<br>
+<br>
+
+<style>
+blockquote {
+    padding: 11px 22px;
+    margin: 0 0 22px;
+    font-size: 18px;
+    border-left: 5px solid lightgray;
+}
+
+</style>
+
