@@ -170,7 +170,7 @@ lm( y ~ x1 + x2 )
 
 The fences are three back-ticks. These look like quotation marks, but are actually the character at the top left of your keyboard (if you have a US or European keyboard). 
 
-GitHub does not have a native math rendering language (RMD documents, on the other hand, [support formulas](https://www.calvin.edu/~rpruim/courses/s341/S17/from-class/MathinRmd.html)). 
+GitHub does not have a native math rendering language (RMD documents, on the other hand, [support formulas](https://rpruim.github.io/s341/S19/from-class/MathinRmd.html)). 
 
 You have two options when using formulas: type them as regular text and use code formatting to make them clear (this option is usually sufficient). 
 
@@ -184,8 +184,43 @@ b1 = cov(x,y) / var(x)
 
 Or type your formula in a formula editor and copy and paste an image.
 
-Use **dput()** to share R objects in a format that can be copied from the forum and pasted into R to recreate the vectors or data frames. 
+Use **dput()** to share R objects for reproducible examples.  
 
+```r
+dat
+      x y
+1   9.8 A
+2   9.2 B
+3   9.0 C
+4  10.5 D
+5   9.5 E
+6   9.4 F
+7  10.4 G
+8  11.1 H
+9   9.6 I
+10  9.4 J
+  
+dput(x)  # outputs numeric vector
+c(9.8, 9.2, 9, 10.5, 9.5, 9.4, 10.4, 11.1, 9.6, 9.4)
+  
+dput(y)  # outputs character vector 
+c("A", "B", "C", "D", "E", "F", "G", "H", "I", "J")
+  
+dput( dat )  # outputs a data frame
+structure(list(x = c(9.8, 9.2, 9, 10.5, 9.5, 9.4, 10.4, 11.1, 
+9.6, 9.4), y = c("A", "B", "C", "D", "E", "F", "G", "H", "I", 
+"J")), class = "data.frame", row.names = c(NA, -10L))
+  
+```
+  
+This code can be copied from the forum and pasted into R to recreate the vectors or data frames.
+  
+If your object is large just share a small portion for a reproducible example:
+  
+```
+dput( head(dat,25) )  # first 25 rows 
+```
+  
 ----
 
 
