@@ -355,6 +355,8 @@ And what does this tell us about how alphabetization occurs using logical operat
 -----
 
 **Post your ideas to YellowDig** 
+  
+Each question has it's own pin. Share your solutions by adding comments to the pins. If you  
 
 
 <a class="uk-button uk-button-primary" href="{{page.yellowdig_url}}">YELLOWDIG</a>
