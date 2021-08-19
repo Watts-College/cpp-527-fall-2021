@@ -155,13 +155,13 @@ The assigned work for the term comes in the form of four elements, described bel
 
 - **R Package (10%):**  Labs 01 and 02 require you to write functions to generate your solution. You will have an additional assignment to build an R package with these functions and make it available for others to use. 
 
-- **RMD to Jekyll Project (20%):**  The final project in the course will require you to create a template for automating a report in R. You will publish the report as a Jekyll website. 
+- **RMD to Jekyll Project (20%):**  The final project in the course will require you to create a template for automating a report in R. You will publish the report as a GitHub (Jekyll) website. 
 
 - **Explainer Assignment (10%):**  You are invited to pick one topic from the class that you want to learn more about, or that you think might provide value to your classmates. Create a short tutorial to make your topic accessible to your peers. It can be a blog post, a video, a GIF, or a tutorial that explains an important concept from data programming, presents a helpful framework, illustrates a useful R tool or approach to data programming, or introduces classmates to a new package or function. 
 
-- **Yellowdig Practice Problems (10%):**  Each week I will post a list of review questions or brain teasers about the R language. You will be invited to submit solutions or explanations to the problems on Yellowdig and discuss with classmates. The points will be allocated as follows:
+- **Yellowdig Practice Problems (10%):**  Each week I will post a list of review questions or brain teasers about the R language. You will be invited to submit solutions or explanations to the problems on Yellowdig and discuss with classmates. You need to earn 100 points over the 7 weeks to earn full credit for participation in practice problems. The points will be allocated as follows:
 
-  - 5 points for a new pin.
+  - 4 points for a new pin.
   - 3 points for a comment made to another pin.
   - 2 point if you receive a comment on your pin.
   - 1 point for liking another pin.
