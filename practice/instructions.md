@@ -1,7 +1,7 @@
 ---
 layout: lab
 title: Practice Problems 
-image: microscope.png
+image: practice.png
 image-width: 150px
 ---
 
