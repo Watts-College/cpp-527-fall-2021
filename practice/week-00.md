@@ -124,13 +124,13 @@ When there is a tie capitalization also matters:
 [1] TRUE
 ```
 
-Considering these rules above, what will the following statement return? 
+Considering these rules above, what might you guess about what the following statement will return? 
 
 ```r
 "Aaron" > "abram"
 ```
 
-And what does this tell us about how alphabetization occurs using logical operators? 
+Try it out in R to see if you guessed correctly. What does this tell us about how alphabetization occurs using logical operators? 
 
 -----
 
