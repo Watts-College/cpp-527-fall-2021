@@ -8,9 +8,8 @@ image-width: 150px
 
 <div class = "uk-container uk-container-small">
 
-<br>
-<br>
-
+  
+  
 ## Instructions
 
   
@@ -40,17 +39,12 @@ Attempt the practice problems on your own. Share your insights with classmates. 
 
 
 
-(1) Share solutions to one or two of the questions each week by commenting on the appropriate pins. Responses to each question should be grouped on the same pin.
-
-(2) Please do NOT rush to be the first to answer all questions each week. Give your classmates a chance to participate. Everyone needs points.
-
-(3) Engage with solutions. Let your classmates know if their solution was clear or helpful. Ask questions for clarification. If you think a solution might be incorrect try to find an example that shows why.
-
-(4) Answer questions without looking for custom packages. Unless stated otherwise all of the problems can be solved using core R functions.
-
-(5) Format code and text appropriately and try to make your examples clear, concise, and reproducible when possible.
-
-(6) Create toy datasets or examples to test your solutions or demonstrate concepts. Clear examples are worth their weight in gold and are a best practice for developing robust code.
+1. Share solutions to one or two of the questions each week by commenting on the appropriate pins. Responses to each question should be grouped on the same pin.
+2. Please do NOT rush to be the first to answer all questions each week. Give your classmates a chance to participate. Everyone needs points.
+3. Engage with solutions. Let your classmates know if their solution was clear or helpful. Ask questions for clarification. If you think a solution might be incorrect try to find an example that shows why.
+4. Answer questions without looking for custom packages. Unless stated otherwise all of the problems can be solved using core R functions.
+5. Format code and text appropriately and try to make your examples clear, concise, and reproducible when possible.
+6. Create toy datasets or examples to test your solutions or demonstrate concepts. Clear examples are worth their weight in gold and are a best practice for developing robust code.
 
 
 
@@ -62,22 +56,40 @@ Feel free to post your own R brain teasers if you want to present your examples 
 
 
 
-YELLOWDIG POINTS:
-
+### Yellowdig Points
 
 
 You need to earn 100 points over the 7 weeks to earn full credit for participation in practice problems (15% of your grade). The points will be allocated as follows:
 
 
-
-4 points for a new pin.
-3 points for a comment made to another pin.
-2 point if you receive a comment on your pin.
-1 point for liking another pin.
-5 points if you earn an instructor badge for an informative post.
-max of 20 points can be earned each week. 
+* 4 points for a new pin.  
+* 3 points for a comment made to another pin.  
+* 2 point if you receive a comment on your pin.  
+* 1 point for liking another pin.  
+* 5 points if you earn an instructor badge for an informative post.  
+* max of 20 points can be earned each week. 
 
   
+  
+### Be Mindful of Progress  
+  
+New technical content will never be 100% clear when encountering it for the first time. 
+  
+Some material this semester will be review, some new. Make sure to remind yourself of how far you have come in a single semester. 
+  
+It typically takes ten years to hit a serious learning plateau, which is exciting because it means you are part of an interesting and dynamic field. 
+  
+But it means that you need to get comfortable learning new material now and on the job, and knowing when to attempt something alone and when to ask for help. 
+  
+Everyone gets stuck and makes mistakes. You just get stuck less often and make fewer mistakes over time. 
+  
+Trust the process and be mindful of your progress! 
+
+<br> 
+
+![](../assets/img/learning-curve-01.png)
+  
+<br>
   
 ![](../assets/img/learning-curve-02.png)
   
