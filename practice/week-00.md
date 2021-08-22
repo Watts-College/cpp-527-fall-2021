@@ -6,7 +6,6 @@ image-width: 150px
 ---
 
 
-<div class = "uk-container uk-container-small">
 
 <br>
 <br>
@@ -145,9 +144,7 @@ Each question has it's own pin. Share your solutions by adding comments to the p
 <hr>
 <br>
 
-</div>
+
  
  
-<style>
- .highlight { background-color: #5A6575; }
-</style>
+
