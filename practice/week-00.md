@@ -149,5 +149,5 @@ Each question has it's own pin. Share your solutions by adding comments to the p
  
  
 <style>
- code{ background-color: #5A6575; }
+ .highlight { background-color: #5A6575; }
 </style>
