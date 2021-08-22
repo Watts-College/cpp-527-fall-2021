@@ -5,7 +5,7 @@ image: microscope.png
 image-width: 150px
 ---
 
-
+<div class = "uk-container uk-container-small">
 
 <br>
 <br>
@@ -144,7 +144,7 @@ Each question has it's own pin. Share your solutions by adding comments to the p
 <hr>
 <br>
 
-
+</div>
  
  
 
