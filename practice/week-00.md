@@ -1,6 +1,6 @@
 ---
 layout: lab
-title: Lab 01 - Project Setup
+title: Practice Problems 
 image: microscope.png
 image-width: 150px
 ---
@@ -12,9 +12,8 @@ image-width: 150px
 <br>
 
 
-## Practice Problem Warmup
+## Week 00: Warmup
 
-**Post on {{page.yellowdig.post-01}}**
 
 Note that these are non-obvious bugs that can EASILY work there way into your code. Once you see the problem, it will seem obvious. But until you see it the code often looks fine and it's unclear why it is not working as expected. 
 
@@ -147,3 +146,8 @@ Each question has it's own pin. Share your solutions by adding comments to the p
 <br>
 
 </div>
+ 
+ 
+<style>
+ code{ background-color: #5A6575; }
+</style>
