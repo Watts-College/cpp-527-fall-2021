@@ -6,7 +6,7 @@ root-url: 'https://raw.githubusercontent.com/DS4PS/cpp-527-fall-2020/master/revi
 
 
 session: 
-- week1:
+- week1: 'Review of Functions and Logical Statements'
   date:  ''  
   video: ''
   password: ''
