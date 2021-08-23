@@ -6,8 +6,8 @@ root-url: 'https://raw.githubusercontent.com/DS4PS/cpp-527-fall-2020/master/revi
 
 
 session: 
-- week1: 'Review of Functions and Logical Statements'
-  date:  ''  
+- week1:
+  date:  'Tues Aug 24'  
   video: ''
   password: ''
   sample-code: 'week-01-control-structures.R' 
