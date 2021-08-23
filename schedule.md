@@ -492,7 +492,7 @@ It is very common to use variables like **X** or **dat** to represent objects in
 
 Scope prevents actions inside of a function from impacting your active work environment. 
 
-For example, why is X not altered here except through assignment? 
+For example, why is X not altered here when we call the *two.plus.two()* function since the value of 4 is assigned to X inside the function? 
 
 ```r
 x <- 10 
