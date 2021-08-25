@@ -381,26 +381,28 @@ A numeric vector is a generic category for vectors of numbers, but computers hav
 
 ![](img/memory-allocation-integer.png)  
   
-**Each element in an integer vector occupies 4 bytes of memory**. Each byte contains 4 bits. A **bit** is a single position in memory that can be either a 1 or a 0 (on or off). All data in computers is encoded using bits. 
+**Each element in an integer vector occupies 4 bytes of memory**. Each byte contains 8 bits. So each element in an integer vector requires 32 bits of memory.  
   
-How many different integer values can we represent with 4 bytes of memory? 
+**The word bit is short for "binary digit", the smallest unit of storage in a computer and the fundamental building block of mathematics and code in computer science**. A bit is a single position in memory that can be in one of two states - either 1 (on) or 0 (off). All data in computers is encoded using bits. 
+
+Try out binary number conversion to see an example of how it works: [Numeric to Binary Converter](https://www.rapidtables.com/convert/number/decimal-to-binary.html)  
+  
+How many different integer values can we represent with 4 bytes of memory then? 
   
 --------  
   
 *Each byte is considered to have 8 bits in this context. Since there are 4 bytes, that means 4 × 8 bits = 32 bits are available for storing a number.*  
-  
-*The word bit is derived from the expression **binary digit**, referring to the two states that each bit can take (1 or 0).*   
   
 *Therefore, each 4-byte portion of memory can handle 2³² = 4 294 967 296 representations. Typically, the ranges of integers supported are either:*  
   
 * *0 .. 4 294 967 295 if you want only non-negative integer values and do not wish to “waste” a bit to indicate a sign (positive versus negative).*  
 * *−2 147 483 648 .. 2 147 483 647, where one of the bits is used to indicate sign as opposed to allowing for greater positive values.*   
 
-[explanation from](https://www.quora.com/How-many-numbers-can-you-represent-in-4-bytes)
+[explanation borrowed from](https://www.quora.com/How-many-numbers-can-you-represent-in-4-bytes)
 
 ------
   
-**Numberic vectors containing decimals are called doubles** because the computer allocates twice as much memory as an integer (8 bytes). So more precise numbers are more "expensive" in computational terms. 
+**Numberic vectors containing decimals are called doubles because the computer allocates twice as much memory as an integer (8 bytes)**. So more precise numbers are more "expensive" in computational terms. 
 
 ### Q5-A: Default Numeric Type
 
@@ -494,6 +496,7 @@ Based upon these examples, what are the rules R applies for numeric casting when
 856 bytes
 ```
 
+*Note that the print function (which is called by typing the object name) will truncate zeros at the end of numbers up to the last meaningful digit. As a result, you cannot determine whether a numeric vector is an integer by printing it out because integers and doubles will often appear the same. You need the **typeof()** function to check the data type for numeric vectors.** 
   
   
   
