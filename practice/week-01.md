@@ -679,7 +679,7 @@ h1{
   } 
   
 h2{
-  font-size:calc(1.5em + 0.25vw) !important;
+  font-size:calc(1.8em + 0.25vw) !important;
   font-weight:300;
   margin-top:80px !important;
   margin-bottom:20px;
