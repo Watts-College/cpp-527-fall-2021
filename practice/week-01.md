@@ -11,10 +11,20 @@ image-width: 150px
 <br>
 
 
-## Week 01
+# Week 01
 
+-----------------------
+
+* TOC
+{:toc}
+
+-----------------------
+
+<br>
   
-**Q0: IMPLICIT CASTING**
+  
+  
+## Q1: IMPLICIT CASTING
   
 When we combine two different data types we trigger an implicit cast. 
   
@@ -38,26 +48,53 @@ NAs introduced by coercion
 ```
 
 R tries to be clever by invoking a casting rule that minimizes data loss. For example, when we combine numeric and character vectors we will implicitly recast the object as a character vector. 
+
+**Q1: Default Data Types**
      
 Consider the following cases. Explain why the defaults were selected in each case. 
      
 ```r
-# numeric + character 
-# character + factor 
-# numeric + factor 
-# integer + double
-     
-x1 <- c(1,2,3)
-x2 <- c(4,5,6.01)
-c(x1,x2)
+x.numeric <- 1:3
+x.character <- LETTERS[1:3]
+f <- factor( LETTERS[24:26] )
+x
+[1] 1 2 3
+y
+[1] "A" "B" "C"
+f
+[1] X Y Z
+Levels: X Y Z
+
+# CASE A
+z <- c( x.numeric, x.character )
+[1] "1" "2" "3" "A" "B" "C"
+class( z )
+[1] "character"
+
+# CASE B
+z <- c( x.character, f )
+[1] "A" "B" "C" "1" "2" "3"
+class( z )
+[1] "character"
+
+# CASE C  
+z <- c( x.numeric, f )
+[1] 1 2 3 1 2 3
+class( z )
+[1] "integer"
 ```
      
+Which case is most likely to introduce errors in your analysis? 
      
      
-  
-**Q1: FACTORS**
+     
 
-**Q1-A: Ordering Levels**
+
+      
+  
+## Q2: FACTORS
+
+**Q2-A: Ordering Levels**
 
 By default factors created in R will order levels (categories) alphabetically. 
 
@@ -87,7 +124,7 @@ f
 *Make a mental note that __factor__ and __level__ are both precise technical terms that have different meanings in computer science and statistics.* 
 
 
-**Q1-B: Empty Levels**
+**Q2-B: Empty Levels**
 
 How can we drop empty levels from a factor? 
 
@@ -101,7 +138,7 @@ table( f2 )
 ```
 
 
-**Q1-C: Counting Zeros**
+**Q2-C: Counting Zeros**
 
 What about cases where counts of zeros are important? What if we wanted to note here days that events did not occur? 
 
@@ -129,7 +166,7 @@ table( f3 )
 -----
 
 
-**Q2: COMPARISON OF SETS**
+**Q3: COMPARISON OF SETS**
 
 Recall the structure of IF STATEMENTS:
 
@@ -163,7 +200,7 @@ if( identical( x, y ) )
 ```
 
 
-**Q2-A: Ignore Order**
+**Q3-A: Ignore Order**
 
 Perhaps you want to run a chunk of code only IF two vectors contain the same elements, but order is irrelevant. 
 
@@ -187,7 +224,7 @@ identical( x, y )
 [1] FALSE
 ```
 
-**Q2-B: Ignore Vector Length**
+**Q3-B: Ignore Vector Length**
 
 Similar to the case above, we want to compare these two sets to ensure they contain the same elements. We don't care about how many times each element occurs, just that the two sets are the same. 
 
@@ -201,7 +238,7 @@ identical( x, y )
 [1] FALSE
 ```
 
-**Q2-C: Data Types**
+**Q3-C: Data Types**
 
 This is an interesting case because the logical operator **==** will consider these vectors to be identical, but the **identical()** function will not.
 
@@ -245,7 +282,7 @@ y <- c("01","02","03")
 
 
 
-**Q2-D: Comparisons with Missing Values**
+**Q3-D: Comparisons with Missing Values**
 
 Missing values are important in statistics and data analytics, but they pose some challenges for computer logic. 
 
@@ -286,7 +323,7 @@ x <- c("A","A","B","B","C","C")
 y <- c("A",NA,"B",NA,"C","C")
 ```
 
-**Q3: ROUNDING ERRORS**
+**Q4: ROUNDING ERRORS**
 
 This is one of the most unexpected and somewhat shocking errors you can encounter in computer science: 
 
@@ -392,7 +429,7 @@ x3 == y3
 -----
 
 
-**Q4: APPROXIMATE MATCHES**
+## Q5: APPROXIMATE MATCHES
 
 In this example vectors represent sets of traits of pairs of individuals in a study. 
 
@@ -436,12 +473,149 @@ compare_pairs( x4, y4 )
 # SHOULD BE FALSE
 ```
 
+  
+  
+## Q6: NUMERIC CASTING
+     
+A numeric vector is a generic category for vectors of numbers, but computers have different rules for storing integers versus decimals. The rules determine how much memory is allocated for each object. 
 
+![](img/memory-allocation-integers.png)  
+  
+**Each element in an integer vector occupies 4 bytes of memory**. Each byte contains 4 bits. A **bit** is a single position in memory that can be either a 1 or a 0 (on or off). All data in computers is encoded using bits. 
+  
+How many different integer values can we represent with 4 bytes of memory? 
+     
+> Each byte is considered to have 8 bits in this context. Since there are 4 bytes, that means 4 × 8 bits = 32 bits are available for storing a number. 
+> 
+> The word bit is derived from the expression **binary digit**, referring to the two states that each bit can take (1 or 0). 
+> 
+> Therefore, each 4-byte portion of memory can handle 2³² = 4 294 967 296 representations. Typically, the ranges of integers supported are either:
+>    0 .. 4 294 967 295 if you want only non-negative integer values and do not wish to “waste” a bit to indicate a sign (positive versus negative).
+>   −2 147 483 648 .. 2 147 483 647, where one of the bits is used to indicate sign as opposed to allowing for greater positive values. 
+
+[cite](https://www.quora.com/How-many-numbers-can-you-represent-in-4-bytes)
+  
+**Numberic vectors containing decimals are called doubles** because the computer allocates twice as much memory as an integer (8 bytes). So more precise numbers are more "expensive" in computational terms. 
+
+**Q6-A: Numeric Casting**
+
+Based upon these examples, what are the rules R applies for numeric casting when combining integers and doubles? Does this rule optimize performance (smaller objects = faster computing time), or information integrity (preventing loss of precision)? 
+  
+```r
+> x <- sample( 1:10, 100, replace=TRUE )
+> x
+  [1]  1  6  2  9  9  7  6  3  6 10  2  9  5  3 10
+ [16]  2  7  5  3  3  1  6  1  9  9  3 10  2  6  8
+ [31]  2  3  1  9 10  6 10  1  6  8  1 10  5  4  2
+ [46]  1 10  8 10  3  8  7  4  7  5  1  9  2  9  6
+ [61]  3  8  1  7  2  6  9  9  1  3  4  5  2  4  3
+ [76]  6  5  7  4  6  7  4  2  9  1  6  3  3  6  2
+ [91]  1  6  3  1  8  7  6  4  6  8
+> typeof(x)
+[1] "integer"
+> object.size(x)
+448 bytes
+> 
+> x <- as.double(x)
+> x
+  [1]  1  6  2  9  9  7  6  3  6 10  2  9  5  3 10
+ [16]  2  7  5  3  3  1  6  1  9  9  3 10  2  6  8
+ [31]  2  3  1  9 10  6 10  1  6  8  1 10  5  4  2
+ [46]  1 10  8 10  3  8  7  4  7  5  1  9  2  9  6
+ [61]  3  8  1  7  2  6  9  9  1  3  4  5  2  4  3
+ [76]  6  5  7  4  6  7  4  2  9  1  6  3  3  6  2
+ [91]  1  6  3  1  8  7  6  4  6  8
+> typeof(x)
+[1] "double"
+> object.size(x)
+848 bytes
+> 
+> 
+> x <- sample( 1:10, 100, replace=TRUE )
+> typeof(x)
+[1] "integer"
+> object.size(x)
+448 bytes
+> 
+> z <- c( x, 1 )
+> z
+  [1] 10  8  5  5  6  7  5  1  5  7  3 10  2  9  5
+ [16]  4  5  7  9  1  6  7 10  7 10  5  1  8  3  5
+ [31]  2  4  5  4  2  9  1  1  7  4  3  5  4  9  7
+ [46]  3  1  2  5  8  9  1  3  8  6  1  1  8  4  4
+ [61]  6 10  6  6  8  6  6  3  3  7  1  1  9  9  5
+ [76]  8 10  3 10  5  1  8  5  4 10  4  3  4  1  5
+ [91]  2  4  7  4  2  4  6  9  4 10  1
+> typeof(z)
+[1] "double"
+> object.size(z)
+856 bytes
+> 
+> z <- c( x, 1.00 )
+> z
+  [1] 10  8  5  5  6  7  5  1  5  7  3 10  2  9  5
+ [16]  4  5  7  9  1  6  7 10  7 10  5  1  8  3  5
+ [31]  2  4  5  4  2  9  1  1  7  4  3  5  4  9  7
+ [46]  3  1  2  5  8  9  1  3  8  6  1  1  8  4  4
+ [61]  6 10  6  6  8  6  6  3  3  7  1  1  9  9  5
+ [76]  8 10  3 10  5  1  8  5  4 10  4  3  4  1  5
+ [91]  2  4  7  4  2  4  6  9  4 10  1
+> typeof(z)
+[1] "double"
+> object.size(z)
+856 bytes
+> 
+> 
+> z <- c( x, 1.01 )
+> z
+  [1] 10.00  8.00  5.00  5.00  6.00  7.00  5.00
+  [8]  1.00  5.00  7.00  3.00 10.00  2.00  9.00
+ [15]  5.00  4.00  5.00  7.00  9.00  1.00  6.00
+ [22]  7.00 10.00  7.00 10.00  5.00  1.00  8.00
+ [29]  3.00  5.00  2.00  4.00  5.00  4.00  2.00
+ [36]  9.00  1.00  1.00  7.00  4.00  3.00  5.00
+ [43]  4.00  9.00  7.00  3.00  1.00  2.00  5.00
+ [50]  8.00  9.00  1.00  3.00  8.00  6.00  1.00
+ [57]  1.00  8.00  4.00  4.00  6.00 10.00  6.00
+ [64]  6.00  8.00  6.00  6.00  3.00  3.00  7.00
+ [71]  1.00  1.00  9.00  9.00  5.00  8.00 10.00
+ [78]  3.00 10.00  5.00  1.00  8.00  5.00  4.00
+ [85] 10.00  4.00  3.00  4.00  1.00  5.00  2.00
+ [92]  4.00  7.00  4.00  2.00  4.00  6.00  9.00
+ [99]  4.00 10.00  1.01
+> typeof(z)
+[1] "double"
+> object.size(z)
+856 bytes
+```
+
+  
+**Q6-B: Memory Allocation and Precision** 
+  
+Since computers only allocate a certain amount of memory for numbers at some point they will need to truncate a number in order to store it in memory. 
+
+Explain why the following might happen
+  
+```r
+x <- 6.001
+x
+[1] 6.001
+x <- 6.0000000000000000000000000000000001
+x
+[1] 6
+ 
+6 == 6.001
+[1] FALSE
+6 == 6.0000000000000000000000000000000001
+[1] TRUE
+```
+  
+  
 -----
 
 **CHALLENGE QUESTION**
 
-**Q5: COUNTING SUBSTRINGS**
+**Q7: COUNTING SUBSTRINGS**
 
 In all of the examples above we were comparing two things. 
 
@@ -463,16 +637,16 @@ sum( x == 9 )
 ```
 
 
-**Q5-A: How would you count all nine's in the vector?**
+**Q7-A: How would you count all nine's in the vector?**
 
 For example, 19 contains one nine, 99 contains two nines. 
 
 
-**Q5-B: How would you count all of the elements of X that CONTAIN a nine?**
+**Q7-B: How would you count all of the elements of X that CONTAIN a nine?**
 
 For example, 19 contains a nine. 
 
-**Q5-C: Count all 17's in the vector X.**
+**Q7-C: Count all 17's in the vector X.**
 
 X is a vector containing the numbers 1 to 1,000.
 
