@@ -121,7 +121,7 @@ The online discussions are explicitly intended to meet the objectives stated abo
 
 We will use some chapters from the program textbook. 
 
-* [Course Textbook](https://ds4ps.org/dp4ss/)
+* [Course Notes](https://ds4ps.org/dp4ss/)
 
 The following texts are recommended as good reference material for topics covered in this course:
 
