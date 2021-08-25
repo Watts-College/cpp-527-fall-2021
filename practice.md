@@ -19,7 +19,7 @@ These questions are similar to riddles or brain teasers that help sharpen your c
 <hr>
 <a class="uk-button uk-button-default" href="../practice/week-01/">WEEK 01</a>
 <hr>
-<a class="uk-button uk-button-default" href="">WEEK 02</a>
+<a class="uk-button uk-button-default" href="../practice/week-02/">WEEK 02</a>
 <hr>
 <a class="uk-button uk-button-default" href="">WEEK 03</a>
 <hr>
