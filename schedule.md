@@ -673,7 +673,7 @@ In Lab 01 we will use control structures to build a virtual version of the game.
 
 **Post on {{page.yellowdig.post-02}}**
 
-<a class="uk-button uk-button-primary" href="../practice/week-01/">SUBMIT LAB</a>
+<a class="uk-button uk-button-default" href="../practice/week-01/">PRACTICE PROBLEMS</a>
 
 <br>
 <hr>
