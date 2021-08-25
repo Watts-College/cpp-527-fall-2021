@@ -8,8 +8,8 @@ root-url: 'https://raw.githubusercontent.com/DS4PS/cpp-527-fall-2020/master/revi
 session: 
 - week1:
   date:  'Tues Aug 24'  
-  video: ''
-  password: ''
+  video: 'https://asu.zoom.us/rec/share/zjvNICtnu8dZFdeg60wxhMu2kBIuEgLzKpFL0ENFCxAutjNRoh7Qv4Y-FS_x1To4.jA5BkU07monHPkKj'
+  password: 'mG?H092#'
   sample-code: 'week-01-control-structures.R' 
   session-code: 'week-01-control-structures.Rhistory' 
 - week2:
