@@ -29,7 +29,7 @@ layout: default
 <br>
 <hr>
 
-<a class="uk-button uk-button-primary" href="https://canvas.asu.edu/courses/99223/assignments/2552420">YELLOWDIG</a> 
+<a class="uk-button uk-button-primary" href="https://asu-online.yellowdig.app/community/17592351249266">YELLOWDIG</a> 
   
 <hr>
 <br>
