@@ -234,6 +234,14 @@ dput( head(dat,25) )  # first 25 rows
 
 **Post on {{page.yellowdig.post-01}}**
 
+It is easy for non-obvious bugs to EASILY work their way into your code. Once you see the problem, it will seem obvious. But until you see it the code often looks fine and it’s unclear why it is not working as expected.
+
+These practice problems are largely an opportunity to review content from CPP 526 and develop a sensitivity to the nuances of R. It also demonstrates the importance of testing your code for unexpected behaviors and writing robust and maintainable scripts.
+
+These questions are similar to riddles or brain teasers that help sharpen your critical thinking skills when working with code. Work through each on your own, then discuss solutions on YellowDig with classmates.
+
+For the topics this week, you will find that reviewing the lecture notes on one-dimensional data types useful: [VECTORS IN R](http://ds4ps.org/dp4ss-textbook/ch-050-vectors.html).
+  
 <hr>
 <a class="uk-button uk-button-default" href="../practice/week-01/">PRACTICE PROBLEMS</a>
 <hr>
