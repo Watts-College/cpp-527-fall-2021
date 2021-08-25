@@ -323,7 +323,204 @@ x <- c("A","A","B","B","C","C")
 y <- c("A",NA,"B",NA,"C","C")
 ```
 
-### Q4: ROUNDING ERRORS
+
+-----
+
+
+## Q4: APPROXIMATE MATCHES
+
+In this example vectors represent sets of traits of pairs of individuals in a study. 
+
+* race (white/minority) 
+* gender (male/female)
+* college degree? (college/highschool)
+
+We want to identify people that are similar but not necessarily identical. 
+
+Create a function that compares the two individuals and returns TRUE if they are the same on at least two traits, and false if they only match on one or zero traits. 
+
+
+```r
+compare_pairs <- function( x, y )
+{
+   # your code here
+}
+
+
+x1 <- c("white","female","college")
+y1 <- c("white","female","college")
+compare_pairs( x1, y1 )
+# SHOULD BE TRUE
+
+x2 <- c("minority","female","college")
+y2 <- c("white","female","college")
+compare_pairs( x2, y2 )
+# SHOULD BE TRUE
+
+x3 <- c("minority","female","college")
+y3 <- c("white","male","college")
+compare_pairs( x3, y3 )
+# SHOULD BE FALSE
+
+x4 <- c("minotity","female","college")
+y4 <- c("white","male","high school")
+compare_pairs( x4, y4 )
+# SHOULD BE FALSE
+```
+
+  
+  
+  
+  
+  
+  
+  
+## Q5: NUMERIC CASTING
+     
+A numeric vector is a generic category for vectors of numbers, but computers have different rules for storing integers versus decimals. The rules determine how much memory is allocated for each object. 
+
+![](img/memory-allocation-integer.png)  
+  
+**Each element in an integer vector occupies 4 bytes of memory**. Each byte contains 4 bits. A **bit** is a single position in memory that can be either a 1 or a 0 (on or off). All data in computers is encoded using bits. 
+  
+How many different integer values can we represent with 4 bytes of memory? 
+  
+--------  
+  
+*Each byte is considered to have 8 bits in this context. Since there are 4 bytes, that means 4 × 8 bits = 32 bits are available for storing a number.*  
+  
+*The word bit is derived from the expression **binary digit**, referring to the two states that each bit can take (1 or 0).*   
+  
+*Therefore, each 4-byte portion of memory can handle 2³² = 4 294 967 296 representations. Typically, the ranges of integers supported are either:*  
+  
+* *0 .. 4 294 967 295 if you want only non-negative integer values and do not wish to “waste” a bit to indicate a sign (positive versus negative).*  
+* *−2 147 483 648 .. 2 147 483 647, where one of the bits is used to indicate sign as opposed to allowing for greater positive values.*   
+
+[explanation from](https://www.quora.com/How-many-numbers-can-you-represent-in-4-bytes)
+
+------
+  
+**Numberic vectors containing decimals are called doubles** because the computer allocates twice as much memory as an integer (8 bytes). So more precise numbers are more "expensive" in computational terms. 
+
+### Q5-A: Default Numeric Type
+
+Based upon these examples, what are the rules R applies for numeric casting when combining integers and doubles? Does this rule optimize performance (smaller objects = faster computing time), or information integrity (preventing loss of precision)? 
+  
+```r
+> x <- sample( 1:10, 100, replace=TRUE )
+> x
+  [1]  1  6  2  9  9  7  6  3  6 10  2  9  5  3 10
+ [16]  2  7  5  3  3  1  6  1  9  9  3 10  2  6  8
+ [31]  2  3  1  9 10  6 10  1  6  8  1 10  5  4  2
+ [46]  1 10  8 10  3  8  7  4  7  5  1  9  2  9  6
+ [61]  3  8  1  7  2  6  9  9  1  3  4  5  2  4  3
+ [76]  6  5  7  4  6  7  4  2  9  1  6  3  3  6  2
+ [91]  1  6  3  1  8  7  6  4  6  8
+> typeof(x)
+[1] "integer"
+> object.size(x)
+448 bytes
+> 
+> x <- as.double(x)
+> x
+  [1]  1  6  2  9  9  7  6  3  6 10  2  9  5  3 10
+ [16]  2  7  5  3  3  1  6  1  9  9  3 10  2  6  8
+ [31]  2  3  1  9 10  6 10  1  6  8  1 10  5  4  2
+ [46]  1 10  8 10  3  8  7  4  7  5  1  9  2  9  6
+ [61]  3  8  1  7  2  6  9  9  1  3  4  5  2  4  3
+ [76]  6  5  7  4  6  7  4  2  9  1  6  3  3  6  2
+ [91]  1  6  3  1  8  7  6  4  6  8
+> typeof(x)
+[1] "double"
+> object.size(x)
+848 bytes
+> 
+> 
+> x <- sample( 1:10, 100, replace=TRUE )
+> typeof(x)
+[1] "integer"
+> object.size(x)
+448 bytes
+> 
+> z <- c( x, 1 )
+> z
+  [1] 10  8  5  5  6  7  5  1  5  7  3 10  2  9  5
+ [16]  4  5  7  9  1  6  7 10  7 10  5  1  8  3  5
+ [31]  2  4  5  4  2  9  1  1  7  4  3  5  4  9  7
+ [46]  3  1  2  5  8  9  1  3  8  6  1  1  8  4  4
+ [61]  6 10  6  6  8  6  6  3  3  7  1  1  9  9  5
+ [76]  8 10  3 10  5  1  8  5  4 10  4  3  4  1  5
+ [91]  2  4  7  4  2  4  6  9  4 10  1
+> typeof(z)
+[1] "double"
+> object.size(z)
+856 bytes
+> 
+> z <- c( x, 1.00 )
+> z
+  [1] 10  8  5  5  6  7  5  1  5  7  3 10  2  9  5
+ [16]  4  5  7  9  1  6  7 10  7 10  5  1  8  3  5
+ [31]  2  4  5  4  2  9  1  1  7  4  3  5  4  9  7
+ [46]  3  1  2  5  8  9  1  3  8  6  1  1  8  4  4
+ [61]  6 10  6  6  8  6  6  3  3  7  1  1  9  9  5
+ [76]  8 10  3 10  5  1  8  5  4 10  4  3  4  1  5
+ [91]  2  4  7  4  2  4  6  9  4 10  1
+> typeof(z)
+[1] "double"
+> object.size(z)
+856 bytes
+> 
+> 
+> z <- c( x, 1.01 )
+> z
+  [1] 10.00  8.00  5.00  5.00  6.00  7.00  5.00
+  [8]  1.00  5.00  7.00  3.00 10.00  2.00  9.00
+ [15]  5.00  4.00  5.00  7.00  9.00  1.00  6.00
+ [22]  7.00 10.00  7.00 10.00  5.00  1.00  8.00
+ [29]  3.00  5.00  2.00  4.00  5.00  4.00  2.00
+ [36]  9.00  1.00  1.00  7.00  4.00  3.00  5.00
+ [43]  4.00  9.00  7.00  3.00  1.00  2.00  5.00
+ [50]  8.00  9.00  1.00  3.00  8.00  6.00  1.00
+ [57]  1.00  8.00  4.00  4.00  6.00 10.00  6.00
+ [64]  6.00  8.00  6.00  6.00  3.00  3.00  7.00
+ [71]  1.00  1.00  9.00  9.00  5.00  8.00 10.00
+ [78]  3.00 10.00  5.00  1.00  8.00  5.00  4.00
+ [85] 10.00  4.00  3.00  4.00  1.00  5.00  2.00
+ [92]  4.00  7.00  4.00  2.00  4.00  6.00  9.00
+ [99]  4.00 10.00  1.01
+> typeof(z)
+[1] "double"
+> object.size(z)
+856 bytes
+```
+
+  
+  
+  
+### Q5-B: Memory Allocation and Precision
+  
+Since computers only allocate a certain amount of memory for numbers at some point they will need to truncate a number in order to store it in memory. 
+
+Explain why the following might happen
+  
+```r
+x <- 6.001
+x
+[1] 6.001
+x <- 6.0000000000000000000000000000000001
+x
+[1] 6
+ 
+6 == 6.001
+[1] FALSE
+6 == 6.0000000000000000000000000000000001
+[1] TRUE
+```
+
+  
+  
+  
+### Q5-C: Comparisons with Rounding Errors 
 
 This is one of the most unexpected and somewhat shocking errors you can encounter in computer science: 
 
@@ -424,197 +621,9 @@ x3 == y3
 [1] TRUE
 ```
 
-
-
------
-
-
-## Q5: APPROXIMATE MATCHES
-
-In this example vectors represent sets of traits of pairs of individuals in a study. 
-
-* race (white/minority) 
-* gender (male/female)
-* college degree? (college/highschool)
-
-We want to identify people that are similar but not necessarily identical. 
-
-Create a function that compares the two individuals and returns TRUE if they are the same on at least two traits, and false if they only match on one or zero traits. 
-
-
-
-
-
-```r
-compare_pairs <- function( x, y )
-{
-   # your code here
-}
-
-
-x1 <- c("white","female","college")
-y1 <- c("white","female","college")
-compare_pairs( x1, y1 )
-# SHOULD BE TRUE
-
-x2 <- c("minority","female","college")
-y2 <- c("white","female","college")
-compare_pairs( x2, y2 )
-# SHOULD BE TRUE
-
-x3 <- c("minority","female","college")
-y3 <- c("white","male","college")
-compare_pairs( x3, y3 )
-# SHOULD BE FALSE
-
-x4 <- c("minotity","female","college")
-y4 <- c("white","male","high school")
-compare_pairs( x4, y4 )
-# SHOULD BE FALSE
-```
-
   
-  
-## Q6: NUMERIC CASTING
-     
-A numeric vector is a generic category for vectors of numbers, but computers have different rules for storing integers versus decimals. The rules determine how much memory is allocated for each object. 
-
-![](img/memory-allocation-integer.png)  
-  
-**Each element in an integer vector occupies 4 bytes of memory**. Each byte contains 4 bits. A **bit** is a single position in memory that can be either a 1 or a 0 (on or off). All data in computers is encoded using bits. 
-  
-How many different integer values can we represent with 4 bytes of memory? 
-  
---------  
-  
-*Each byte is considered to have 8 bits in this context. Since there are 4 bytes, that means 4 × 8 bits = 32 bits are available for storing a number.*  
-  
-*The word bit is derived from the expression **binary digit**, referring to the two states that each bit can take (1 or 0).*   
-  
-*Therefore, each 4-byte portion of memory can handle 2³² = 4 294 967 296 representations. Typically, the ranges of integers supported are either:*  
-  
-* *0 .. 4 294 967 295 if you want only non-negative integer values and do not wish to “waste” a bit to indicate a sign (positive versus negative).*  
-* *−2 147 483 648 .. 2 147 483 647, where one of the bits is used to indicate sign as opposed to allowing for greater positive values.*   
-
-[explanation from](https://www.quora.com/How-many-numbers-can-you-represent-in-4-bytes)
-
-------
-  
-**Numberic vectors containing decimals are called doubles** because the computer allocates twice as much memory as an integer (8 bytes). So more precise numbers are more "expensive" in computational terms. 
-
-### Q6-A: Default Numeric Type
-
-Based upon these examples, what are the rules R applies for numeric casting when combining integers and doubles? Does this rule optimize performance (smaller objects = faster computing time), or information integrity (preventing loss of precision)? 
-  
-```r
-> x <- sample( 1:10, 100, replace=TRUE )
-> x
-  [1]  1  6  2  9  9  7  6  3  6 10  2  9  5  3 10
- [16]  2  7  5  3  3  1  6  1  9  9  3 10  2  6  8
- [31]  2  3  1  9 10  6 10  1  6  8  1 10  5  4  2
- [46]  1 10  8 10  3  8  7  4  7  5  1  9  2  9  6
- [61]  3  8  1  7  2  6  9  9  1  3  4  5  2  4  3
- [76]  6  5  7  4  6  7  4  2  9  1  6  3  3  6  2
- [91]  1  6  3  1  8  7  6  4  6  8
-> typeof(x)
-[1] "integer"
-> object.size(x)
-448 bytes
-> 
-> x <- as.double(x)
-> x
-  [1]  1  6  2  9  9  7  6  3  6 10  2  9  5  3 10
- [16]  2  7  5  3  3  1  6  1  9  9  3 10  2  6  8
- [31]  2  3  1  9 10  6 10  1  6  8  1 10  5  4  2
- [46]  1 10  8 10  3  8  7  4  7  5  1  9  2  9  6
- [61]  3  8  1  7  2  6  9  9  1  3  4  5  2  4  3
- [76]  6  5  7  4  6  7  4  2  9  1  6  3  3  6  2
- [91]  1  6  3  1  8  7  6  4  6  8
-> typeof(x)
-[1] "double"
-> object.size(x)
-848 bytes
-> 
-> 
-> x <- sample( 1:10, 100, replace=TRUE )
-> typeof(x)
-[1] "integer"
-> object.size(x)
-448 bytes
-> 
-> z <- c( x, 1 )
-> z
-  [1] 10  8  5  5  6  7  5  1  5  7  3 10  2  9  5
- [16]  4  5  7  9  1  6  7 10  7 10  5  1  8  3  5
- [31]  2  4  5  4  2  9  1  1  7  4  3  5  4  9  7
- [46]  3  1  2  5  8  9  1  3  8  6  1  1  8  4  4
- [61]  6 10  6  6  8  6  6  3  3  7  1  1  9  9  5
- [76]  8 10  3 10  5  1  8  5  4 10  4  3  4  1  5
- [91]  2  4  7  4  2  4  6  9  4 10  1
-> typeof(z)
-[1] "double"
-> object.size(z)
-856 bytes
-> 
-> z <- c( x, 1.00 )
-> z
-  [1] 10  8  5  5  6  7  5  1  5  7  3 10  2  9  5
- [16]  4  5  7  9  1  6  7 10  7 10  5  1  8  3  5
- [31]  2  4  5  4  2  9  1  1  7  4  3  5  4  9  7
- [46]  3  1  2  5  8  9  1  3  8  6  1  1  8  4  4
- [61]  6 10  6  6  8  6  6  3  3  7  1  1  9  9  5
- [76]  8 10  3 10  5  1  8  5  4 10  4  3  4  1  5
- [91]  2  4  7  4  2  4  6  9  4 10  1
-> typeof(z)
-[1] "double"
-> object.size(z)
-856 bytes
-> 
-> 
-> z <- c( x, 1.01 )
-> z
-  [1] 10.00  8.00  5.00  5.00  6.00  7.00  5.00
-  [8]  1.00  5.00  7.00  3.00 10.00  2.00  9.00
- [15]  5.00  4.00  5.00  7.00  9.00  1.00  6.00
- [22]  7.00 10.00  7.00 10.00  5.00  1.00  8.00
- [29]  3.00  5.00  2.00  4.00  5.00  4.00  2.00
- [36]  9.00  1.00  1.00  7.00  4.00  3.00  5.00
- [43]  4.00  9.00  7.00  3.00  1.00  2.00  5.00
- [50]  8.00  9.00  1.00  3.00  8.00  6.00  1.00
- [57]  1.00  8.00  4.00  4.00  6.00 10.00  6.00
- [64]  6.00  8.00  6.00  6.00  3.00  3.00  7.00
- [71]  1.00  1.00  9.00  9.00  5.00  8.00 10.00
- [78]  3.00 10.00  5.00  1.00  8.00  5.00  4.00
- [85] 10.00  4.00  3.00  4.00  1.00  5.00  2.00
- [92]  4.00  7.00  4.00  2.00  4.00  6.00  9.00
- [99]  4.00 10.00  1.01
-> typeof(z)
-[1] "double"
-> object.size(z)
-856 bytes
-```
-
-  
-### Q6-B: Memory Allocation and Precision
-  
-Since computers only allocate a certain amount of memory for numbers at some point they will need to truncate a number in order to store it in memory. 
-
-Explain why the following might happen
-  
-```r
-x <- 6.001
-x
-[1] 6.001
-x <- 6.0000000000000000000000000000000001
-x
-[1] 6
- 
-6 == 6.001
-[1] FALSE
-6 == 6.0000000000000000000000000000000001
-[1] TRUE
-```
-  
+<br>
+<br>
 <br>
   
 -----
@@ -622,7 +631,7 @@ x
 <br>
   
 
-## Q7: COUNTING SUBSTRINGS
+## Q6: COUNTING SUBSTRINGS
 
 **CHALLENGE QUESTION**
   
@@ -646,16 +655,16 @@ sum( x == 9 )
 ```
 
 
-### Q7-A: How would you count all nine's in the vector?
+**Q6-A: How would you count all nine's in the vector?**
 
 For example, 19 contains one nine, 99 contains two nines. 
 
 
-### Q7-B: How would you count all of the elements of X that CONTAIN a nine?
+**Q6-B: How would you count all of the elements of X that CONTAIN a nine?**
 
 For example, 19 contains a nine. 
 
-### Q7-C: Count all 17's in the vector X.
+**Q6-C: Count all 17's in the vector X.**
 
 X is a vector containing the numbers 1 to 1,000.
 
