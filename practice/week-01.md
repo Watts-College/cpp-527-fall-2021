@@ -479,21 +479,26 @@ compare_pairs( x4, y4 )
      
 A numeric vector is a generic category for vectors of numbers, but computers have different rules for storing integers versus decimals. The rules determine how much memory is allocated for each object. 
 
-![](img/memory-allocation-integers.png)  
+![](img/memory-allocation-integer.png)  
   
 **Each element in an integer vector occupies 4 bytes of memory**. Each byte contains 4 bits. A **bit** is a single position in memory that can be either a 1 or a 0 (on or off). All data in computers is encoded using bits. 
   
 How many different integer values can we represent with 4 bytes of memory? 
-     
-> Each byte is considered to have 8 bits in this context. Since there are 4 bytes, that means 4 × 8 bits = 32 bits are available for storing a number. 
-> 
-> The word bit is derived from the expression **binary digit**, referring to the two states that each bit can take (1 or 0). 
-> 
-> Therefore, each 4-byte portion of memory can handle 2³² = 4 294 967 296 representations. Typically, the ranges of integers supported are either:
->    0 .. 4 294 967 295 if you want only non-negative integer values and do not wish to “waste” a bit to indicate a sign (positive versus negative).
->   −2 147 483 648 .. 2 147 483 647, where one of the bits is used to indicate sign as opposed to allowing for greater positive values. 
+  
+--------  
+  
+*Each byte is considered to have 8 bits in this context. Since there are 4 bytes, that means 4 × 8 bits = 32 bits are available for storing a number.*  
+  
+*The word bit is derived from the expression **binary digit**, referring to the two states that each bit can take (1 or 0).*   
+  
+*Therefore, each 4-byte portion of memory can handle 2³² = 4 294 967 296 representations. Typically, the ranges of integers supported are either:*  
+  
+* *0 .. 4 294 967 295 if you want only non-negative integer values and do not wish to “waste” a bit to indicate a sign (positive versus negative).*  
+* *−2 147 483 648 .. 2 147 483 647, where one of the bits is used to indicate sign as opposed to allowing for greater positive values.*   
 
-[cite](https://www.quora.com/How-many-numbers-can-you-represent-in-4-bytes)
+[explanation from](https://www.quora.com/How-many-numbers-can-you-represent-in-4-bytes)
+
+------
   
 **Numberic vectors containing decimals are called doubles** because the computer allocates twice as much memory as an integer (8 bytes). So more precise numbers are more "expensive" in computational terms. 
 
