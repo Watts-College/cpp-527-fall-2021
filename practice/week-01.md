@@ -166,7 +166,7 @@ table( f3 )
 -----
 
 
-### Q3: COMPARISON OF SETS
+## Q3: COMPARISON OF SETS
 
 Recall the structure of IF STATEMENTS:
 
