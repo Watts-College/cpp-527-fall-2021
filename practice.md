@@ -1,5 +1,15 @@
 ---
 layout: default
+
+yellowdig: 
+  post-01: 'Friday, August 20th'
+  post-02: 'Friday, August 27th' 
+  post-03: 'Friday, September 3rd' 
+  post-04: 'Friday, September 10th' 
+  post-05: 'Friday, September 17th' 
+  post-06: 'Friday, September 24th' 
+  post-07: 'Friday, October 1st' 
+  
 ---
 
 <div class = "uk-container uk-container-small">
@@ -15,21 +25,20 @@ These practice problems are largely an opportunity to review content from CPP 52
 These questions are similar to riddles or brain teasers that help sharpen your critical thinking skills when working with code. Work through each on your own, then discuss solutions on YellowDig with classmates.
 
   
-<a class="uk-button uk-button-default" href="../practice/week-00/">WEEK 00</a>
+<a class="uk-button uk-button-default" href="../practice/week-00/">WEEK 00</a>  **Post on {{page.yellowdig.post-01}}**  
 <hr>
-<a class="uk-button uk-button-default" href="../practice/week-01/">WEEK 01</a>
+<a class="uk-button uk-button-default" href="../practice/week-01/">WEEK 01</a>  **Post on {{page.yellowdig.post-02}}** 
 <hr>
-<a class="uk-button uk-button-default" href="../practice/week-02/">WEEK 02</a>
+<a class="uk-button uk-button-default" href="../practice/week-02/">WEEK 02</a>  **Post on {{page.yellowdig.post-03}}** 
 <hr>
-<a class="uk-button uk-button-default" href="">WEEK 03</a>
+<a class="uk-button uk-button-default" href="">WEEK 03</a>  **Post on {{page.yellowdig.post-04}}** 
 <hr>
-<a class="uk-button uk-button-default" href="">WEEK 04</a>
+<a class="uk-button uk-button-default" href="">WEEK 04</a>  **Post on {{page.yellowdig.post-05}}** 
 <hr>
-<a class="uk-button uk-button-default" href="">WEEK 05</a>
+<a class="uk-button uk-button-default" href="">WEEK 05</a>  **Post on {{page.yellowdig.post-06}}** 
 <hr>
-<a class="uk-button uk-button-default" href="">WEEK 06</a>  
-<hr>
-<a class="uk-button uk-button-default" href="">WEEK 07</a>   
+<a class="uk-button uk-button-default" href="">WEEK 06</a>  **Post on {{page.yellowdig.post-07}}** 
+
 
 
 <br>
