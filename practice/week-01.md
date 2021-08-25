@@ -49,7 +49,7 @@ NAs introduced by coercion
 
 R tries to be clever by invoking a casting rule that minimizes data loss. For example, when we combine numeric and character vectors we will implicitly recast the object as a character vector. 
 
-**Q1: Default Data Types**
+### Q1: Default Data Types
      
 Consider the following cases. Explain why the defaults were selected in each case. 
      
@@ -84,7 +84,7 @@ class( z )
 [1] "integer"
 ```
      
-Which case is most likely to introduce errors in your analysis? 
+Which case is most likely to introduce errors in your analysis? Explain why and present an example. 
      
      
      
