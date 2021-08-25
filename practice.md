@@ -24,7 +24,7 @@ These practice problems are largely an opportunity to review content from CPP 52
 
 These questions are similar to riddles or brain teasers that help sharpen your critical thinking skills when working with code. Work through each on your own, then discuss solutions on YellowDig with classmates.
 
-  
+<hr> 
 <a class="uk-button uk-button-default" href="../practice/week-00/">WEEK 00</a>  **Post on {{page.yellowdig.post-01}}**  
 <hr>
 <a class="uk-button uk-button-default" href="../practice/week-01/">WEEK 01</a>  **Post on {{page.yellowdig.post-02}}** 
