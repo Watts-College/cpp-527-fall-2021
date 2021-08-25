@@ -688,7 +688,7 @@ h2{
 h3{
   font-size:calc(1.4em + 0.25vw);
   font-weight:300;
-  margin-top:20px !important;
+  margin-top:40px !important;
   margin-bottom:10px;} 
    
 
