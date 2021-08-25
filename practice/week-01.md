@@ -679,10 +679,9 @@ h1{
   } 
   
 h2{
-  font-size:calc(2em + 0.25vw) !important;
-  color: #995c00;
+  font-size:calc(1.5em + 0.25vw) !important;
   font-weight:300;
-  margin-top:40px !important;
+  margin-top:80px !important;
   margin-bottom:20px;
   } 
 
