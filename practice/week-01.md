@@ -610,13 +610,17 @@ x
 [1] TRUE
 ```
   
+<br>
   
 -----
 
-**CHALLENGE QUESTION**
+<br>
+  
 
 ## Q7: COUNTING SUBSTRINGS
 
+**CHALLENGE QUESTION**
+  
 In all of the examples above we were comparing two things. 
 
 ```r
@@ -679,7 +683,7 @@ h1{
   } 
   
 h2{
-  font-size:calc(1.8em + 0.25vw) !important;
+  font-size:calc(2em + 0.25vw) !important;
   font-weight:300;
   margin-top:80px !important;
   margin-bottom:20px;
