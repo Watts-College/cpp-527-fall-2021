@@ -94,7 +94,7 @@ Which case is most likely to introduce errors in your analysis?
   
 ## Q2: FACTORS
 
-**Q2-A: Ordering Levels**
+### Q2-A: Ordering Levels
 
 By default factors created in R will order levels (categories) alphabetically. 
 
@@ -124,7 +124,7 @@ f
 *Make a mental note that __factor__ and __level__ are both precise technical terms that have different meanings in computer science and statistics.* 
 
 
-**Q2-B: Empty Levels**
+### Q2-B: Empty Levels
 
 How can we drop empty levels from a factor? 
 
@@ -138,7 +138,7 @@ table( f2 )
 ```
 
 
-**Q2-C: Counting Zeros**
+### Q2-C: Counting Zeros
 
 What about cases where counts of zeros are important? What if we wanted to note here days that events did not occur? 
 
@@ -166,7 +166,7 @@ table( f3 )
 -----
 
 
-**Q3: COMPARISON OF SETS**
+### Q3: COMPARISON OF SETS
 
 Recall the structure of IF STATEMENTS:
 
@@ -200,7 +200,7 @@ if( identical( x, y ) )
 ```
 
 
-**Q3-A: Ignore Order**
+### Q3-A: Ignore Order
 
 Perhaps you want to run a chunk of code only IF two vectors contain the same elements, but order is irrelevant. 
 
@@ -224,7 +224,7 @@ identical( x, y )
 [1] FALSE
 ```
 
-**Q3-B: Ignore Vector Length**
+### Q3-B: Ignore Vector Length
 
 Similar to the case above, we want to compare these two sets to ensure they contain the same elements. We don't care about how many times each element occurs, just that the two sets are the same. 
 
@@ -238,7 +238,7 @@ identical( x, y )
 [1] FALSE
 ```
 
-**Q3-C: Data Types**
+### Q3-C: Data Types
 
 This is an interesting case because the logical operator **==** will consider these vectors to be identical, but the **identical()** function will not.
 
@@ -282,7 +282,7 @@ y <- c("01","02","03")
 
 
 
-**Q3-D: Comparisons with Missing Values**
+### Q3-D: Comparisons with Missing Values
 
 Missing values are important in statistics and data analytics, but they pose some challenges for computer logic. 
 
@@ -323,7 +323,7 @@ x <- c("A","A","B","B","C","C")
 y <- c("A",NA,"B",NA,"C","C")
 ```
 
-**Q4: ROUNDING ERRORS**
+### Q4: ROUNDING ERRORS
 
 This is one of the most unexpected and somewhat shocking errors you can encounter in computer science: 
 
@@ -497,7 +497,7 @@ How many different integer values can we represent with 4 bytes of memory?
   
 **Numberic vectors containing decimals are called doubles** because the computer allocates twice as much memory as an integer (8 bytes). So more precise numbers are more "expensive" in computational terms. 
 
-**Q6-A: Numeric Casting**
+### Q6-A: Default Numeric Type
 
 Based upon these examples, what are the rules R applies for numeric casting when combining integers and doubles? Does this rule optimize performance (smaller objects = faster computing time), or information integrity (preventing loss of precision)? 
   
@@ -590,7 +590,7 @@ Based upon these examples, what are the rules R applies for numeric casting when
 ```
 
   
-**Q6-B: Memory Allocation and Precision** 
+### Q6-B: Memory Allocation and Precision
   
 Since computers only allocate a certain amount of memory for numbers at some point they will need to truncate a number in order to store it in memory. 
 
@@ -615,7 +615,7 @@ x
 
 **CHALLENGE QUESTION**
 
-**Q7: COUNTING SUBSTRINGS**
+## Q7: COUNTING SUBSTRINGS
 
 In all of the examples above we were comparing two things. 
 
@@ -637,16 +637,16 @@ sum( x == 9 )
 ```
 
 
-**Q7-A: How would you count all nine's in the vector?**
+### Q7-A: How would you count all nine's in the vector?
 
 For example, 19 contains one nine, 99 contains two nines. 
 
 
-**Q7-B: How would you count all of the elements of X that CONTAIN a nine?**
+### Q7-B: How would you count all of the elements of X that CONTAIN a nine?
 
 For example, 19 contains a nine. 
 
-**Q7-C: Count all 17's in the vector X.**
+### Q7-C: Count all 17's in the vector X.
 
 X is a vector containing the numbers 1 to 1,000.
 
