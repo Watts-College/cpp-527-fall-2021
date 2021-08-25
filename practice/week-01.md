@@ -402,7 +402,7 @@ How many different integer values can we represent with 4 bytes of memory then?
 
 ------
   
-**Numberic vectors containing decimals are called doubles because the computer allocates twice as much memory as an integer (8 bytes)**. So more precise numbers are more "expensive" in computational terms. 
+Vectors of **decimal numbers are called doubles because the computer allocates 8 bytes or twice as much memory** for each element as allocated for elements in an integer vector. So more precise numbers are more "expensive" in computational terms. *Modern computers typically allocate more than 8 bytes per element for doubles and it varies by operating system.*
 
 ### Q5-A: Default Numeric Type
 
