@@ -496,7 +496,7 @@ Based upon these examples, what are the rules R applies for numeric casting when
 856 bytes
 ```
 
-*Note that the print function (which is called implicitly by typing the object name) will truncate zeros at the end of numbers up to the last meaningful digit. As a result, you cannot determine whether a numeric vector is an integer by printing it out because integers and doubles will often appear the same when printed. You need the **typeof()** function to check the data type for numeric vectors.** 
+*Note that the print function (which is called implicitly by typing the object name) will truncate zeros at the end of numbers up to the last meaningful digit. As a result, you cannot determine whether a numeric vector is an integer by printing it out because integers and doubles will often appear the same when printed. You need the **typeof()** function to check the data type for numeric vectors.*
   
   
   
