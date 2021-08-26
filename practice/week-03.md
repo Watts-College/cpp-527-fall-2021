@@ -22,9 +22,18 @@ image-width: 150px
 
 <br>
   
+
+ADD: 
+  
+* create regular expression to search for email address
+* create regular expression to search for social media handles (@xxx)  
+* search for dates XX-XX-XXXX; XXXX-XX-XX; jan-xx; Dec xx, xxxx;
+* CHALLENGE: read dates in combination of M-D-Y format then determine which is which (only 12 months, only 31 days)
+* search for proper nouns (capitalization, not at start of the sentence) 
+* name parsing to guess first, middle, last names 
   
   
-## WARM-UP
+## Regular Expressions
 
 The function **grep( pattern, string )** works as follows:
 
@@ -50,6 +59,8 @@ For a full list of operators review this basic [cheat sheet](https://github.com/
 
 *The fundamental building blocks are the regular expressions that match a single character. Most characters, including all letters and digits, are regular expressions that match themselves. Any metacharacter with special meaning may be quoted by preceding it with a backslash (or double-backslash in windows).*
 
+**WARM-UP:** 
+  
 How many can your guess correctly before you run the code? 
 
 ```r
