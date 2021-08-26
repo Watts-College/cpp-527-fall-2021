@@ -59,7 +59,7 @@ x.character <- LETTERS[1:3]
 f <- factor( LETTERS[24:26] )
 x
 [1] 1 2 3
-y
+x.character
 [1] "A" "B" "C"
 f
 [1] X Y Z
