@@ -31,7 +31,7 @@ These questions are similar to riddles or brain teasers that help sharpen your c
 <hr>
 <a class="uk-button uk-button-default" href="../practice/week-02/">WEEK 02</a>  **Post on {{page.yellowdig.post-03}}** 
 <hr>
-<a class="uk-button uk-button-default" href="">WEEK 03</a>  **Post on {{page.yellowdig.post-04}}** 
+<a class="uk-button uk-button-default" href="../practice/week-03/">WEEK 03</a>  **Post on {{page.yellowdig.post-04}}** 
 <hr>
 <a class="uk-button uk-button-default" href="">WEEK 04</a>  **Post on {{page.yellowdig.post-05}}** 
 <hr>
