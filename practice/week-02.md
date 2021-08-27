@@ -22,9 +22,47 @@ image-width: 150px
 
 <br>
   
+## Q1 UNIT TESTING
+
+We encountered a strange bug in the Monty Hall problem that arises from the behavior of the sample function in these scenarios: 
   
+```r
+sample( x=2, size=1, replace=FALSE )  # x turns into 1:2 or c(1,2)
+sample( x=3, size=1, replace=FALSE )  # x turns into c(1,2,3)
+# would not matter
+sample( x=1, size=1, replace=FALSE )  # x is 1:1 so still just 1  
+```
   
-## Q1 - GAMBLING STREAKS AND DURATION MODELS
+I have made the conjecture that this bug will result in errors in 18% of games played. 
+  
+> In those two scenarios there is a 50% chance and 33% chance of returning to right value from the sample function.
+> 
+> We encounter each scenario 2 times out of 9: car in 1st position and we pick 3rd door, and vice-versa. Or car in second position and we pick 1st door, and vice-versa.
+> 
+> So we expect the error to occur in (2/9)(1/2) + (2/9)(1/3) = 0.185 proportion of games played. 
+
+Use the problematic open_goat_door() function below and write an automated unit test to measure the error rate. 
+  
+In your unit test you must visit each scenario the same number of times (or approximately the same number). 
+
+Play 10,000 games and compare the results of the open_goat_door() function to a set of correct outcomes (you will need to define these for each scenario). 
+  
+Share your solution and report the average error rate of the function. 
+  
+```r
+# PROBLEMATIC FUNCTION 
+open_goat_door <- function( game, a.pick )
+{
+   doors <- c(1,2,3)
+   available.doors <- doors[ game != "car" & doors != a.pick ] 
+   opened.door <- sample( available.doors, size=1 )
+   return( opened.door ) 
+}
+```
+  
+
+  
+## Q2 - GAMBLING STREAKS AND DURATION MODELS
 
 We covered a very basic animation in the lecture notes - a random walk. 
 
@@ -48,12 +86,12 @@ while( cash > 0 )
 ```
 
 
-### Q1-A: Visualize the Game
+### Q2-A: Visualize the Game
 
 Similar to the lecture notes, create a visualization of the cash that a player has at each round of the game until they go broke. 
 
 
-### Q1-B: You've got to know when to fold them
+### Q2-B: You've got to know when to fold them
 
 Starting with $10 in the game, how long does it take the **typical** player to go bankrupt? 
 
@@ -71,7 +109,7 @@ How would you adapt your code to account for this scenario?
 
 
 
-### Q1-C: Finding Warren Buffet
+### Q2-C: Finding Warren Buffet
 
 If you run a simulation of 10,000 individuals playing the game, all starting with $10, how many individuals will **never** go broke? 
 
@@ -82,7 +120,7 @@ How many of these individuals did you find in your simulation?
 
 -----
 
-## Q2 - ANIMATIONS
+## Q3 - ANIMATIONS
 
 A random walk is a one-dimensional outcome (cash in hand) tracked over time. 
 
@@ -104,7 +142,7 @@ for( i in 1:1000 )
 
 
 
-### Q2-A: Create the Brownian Motion animation above
+### Q2-3: Create the Brownian Motion animation above
 
 Use the loop above to generate particle positions. 
 
@@ -112,7 +150,7 @@ Create an animation to visualize the movement of the particle.
 
 Discuss the package or app you used to generate the GIF. 
 
-### Q2-B: Shadow of the past
+### Q3-B: Shadow of the past
 
 If animations move too quickly it will look like popcorn and it can be hard to identify the meaningful patterns in the data. 
 
@@ -120,7 +158,7 @@ You can enhance the information value of animations by visualizing change and in
 
 How would you create the trailing tail in this animation? 
 
-### Q2-C: Alternative Animations
+### Q3-C: Alternative Animations
 
 If you are not interested in Brownian Motion, share another animation you can create using loops. 
 
