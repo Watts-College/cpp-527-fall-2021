@@ -158,11 +158,18 @@ You can enhance the information value of animations by visualizing change and in
 
 How would you create the trailing tail in this animation? 
 
-### Q3-C: Alternative Animations
+            
+## 4 CUSTOM ANIMATION
 
-If you are not interested in Brownian Motion, share another animation you can create using loops. 
+If you are not interested in Brownian Motion, share another animation you create using loops. 
+            
+Do NOT simply find a package that has a pre-programmed animation. 
+            
+Design your own animation using loops and explain your example. 
 
-Discuss the package or app you used to generate the GIF. 
+You will, however, need a package (or external tool) to create a GIF from the animation. 
+
+Discuss the package or app you used to generate the GIF.
 
 <br>
 <hr>
