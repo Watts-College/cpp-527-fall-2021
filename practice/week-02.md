@@ -176,7 +176,7 @@ How would you create the trailing tail in this animation?
   
   
   
-## 4 CUSTOM ANIMATION
+## Q4 CUSTOM ANIMATION
 
 If you are not interested in Brownian Motion, share another animation you create using loops. 
             
