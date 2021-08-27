@@ -60,7 +60,12 @@ open_goat_door <- function( game, a.pick )
 }
 ```
   
-
+<br>
+<br>
+<hr>
+  
+  
+  
   
 ## Q2 - GAMBLING STREAKS AND DURATION MODELS
 
@@ -117,9 +122,14 @@ Operationalize *never* in your code and explain your assumptions.
 
 How many of these individuals did you find in your simulation? 
 
+<br>
+<br>
+<hr>
 
------
 
+  
+  
+  
 ## Q3 - ANIMATIONS
 
 A random walk is a one-dimensional outcome (cash in hand) tracked over time. 
@@ -158,7 +168,13 @@ You can enhance the information value of animations by visualizing change and in
 
 How would you create the trailing tail in this animation? 
 
-            
+<br>
+<br>
+<hr>
+  
+  
+  
+  
 ## 4 CUSTOM ANIMATION
 
 If you are not interested in Brownian Motion, share another animation you create using loops. 
