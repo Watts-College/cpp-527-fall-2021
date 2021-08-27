@@ -95,7 +95,8 @@ while( cash > 0 )
 
 Similar to the lecture notes, create a visualization of the cash that a player has at each round of the game until they go broke. 
 
-
+![](https://watts-college.github.io/cpp-527-fall-2021/lectures/p-02-loops_files/figure-html/unnamed-chunk-32-1.png)
+           
 ### Q2-B: You've got to know when to fold them
 
 Starting with $10 in the game, how long does it take the **typical** player to go bankrupt? 
