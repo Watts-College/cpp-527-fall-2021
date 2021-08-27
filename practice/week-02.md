@@ -173,12 +173,7 @@ Discuss the package or app you used to generate the GIF.
 
 <br>
 <hr>
-  
-
-
-  
 <br>
-<hr>
 <br>
 
 </div>
