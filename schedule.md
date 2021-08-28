@@ -308,7 +308,7 @@ It uses loops to create effective data visualization:
 
 
 
-## Lab 02
+## Lab 02: Simulations 
 
 <hr> 
   
@@ -548,7 +548,7 @@ Focus on:
 
 
 
-## Lab-04 - Text Analysis
+## Lab-04: Text Analysis
 
 <hr> 
 
@@ -621,7 +621,7 @@ Templates use the same basic tools for both HTML pages and R Markdown reports. S
 
 
 
-## Lab 05
+## Lab 05: GitHub Pages 
 
 <hr>
 
@@ -707,7 +707,7 @@ Also share your page link on YellowDig:
 <br>
 
 
-## Lab 06
+## Lab 06: Scaling Analysis 
 
 **Due {{page.labs.lab-06}}**
 
