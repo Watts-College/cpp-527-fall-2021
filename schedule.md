@@ -619,10 +619,14 @@ Examples of loops used to create effective data visualization:
 
 [Why Americans Are So Damn Unhealthy, In 4 Shocking Charts](https://www.buzzfeednews.com/article/peteraldhous/american-health-care)
 
-[Buzzfeed Replication Files](https://github.com/BuzzFeedNews/2017-05-us-health-care)
-
 ![](../assets/img/buzzfeed-gif.gif)
 
+<br>
+  
+[Buzzfeed Replication Files](https://github.com/BuzzFeedNews/2017-05-us-health-care)
+
+<br>
+  
 ## Assigned Reading
 
 **Required:**
