@@ -14,9 +14,9 @@ image-width: 150px
 ## Week 00: Warmup
 
 
-Note that these are non-obvious bugs that can EASILY work there way into your code. Once you see the problem, it will seem obvious. But until you see it the code often looks fine and it's unclear why it is not working as expected. 
+Non-obvious bugs can EASILY work there way into your code. Once you identify the problem always seems obvious in retrospect. But it is often unclear why code is not working as expected. 
 
-These practice problems are largely an opportunity to review content from CPP 526 and develop a sensitivity for the importance of writing robust and sustainable code, and testing your code for unexpected behaviors. 
+These practice problems are largely an opportunity to review content from CPP 526 and develop a sensitivity for the importance of writing **robust and maintainable code** and testing for unexpected behaviors. 
 
 Many of these questions are similar to riddles or brain teasers that help sharpen your critical thinking skills when working with code. Work through them on your own, then discuss your ideas on YellowDig with classmates. 
 
