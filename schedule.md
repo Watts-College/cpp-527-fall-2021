@@ -536,6 +536,12 @@ Here are some helpful examples:
 
 **Due {{page.labs.lab-01}}**
 
+<a class="uk-button uk-button-default" href="../labs/lab-01-instructions.html">LAB-01 Instructions</a>
+
+<a class="uk-button uk-button-primary" href="{{page.canvas.assignment_url}}">SUBMIT LAB</a>
+
+<hr>
+
 This lab is based upon the famous [Monty Hall Problem](http://www.montyhallproblem.com/). 
 
 Although there was much debate about the correct solution when it was initially introduced there are many concise explanations of the proper solution:
@@ -548,13 +554,23 @@ The Monty Hall Problem is a great example of a mathematical problem that might b
 
 Since it is a game with simple and explicit rules we can build our own virtual version. Then we can compare how outcomes differ when we deploy the two different strategies for selecting doors. 
 
-In Lab 01 we will use control structures to build a virtual version of the game. In Lab 02 we will use simulation to play the game thousands of times so that we can get stable estimates of the payoff of each strategy. 
+In Lab 01 we will use functions and control structures to build a virtual version of the game. 
 
-<hr>
+```r
+### STEP 01 OF GAME 
+# 1: create a vector of 3 doors: 2 goats and 1 car
+# 2: randomize the position of the car for a new game
+# 3: return the new game setup (vector of prizes)
 
-<a class="uk-button uk-button-default" href="../labs/lab-01-instructions.html">LAB-01 Instructions</a>
-
-<a class="uk-button uk-button-primary" href="{{page.canvas.assignment_url}}">SUBMIT LAB</a>
+create_game <- function( )
+{
+    prizes <- c("goat","goat","car")
+    a.game <- sample( x=prizes, size=3, replace=F )
+    return( a.game )
+} 
+```
+  
+In Lab 02 we will use simulation to play the game thousands of times so that we can get stable estimates of the payoff of each strategy. 
 
 <hr><br>
 
