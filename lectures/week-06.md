@@ -26,21 +26,26 @@ image-width: 150px
 
 *APIs let you use other people’s databases and coding wizardry to enhance your own applications or analysis scripts. For instance you might have a spreadsheet with street addresses you need to turn into GPS coordinates so you can map them.*
 
-_**Examples Airport Status API**_
+**Examples Airport Status API**
 
-*The FAA has an API that provides information about airports, including delays and weather. You give it an airport code, like “JFK” or “BDL” for Bradley International Airport, and it tells you what’s up at that airport.*
+The FAA has an API that provides information about airports, including delays and weather. You give it an airport code, like “JFK” or “BDL” for Bradley International Airport, and it tells you what’s up at that airport.
 
-*To get data for an airport, you just go to this specially formed web address; it even works in a browser (go ahead, try it):*
+To get data for an airport, you just go to this specially formed web address.
+  
+```
+# root API URL 
+http://services.faa.gov/airport/status/
+```
+  
+You just need to include an airport code and data return type. It even works in a browser (go ahead, try it):
 
 ```
 http://services.faa.gov/airport/status/JFK?format=application/json
 ```
 
-*The “JFK” part can be replaced with any valid airport code, and the “format” can be set to “application/xml”, but I’m not interested in XML, so the only “variable” part of this is the airport code.*
+The “JFK” part can be replaced with any valid airport code, and the “format” can be set to other data options like “application/xml”. 
 
-*The “JFK” part can be replaced with any valid airport code, and the “format” can be set to “application/xml”, but I’m not interested in XML, so the only “variable” part of this is the airport status web address.*
-
-*The response looks like this, a JSON string:*
+The response looks like this, a JSON string:
 
 ```
 { "delay":"true",
