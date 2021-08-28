@@ -153,7 +153,9 @@ for( i in 1:1000 )
 
 
 
-### Q2-3: Create the Brownian Motion animation above
+<br>
+  
+### Q3-A: Create the Brownian Motion animation above
 
 Use the loop above to generate particle positions. 
 
