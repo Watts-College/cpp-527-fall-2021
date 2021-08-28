@@ -60,48 +60,10 @@ Submit Button - <a class="uk-button uk-button-primary" href="{{page.canvas.assig
 <br>
 
 
-## Due Dates 
 
-For easy reference, you have the following due dates this term: 
-
-
-
-**Labs:** 
-
-* {{page.labs.lab-01}} 
-* {{page.labs.lab-02}} 
-* {{page.labs.lab-03}} 
-* {{page.labs.lab-04}} 
-* {{page.labs.lab-05}} 
-* {{page.labs.lab-06}} 
-
-**Post Practice Problems on YellowDig:**
- 
-* {{page.yellowdig.post-01}} 
-* {{page.yellowdig.post-02}} 
-* {{page.yellowdig.post-03}} 
-* {{page.yellowdig.post-04}} 
-* {{page.yellowdig.post-05}} 
-* {{page.yellowdig.post-06}} 
-* {{page.yellowdig.post-07}} 
-
-
-**Projects:**
-
-* **R Package**: {{page.projects.r-package}}
-* **Code Through**: {{page.projects.code-through}}  
-* **Customized Report Template**: {{page.projects.report-template}} 
-
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
 
 
 # Course Overview 
-
 
 
 CPP 527 is the second course in the Foundations of Data Science sequence. 
@@ -142,6 +104,38 @@ There are three additional projects you must complete throughout the term. They 
 * Building an R package from code you develop on Labs 01-02 (due mid term) 
 * Build a report template (due end of term) 
 * Create a code-through tutorial (due end of term) 
+
+## Due Dates 
+
+For easy reference, you have the following due dates this term: 
+
+
+
+**Labs:** 
+
+* {{page.labs.lab-01}} 
+* {{page.labs.lab-02}} 
+* {{page.labs.lab-03}} 
+* {{page.labs.lab-04}} 
+* {{page.labs.lab-05}} 
+* {{page.labs.lab-06}} 
+
+**Post Practice Problems on YellowDig:**
+ 
+* {{page.yellowdig.post-01}} 
+* {{page.yellowdig.post-02}} 
+* {{page.yellowdig.post-03}} 
+* {{page.yellowdig.post-04}} 
+* {{page.yellowdig.post-05}} 
+* {{page.yellowdig.post-06}} 
+* {{page.yellowdig.post-07}} 
+
+
+**Projects:**
+
+* **R Package**: {{page.projects.r-package}}
+* **Code Through**: {{page.projects.code-through}}  
+* **Customized Report Template**: {{page.projects.report-template}} 
 
 
 ## Getting Help
@@ -234,13 +228,13 @@ dput( head(dat,25) )  # first 25 rows
 
 <hr>
 
-**Post on {{page.yellowdig.post-01}}**
-
-Each question has it's own pin. Share your solutions by adding comments to the pins. 
+**Post on {{page.yellowdig.post-01}}** 
 
 <a class="uk-button uk-button-default" href="../practice/week-01/">PRACTICE PROBLEMS</a>
 
 <a class="uk-button uk-button-primary" href="{{page.yellowdig_url}}">YELLOWDIG</a>
+
+*Each question has it's own pin. Share your solutions by adding comments to the pins.*
 
 <hr>
 
@@ -258,6 +252,13 @@ For the topics this week, you will find that reviewing the lecture notes on one-
 
 
 
+  
+  
+  
+  
+  
+  
+  
 
 <!--- 
 #########################################
@@ -269,9 +270,9 @@ For the topics this week, you will find that reviewing the lecture notes on one-
 #########################################
 -->
 
+  
+  
 # Week 1 - Control Structures  
-
-
 
 ## Unit Overview 
 
