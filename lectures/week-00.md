@@ -18,12 +18,7 @@ image-width: 150px
   
 
   
-<br>
-<hr>
-<br>
-<br>
 
-</div>
 
 ## Course Overview 
 
@@ -162,3 +157,8 @@ dput( head(dat,25) )  # first 25 rows
 
 <br>
 <br>
+<hr>
+<br>
+<br>
+
+</div>
