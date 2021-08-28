@@ -35,7 +35,7 @@ sample( x=1, size=1, replace=FALSE )  # x is 1:1 so still just 1
   
 I have made the conjecture that this bug will result in errors in 18% of games played. 
   
-> In those two scenarios there is a 50% chance and 33% chance of returning to right value from the sample function.
+> In those two scenarios there is a 50% chance and 33% chance of returning the correct value from the sample function (random draws from [1,2] and [1,2,3] when correct values are 2 and 3 respectively).
 > 
 > We encounter each scenario 2 times out of 9: car in 1st position and we pick 3rd door, and vice-versa. Or car in second position and we pick 1st door, and vice-versa.
 > 
