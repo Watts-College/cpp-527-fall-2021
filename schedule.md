@@ -228,12 +228,12 @@ dput( head(dat,25) )  # first 25 rows
 
 <hr>
 
-**Post on {{page.yellowdig.post-01}}** 
-
 <a class="uk-button uk-button-default" href="../practice/week-01/">PRACTICE PROBLEMS</a>
 
 <a class="uk-button uk-button-primary" href="{{page.yellowdig_url}}">YELLOWDIG</a>
 
+**Post on {{page.yellowdig.post-01}}** 
+  
 *Each question has it's own pin. Share your solutions by adding comments to the pins.*
 
 <hr>
@@ -276,6 +276,12 @@ For the topics this week, you will find that reviewing the lecture notes on one-
 
 ## Unit Overview 
 
+<hr> 
+
+<a class="uk-button uk-button-default" href="../lectures/week-01/">Lecture Notes</a>
+
+<hr>
+  
 **Description**
 
 This section introduces [control structures](https://intellipaat.com/blog/tutorial/r-programming/decision-making-and-loops/) that will allow you to incorporate decision-making into computer code. It enables things like *if-then* logic to determine what code should be used based upon whether specified conditions are met. 
@@ -292,13 +298,8 @@ Once you have completed this unit you will be able to:
 * identify "edge cases" and their impact on code 
 
 
-## Lecture Notes
 
-<hr> 
-
-<a class="uk-button uk-button-default" href="../lectures/week-01/">Lecture Notes</a>
-
-<hr>
+<br>
 <br>
 
 
@@ -306,20 +307,18 @@ Once you have completed this unit you will be able to:
 
 <hr>
   
-**Due {{page.labs.lab-01}}**
-
 <a class="uk-button uk-button-default" href="../labs/lab-01-instructions.html">LAB-01 Instructions</a>
 
 <a class="uk-button uk-button-primary" href="{{page.canvas.assignment_url}}">SUBMIT LAB</a>
+
+**Due {{page.labs.lab-01}}**
 
 <hr>
 
 This lab is based upon the famous [Monty Hall Problem](http://www.montyhallproblem.com/). 
 
-Although there was much debate about the correct solution when it was initially introduced there are many concise explanations of the proper solution:
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/9vRUxbzJZ9Y" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
+There was famously much debate about the correct solution when the problem was initially introduced. It is now a popular example used to teach conditional probability in statistics.  
+  
 **Using Computing Logic to Build the Game**
 
 The Monty Hall Problem is a great example of a mathematical problem that might be hard to solve using proofs, but it is fairly easy to solve using simulation. 
@@ -344,19 +343,23 @@ create_game <- function( )
   
 In Lab 02 we will use simulation to play the game thousands of times so that we can get stable estimates of the payoff of each strategy. 
 
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/9vRUxbzJZ9Y" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
 <hr><br>
 
 
 
-## YellowDig Practice Problems
+## Practice Problems
 
 <hr> 
-  
-**Post on {{page.yellowdig.post-02}}**
   
 <a class="uk-button uk-button-default" href="../practice/week-01/">PRACTICE PROBLEMS</a>
 
 <a class="uk-button uk-button-primary" href="{{page.yellowdig_url}}">YELLOWDIG</a>
+
+**Post on {{page.yellowdig.post-02}}**
 
 <hr>
 <br>
@@ -412,6 +415,7 @@ Examples of loops used to create effective data visualization:
 
 <br>
 <br>
+<br>
   
 
 
@@ -434,6 +438,7 @@ Examples of loops used to create effective data visualization:
 
 
 
+
 ## Practice Problems
 
 <hr> 
@@ -442,11 +447,10 @@ Examples of loops used to create effective data visualization:
 
 <a class="uk-button uk-button-primary" href="{{page.yellowdig_url}}">YELLOWDIG</a>
 
-**Post to YellowDig on {{page.yellowdig.post-03}}**
+**Post on {{page.yellowdig.post-03}}**
   
 <hr>
 <br>
-
 
 
 
@@ -465,7 +469,7 @@ Examples of loops used to create effective data visualization:
 -->
 
 
-# PROJECT: Build Your Own R Package
+## PROJECT: Build Your Own R Package
 
 <hr> 
 
@@ -473,9 +477,9 @@ Examples of loops used to create effective data visualization:
 
 <a class="uk-button uk-button-primary" href="{{page.canvas.assignment_url}}">SUBMIT PACKAGE</a>
 
-*To receive credit for the assignment, submit the URL to your package on GitHub.*
-
 **Due {{page.projects.r-package}}**
+
+*To receive credit for the assignment, submit the URL to your package on GitHub.*
   
 <hr> 
   
@@ -548,6 +552,8 @@ Let's get started by motivating the topic with a couple of cool examples.
 These examples all demonstrate interesting uses of text as data. They are also examples of the types of insight that can come from analysis with big data - the patterns are hiding in plain sight but our brains cannot hold enough information at one time to see it.  Once we can find a system to extract hidden patterns from language we can go beyond seeking large public databases to generate insights, and we can start using all of Twitter, all published news stories, or all of the internet to identify trends and detect outliers. 
 
 
+<br>
+<br>
 
 
   
@@ -570,7 +576,7 @@ These examples all demonstrate interesting uses of text as data. They are also e
 
 
 
-## YellowDig Practice Problems
+## Practice Problems
 
 <hr> 
   
@@ -578,7 +584,7 @@ These examples all demonstrate interesting uses of text as data. They are also e
 
 <a class="uk-button uk-button-primary" href="{{page.yellowdig_url}}">YELLOWDIG</a>
 
-**Post to YellowDig on {{page.yellowdig.post-04}}**
+**Post on {{page.yellowdig.post-04}}**
   
 <hr>
 <br>
@@ -652,6 +658,8 @@ Focus on:
 
 <br>
 <br>
+<br>
+
 
 
 
@@ -659,6 +667,8 @@ Focus on:
 
 
 ## Lab-04 - Text Analysis
+
+<hr> 
 
 <a class="uk-button uk-button-default" href="https://ds4ps.org/cpp-527-spr-2020/labs/lab-04-instructions.html">INSTRUCTIONS</a>
 
@@ -673,11 +683,13 @@ Focus on:
 
 ## Practice Problems 
 
+<hr> 
+
 <a class="uk-button uk-button-default" href="../practice/week-04/">PRACTICE PROBLEMS</a>
 
 <a class="uk-button uk-button-primary" href="{{page.yellowdig_url}}">YELLOWDIG</a>
 
-**Post to YellowDig on {{page.yellowdig.post-05}}**
+**Post on {{page.yellowdig.post-05}}**
   
 <hr>
 <br>
@@ -706,76 +718,21 @@ Focus on:
 
 ## Unit Overview
 
+<hr> 
+
+<a class="uk-button uk-button-default" href="../lectures/week-05/">LECTURE NOTES</a>
+
+<hr>  
+
 A big part of every analysts job is trying to find ways to distill large volumes of data and information down to meaningful bites of knowledge, often for diverse stakeholder audiences that have varying degrees of technical expertise. For this reason, communication skills are extremely valuable for data scientists. You will constantly be challenged to find the interesting story that emerges from an overwhelming amount of data, and find creative ways to tell the story so that information becomes actionable. 
 
 Although it might not sound as edgy as building a machine learning classifier, the ability to create customized reporting formats and automate various steps of analysis will both make you more efficient and also more effective at communication. 
 
 This lab introduces you to one powerful tool for your toolkit - using GitHub pages to build a website quickly and inexpensively (for free, actually). Then use it to host various components of projects including public-facing reports and RMD documents after rendering. 
 
-For the project component of the course we will use a CV template to learn how the **pagedown** package can be used to create highly-customized report templates:
+More generally, we will learn how to build templates that can be used in websites or to batch process R Markdown reports. 
 
-[Auto-Generated Resume](http://nickstrayer.me/cv/)
-
-We will also practice automation by the separation of the design elements of reporting from the data contained in the reports. In this example for a CV, Nick Strayer's positions are stored in a CSV file on GitHub:
-
-[Positions CSV](https://github.com/nstrayer/cv/blob/switch_to_googlesheets/csvs/positions.csv)
-
-And they are added to the document templates using some custom functions which filter positions and loop through the list to iteratively build the document. 
-
-````
-```{r}
-print_section(position_data, 'education')
-```
-````
-
-These are accomplished with text formatting functions that are a little more advanced than where you are at now. But if you are curious, they are basically just taking lists of text, putting it into tables, and formatting the tables. The formatting functions are [HERE](https://github.com/nstrayer/cv/blob/switch_to_googlesheets/parsing_functions.R). 
-
-
-**GitHub Pages Set-Up**
-
-This week's lab will ask you to configure a GitHub page within a repository on your account. GitHub pages are an amazing resource because (1) they allow you to create an unlimited number of websites related to your projects FOR FREE, and (2) they can be created and maintained using Markdown, which simplifies a lot of the complexity of websites. You will learn to link HTML files generated from R Studio so that you can start sharing analytical projects with external audiences. 
-
-The set-up of a simple GitHub page is fairly straight-forward and can be completed in a few basic steps:
-
-![](https://github.com/DS4PS/cpp-527-spr-2020/blob/master/lectures/images/github-pages-setup.gif?raw=true)
-
-This will give you a barebones website with a landing page you can write using Markdown, and a few templates that you can select from. 
-
-You have access to myriad advanced features on the platform. GitHub pages leverage several powerful web frameworks like Jekyll, Bootstrap, Liquid, and Javascript to make customization of static pages both easy and powerful. We will spend some time talking about how the pieces of a website fit together so that you have a rudimentary knowledge of the platform:
-
-[Barebones Jekyll Example](http://ds4ps.org/barebones-jekyll/index)
-
-More importantly, GitHub pages can help demonstrate the concept of page templates. We can design the layout of a graphic, table, or section of text on a page then dynamically populate it with data. GitHub pages allow you to do with with basic HTML and Liquid tags:
-
-[Table Template Example](http://ds4ps.org/barebones-jekyll/page2)
-
-And the **pagedown** package in R allows you to develop a variety of templates using similar principles:
-
-[Pagedown Overview](https://slides.yihui.org/2019-rstudio-conf-pagedown.html#1)
-
-Similar to other work we have done in R, we will start by using some working examples then reverse engineer them so you can see how the pieces fit together. You are not expected to master any of these topics in the short time-frame of the semester. The proper benchmark of knowledge is can you take an existing open source project and adapt it as necessary. 
-
-**Cascading Style Sheets**
-
-You will not be required to learn web programming languages like HTML and Javascript (though they are super useful if you invest the time). You do, however, need to become familiar with very basic CSS as it is impossible to do customization without it. CSS started as a somewhat modest project but has evolved into a powerful language. R Markdown documents support CSS, which makes them fully customizable. It will also become more important so you begin to develop dashboards or custom interactive Shiny apps, since CSS is the primary means of controlling layouts and other style elements. 
-
-These two pages on the example GitHub site have the same content, but CSS elements are used to change the page layout and style on the second. Click on the "see page layout" button to see the CSS elements. 
-
-[Basic Page](http://ds4ps.org/barebones-jekyll/index)
-
-[Style Added with CSS](http://ds4ps.org/barebones-jekyll/page1) 
-
-## Required Reading
-
-Skim the following chapters, reading to get a general sense of concepts and the basics of how each might function. You can skip sections that explain the code in detail. I am more concerned that you understand how these basic pieces fit together, and when you hear terms like "responsive" you conceptually know what people are talking about. 
-
-[Introduction to Web Programming](https://internetingishard.com/html-and-css/introduction/)
-
-[Hello CSS](https://www.internetingishard.com/html-and-css/hello-css/)
-
-[Responsive Design](https://www.internetingishard.com/html-and-css/responsive-design/)
-
-[Bootstrap (wikipedia entry)](https://en.wikipedia.org/wiki/Bootstrap_(front-end_framework))
+Templates use the same basic tools for both HTML pages and R Markdown reports. Some basic familiarity with CSS, page containers, and responsive design can go a long way toward empowering you to automate organizational reporting processes. 
 
 <br>
 
@@ -790,13 +747,13 @@ Skim the following chapters, reading to get a general sense of concepts and the 
 
 <a class="uk-button uk-button-primary" href="{{page.canvas.assignment_url}}">SUBMIT LAB</a>
 
-And share your page link on YellowDig: 
+Also share your page link on YellowDig: 
 
 <a class="uk-button uk-button-primary" href="{{page.yellowdig_url}}">YELLOWDIG</a>
 
 **Due {{page.labs.lab-05}}**
 
-<br>
+<hr>
 <br>
 
 
@@ -809,7 +766,7 @@ And share your page link on YellowDig:
 
 <a class="uk-button uk-button-primary" href="{{page.yellowdig_url}}">YELLOWDIG</a>
 
-**Post to YellowDig on {{page.yellowdig.post-06}}**
+**Post on {{page.yellowdig.post-06}}**
   
 <hr>
 <br>
@@ -846,374 +803,31 @@ And share your page link on YellowDig:
 
 ## Unit Overview
 
+<hr> 
+
+<a class="uk-button uk-button-default" href="../lectures/week-06/">LECTURE NOTES</a>
+
+<hr>  
+
 <br>
 
-**Introduction:**
+**Introduction to APIs:**
+
+[Data journalists explain the value of APIs.](https://medium.com/trendct-data/a-gentle-guide-to-apis-for-data-journalists-2a6b0e6fcc1a)
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/s7wmiS2mSXY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-**Nice Overview of APIs**
 
-[Data journalists describe the value of APIs.](https://medium.com/trendct-data/a-gentle-guide-to-apis-for-data-journalists-2a6b0e6fcc1a)
-
-_**What is an API?**_
-
-*An application programming interface, or API, is a way for two programs to communicate. An API might provide a way to change the color of a light bulb or post on Twitter. In the case of data APIs, they offer a way to get some small slice of some large data set that lives on a server.*
-
-*APIs let you use other people’s databases and coding wizardry to enhance your own applications or analysis scripts. For instance you might have a spreadsheet with street addresses you need to turn into GPS coordinates so you can map them.*
-
-_**Examples Airport Status API**_
-
-*The FAA has an API that provides information about airports, including delays and weather. You give it an airport code, like “JFK” or “BDL” for Bradley International Airport, and it tells you what’s up at that airport.*
-
-*To get data for an airport, you just go to this specially formed web address; it even works in a browser (go ahead, try it):*
-
-```
-http://services.faa.gov/airport/status/JFK?format=application/json
-```
-
-*The “JFK” part can be replaced with any valid airport code, and the “format” can be set to “application/xml”, but I’m not interested in XML, so the only “variable” part of this is the airport code.*
-
-*The “JFK” part can be replaced with any valid airport code, and the “format” can be set to “application/xml”, but I’m not interested in XML, so the only “variable” part of this is the airport status web address.*
-
-*The response looks like this, a JSON string:*
-
-```
-{ "delay":"true",
-  "IATA":"JFK",
-  "state":"New York",
-  "name":"John F Kennedy International",
-  "weather":{ "visibility":10.00,
-              "weather":"Mostly Cloudy",
-              "meta":{"credit":"NOAA's National Weather Service","updated":"9:51 AM Local","url":"http://weather.gov/"},
-              "temp":"42.0 F (5.6 C)",
-              "wind":"Northwest at 16.1mph" },
-  "ICAO":"KJFK",
-  "city":"New York",
-  "status":{ "reason":"WX:Wind",
-             "closureBegin":"",
-             "endTime":"",
-             "minDelay":"31 minutes",
-             "avgDelay":"",
-             "maxDelay":"45 minutes",
-             "closureEnd":"",
-             "trend":"Increasing","type":"Departure" }
-}
-```
-
-> Side note, what would this data look like as a tidy dataframe? 
-
-<br>
-<hr>
-<br>
-
-
-**Example APIs:**
-
-There is one API that you likely use every single day: Google. Your query takes the form of the search words you type into the box, and the data is sent back as a nicely-formatted list of websites: the page title, URL, and the first few sentences of text on the page. 
-
-The Data Science Toolkit site has a lot of nice examples of these type of APIs in action. 
-
-These mostly have user interfaces where you paste some input data into a search box and it returns data based upon your inputs. 
-
-[Data Science Toolkit](http://www.datasciencetoolkit.org/)
-
-For example, you can type an address and it will return a set of latitude and longitude coordinates. 
-
-Alternatively, if you want to query news sources for stories on specific topics check out: 
-
-[News API Examples](https://newsapi.org/)  
-
-
-**How do APIs Work?**
-
-APIs function like calls to a database. You send parameters, and the server sends the appropriate response - the data that matches your query. 
-
-The interface for many APIs functions a lot like a dplyr::filter call. You specify which slice of data you would like through the values you designate:
-
-```r
-data %>% 
-  filter(  gender=="male"   &  age=="20-25"  &  state %in% c("AZ","NY","PA") )
-```
-
-The main difference is that this is a filter function manipulating data on your own computer. Data APIs allow you to query a database that lives on a server.
-
-Data APIs consist of a base URL that serves as the address of the data on the server and a set of allowable queries. 
-
-Each API defines it's own set of allowable queries. Similar to a filter() function there are rules about how to construct your statements so they identify the proper slice of data. Unlike R, if you violate the defined rules of the API then instead of an error you just get an empty set with no data. 
-
-For demonstration purposes, assume that we want to download some census data from a nice Graphical User Interface (GUI) someone has created for us in order to make the Census API easier to use. It might look something like this: 
-
-![](https://github.com/DS4PS/cpp-527-fall-2020/blob/master/assets/img/census-api-gui.png?raw=true)
-
-All we need to do is select options from drop-down lists and click "download" to receive all of the data as a CSV file. 
-
-APIs operate basically the same, but we would use the API documentation to convert the same query in this GUI into the API URL directly.
-
-To run this example, you will need to get your own free [Census API key](https://api.census.gov/data/key_signup.html) and replace "your.unique.census.key.goes.here" with the actual key you receive from the Census. 
-
-I have selected the population variable B01001_001E but you can find other variable names in the Census catalog: [https://api.census.gov/data/2015/acs/acs5/variables.html](https://api.census.gov/data/2015/acs/acs5/variables.html).
-
-```r
-library( censusapi )
-library( jsonlite )
-library( httr )
-
-##################################################################
-####      API QUERY:
-##################################################################
-
-API.BASE     <- "https://api.census.gov/data"
-API.VINTAGE  <- "2015"
-API.NAME     <- "acs/acs5"
-VARIABLE     <- "B01001_001E"      # TOTAL POPULATION (E for Estimate)
-STATE        <- "04"               # AZ STATE FIPS CODE
-KEY          <- "your.unique.census.key.goes.here"
-
-##################################################################
-
-BASE.URL <- paste( API.BASE, API.VINTAGE, API.NAME, sep="/" )
-BASE.URL
-
-# [1] "https://api.census.gov/data/2015/acs/acs5"
-
-FULL.URL <- paste( BASE.URL, "?get=NAME,", VARIABLE, "&for=state:", STATE, "&key=", KEY, sep="" )
-FULL.URL
-
-# [1] "https://api.census.gov/data/2015/acs/acs5?get=NAME,B01001_001E&for=state:04&key=your.unique.census.key.goes.here"
-
-```
-
-Now, pasting this URL into a browser is the equivalent of sending a query to a database. Similar to the filter() function you are referencing variable names and specific values (logical statements) and separating them with an &:
-
-```
-?get=                  # start of the query
-NAME,B01001_001E       # list of variable names 
-&
-for=state:04           # geography
-&
-key=your.unique.census.key.goes.here
-```
-
-[https://api.census.gov/data/2015/acs/acs5?get=NAME,B01001_001E&for=state:04&key=your.unique.census.key.goes.here](https://api.census.gov/data/2015/acs/acs5?get=NAME,B01001_001E&for=state:04&key=b431c35dad89e2863681311677d12581e8f24c24)
-
-The data is returned in a JSON format: 
-
-```
-[["NAME","B01001_001E","state"],
-["Arizona","6641928","04"]]
-```
-
-That's it! It's that easy. 
-
-Just like functions in R, you will look up the API arguments in the documentation. 
-
-The documentation should also tell you the types of values that each argument expects. For example, the state geography uses FIPS codes (state:04) instead of the normal two-letter abbreviation (state:AZ). 
-
-----
-
-In order to import the data into R we need a couple more steps. 
-
-1. We need to retrieve the data from the API URL that we have built. 
-2. We need to convert from JSON to a matrix, then the matrix to a data frame. 
-
-We can write a couple of functions to make this easier: 
-
-```r
-api.data.raw <- httr::GET( FULL.URL )
-
-matrix_to_df <- function( m )
-{
-  d <- as.data.frame(m)
-  col.names <- d[ 1, ]    # get first row
-  names(d) <- col.names   # assign as column names 
-  d <- d[ -1 , ]          # delete first row
-  return(d)
-}
-
-
-json_to_data_frame <- function( api.data.raw )
-{
-    data.as.json <- httr::content( api.data.raw, as = "text" )
-    data.as.matrix <- jsonlite::fromJSON( data.as.json )
-    data.as.df <- matrix_to_df( data.as.matrix )
-    return( data.as.df )
-
-}
-
-
-json_to_data_frame( api.data.raw )  # returns a data frame 
-     NAME   B01001_001E   state
-2 Arizona       6641928      04
-
-# intermediate data formats for reference 
-
-data.as.json
-[1] "[[\"NAME\",\"B01001_001E\",\"state\"],\n[\"Arizona\",\"6246816\",\"04\"]]"
-
-data.as.matrix
-     [,1]      [,2]          [,3]   
-[1,] "NAME"    "B01001_001E" "state"
-[2,] "Arizona" "6246816"     "04"   
-```
-
-Another example grabbing data from all of the states instead of one at a time: 
-
-```r
-KEY           <- "your.unique.census.key.goes.here"
-API.BASE      <- "https://api.census.gov/data"
-API.VINTAGE   <- "2015"
-API.NAME      <- "acs/acs5"
-VARIABLE      <- "B01001_001E"      # TOTAL POPULATION (E for Estimate)
-STATE         <- "*"                # ALL STATES
-
-BASE.URL <- paste( API.BASE, API.VINTAGE, API.NAME, sep="/" )
-FULL.URL <- paste( BASE.URL, "?get=NAME,", VARIABLE, "&for=state:", STATE, "&key=", KEY, sep="" )
-
-api.data.raw <- httr::GET( FULL.URL )
-
-json_to_data_frame( api.data.raw )
-
-                   NAME B01001_001E state
-2               Alabama     4830620    01
-3                Alaska      733375    02
-4               Arizona     6641928    04
-5              Arkansas     2958208    05
-6            California    38421464    06
-7              Colorado     5278906    08
-8           Connecticut     3593222    09
-9              Delaware      926454    10
-...etc
-
-```
-
-You can drill down further and further depending upon the API options. For example to get the population of every county in the US we would use the following geography:
-
-```
-for=county:*&in=state:*
-```
-
-The Census API gets complicated quickly because there are several hundred datasets you can query, several dozen [allowable geographies](https://api.census.gov/data/2015/acs/acs5/geography.html) for each variable, and [several thousand variables](https://api.census.gov/data/2015/acs/acs5/variables.html) to choose from. 
-
-This is why packages like **censusapi** will include a bunch of functions that just list API options: 
-
-```r
-apis <- censusapi::listCensusApis()
-head( apis[,1:3], 25 )
-                                                                  title              name vintage
-451                     Annual Economic Surveys: Annual Business Survey             abscb    2017
-454                     Annual Economic Surveys: Annual Business Survey            abscbo    2017
-458                     Annual Economic Surveys: Annual Business Survey             abscs    2017
-391 American Community Survey: 1-Year Estimates: Detailed Tables 1-Year          acs/acs1    2005
-395 American Community Survey: 1-Year Estimates: Detailed Tables 1-Year          acs/acs1    2006
-397 American Community Survey: 1-Year Estimates: Detailed Tables 1-Year          acs/acs1    2007
-399 American Community Survey: 1-Year Estimates: Detailed Tables 1-Year          acs/acs1    2008
-403 American Community Survey: 1-Year Estimates: Detailed Tables 1-Year          acs/acs1    2009
-71                                           ACS 1-Year Detailed Tables          acs/acs1    2010
-86                                           ACS 1-Year Detailed Tables          acs/acs1    2011
-97                                           ACS 1-Year Detailed Tables          acs/acs1    2012
-179                                          ACS 1-Year Detailed Tables          acs/acs1    2013
-202                                          ACS 1-Year Detailed Tables          acs/acs1    2014
-243                                          ACS 1-Year Detailed Tables          acs/acs1    2015
-265                                          ACS 1-Year Detailed Tables          acs/acs1    2016
-288                                          ACS 1-Year Detailed Tables          acs/acs1    2017
-365 American Community Survey: 1-Year Estimates: Detailed Tables 1-Year          acs/acs1    2018
-501 American Community Survey: 1-Year Estimates: Detailed Tables 1-Year          acs/acs1    2019
-72                                       ACS 1-Year Comparison Profiles acs/acs1/cprofile    2010
-87                                       ACS 1-Year Comparison Profiles acs/acs1/cprofile    2011
-100                                      ACS 1-Year Comparison Profiles acs/acs1/cprofile    2012
-177                                      ACS 1-Year Comparison Profiles acs/acs1/cprofile    2013
-204                                      ACS 1-Year Comparison Profiles acs/acs1/cprofile    2014
-245                                      ACS 1-Year Comparison Profiles acs/acs1/cprofile    2015
-266                                       ACS 1-Year Comparison Profile acs/acs1/cprofile    2016
-
-```
-
------
-
-In summary, this lecture introduces the basic concepts behind a data API. 
-
-You are doing this: 
-
-![](https://github.com/DS4PS/cpp-527-fall-2020/blob/master/assets/img/census-api-gui.png?raw=true)
-
-But manually by building your API query like this: 
-
-```r
-KEY           <- "your.unique.census.key.goes.here"
-API.BASE      <- "https://api.census.gov/data"
-API.VINTAGE   <- "2015"
-API.NAME      <- "acs/acs5"
-VARIABLE      <- "B01001_001E"      # TOTAL POPULATION (E for Estimate)
-STATE         <- "04"               # AZ STATE FIPS CODE
-
-BASE.URL <- paste( API.BASE, API.VINTAGE, API.NAME, sep="/" )
-FULL.URL <- paste( BASE.URL, "?get=NAME,", VARIABLE, "&for=state:", STATE, "&key=", KEY, sep="" )
-FULL.URL
-
-# [1] "https://api.census.gov/data/2015/acs/acs5?get=NAME,B01001_001E&for=state:04&key=your.unique.census.key.goes.here"
-```
-
-Data APIs are often the fastest way to get data, but more importantly they also document the process used to acquire the data. 
-
-That makes the process easy to replicate later, and also easy to inspect if there are problems with the data. 
-
-The best part is that most useful APIs have already been turned into packages in R, so you don't even need to read all of the documentation. You can download the package then use R functions directly. For example, the function for the Census API might look something like this: 
-
-```r
-get_census_data <- function( VINTAGE, API.NAME, VARIABLE, STATE, KEY )
-{
-   API.BASE <- "https://api.census.gov/data"
-   BASE.URL <- paste( API.BASE, VINTAGE, API.NAME, sep="/" )
-   FULL.URL <- paste( BASE.URL, "?get=NAME,", VARIABLE, "&for=state:", STATE, "&key=", KEY, sep="" )
-   api.data.raw <- httr::GET( FULL.URL )
-   df <- json_to_data_frame( api.data.raw )
-   return( df )
-}
-```
-
-*If you are curious, you can view the [source code for the __censusapi__ package](https://github.com/hrecht/censusapi/tree/master/R) to see how the code is actually constructed. It is more complicated because it has to account for combinations of all of the different arguments using all of the APIs, along with error-checking. The devil is always in the details!*
-
-<br> 
-
-
-**Additional Reading:**
-
-* [Getting Started with APIs in R](https://www.dataquest.io/blog/r-api-tutorial/)  
-* [Querying APIs in R](https://medium.com/@traffordDataLab/querying-apis-in-r-39029b73d5f1)  
-* [Best practices for developing API packages in R](https://cran.r-project.org/web/packages/httr/vignettes/api-packages.html)  
-
-If you have an important dataset that you would like to share with the world, you can also build your own API in R: 
-
-* [How to Build a REST API Using R](https://medium.com/@conalldalydev/part-1-how-to-build-a-rest-api-using-r-ad54d683f3bd)  
 
 <br>
 <br>
-
-
-
-
-
-
-
-
-
 <br>
-<hr>
 <br>
 
 
 ## Lab 06
 
 **Due {{page.labs.lab-06}}**
-
-<br>
-
-<hr>
-
-*THIS LAB IS OPTIONAL*
-
-<hr>
 
 <br>
 
@@ -1393,16 +1007,15 @@ for( i in city.names )
 
 
 
-<br>
+## Practice Problems
+
 <hr>
-<br>
 
-
-## YellowDig Practice Problems
+<a class="uk-button uk-button-primary" href="{{page.yellowdig_url}}">YELLOWDIG</a>
 
 **Post on {{page.yellowdig.post-07}}**
 
------  
+<hr>
 
 **DATA APIs IN R:**
 
@@ -1423,11 +1036,7 @@ Once you have identified an API package, show some very basic functionality by e
 Share your insights with classmates on YellowDig. 
 
 <br>
-<hr>
 
-<a class="uk-button uk-button-primary" href="{{page.yellowdig_url}}">YELLOWDIG</a>
-
-<hr>
 <br>
 
 
