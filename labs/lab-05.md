@@ -9,8 +9,6 @@ image-width: 150px
 
 
 
-# Week 04
-
 -----------------------
 
 * TOC
@@ -20,7 +18,7 @@ image-width: 150px
 
 <br>
 
-## Instructions for Creating a GitHub Page
+# Creating a GitHub Page
 
 The animation in the Unit Overview above shows how simple it is to activate GitHub pages for any project repository so that you can turn markdown files into web-hosted HTML files and share tutorials or reports created from RMD files. 
 
@@ -29,7 +27,7 @@ If we want a website with a bit more functionality, however, we will need to sta
 For this lab you will copy and then adapt an existing GitHub pages websites. 
 
 
-### Step 01
+## Step 01
 
 Start by forking the **beautiful-jekyll** website template:
 
@@ -54,7 +52,7 @@ I would recommend **cloning** a simple site that was built using Beautiful Jekyl
 -----
 
 
-### Step 02
+## Step 02
 
 After forking or cloning a site, follow the instructions in the README file to begin customizing your page. 
 
@@ -88,7 +86,7 @@ footer-text-col: "#777777"
 footer-link-col: "#404040"
 ```
 
-### Step 03
+## Step 03
 
 **Add Page and Update Navigation**
 
@@ -121,7 +119,7 @@ use-site-title: true
 ````
 
 
-### Step 04 
+## Step 04 
 
 **Change the Text Style on the Getting Started Page**
 
@@ -213,7 +211,7 @@ Similarly, add new **div** sections around Step 02 and Step 03 on the page so th
 
   
   
-### Step 05
+## Step 05
   
 **Create a Liquid Table** 
 
