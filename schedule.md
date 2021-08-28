@@ -157,11 +157,6 @@ For the topics this week, you will find that reviewing the lecture notes on one-
 
 ## Unit Overview 
 
-<hr> 
-
-<a class="uk-button uk-button-default" href="../lectures/week-01/">Lecture Notes</a>
-
-<hr>
   
 **Description**
 
@@ -177,6 +172,10 @@ Once you have completed this unit you will be able to:
 * review compound statements 
 * implement if-else statements 
 * identify "edge cases" and their impact on code 
+
+**Lecture Notes**
+  
+<a class="uk-button uk-button-default" href="../lectures/week-01/">Lecture Notes</a>
 
 
 
@@ -270,12 +269,7 @@ In Lab 02 we will use simulation to play the game thousands of times so that we 
 
 ## Unit Overview 
 
-<hr> 
 
-<a class="uk-button uk-button-default" href="../lectures/week-02/">LECTURE NOTES</a>
-
-<hr>
-  
 **Description**
 
 This section introduces loops. We will use them to create simulations. 
@@ -287,8 +281,15 @@ Once you have completed this section you will be able to
 * select appropriate iterators 
 * be mindful of the collector vector needed for the loop 
 
+**Lecture Notes:** 
 
-Examples of loops used to create effective data visualization:
+<a class="uk-button uk-button-default" href="../lectures/week-02/">LECTURE NOTES</a>
+
+**Example:** 
+
+Buzzfeed published a recent story with a dynamic visualization of the change in health care costs over time. 
+
+It uses loops to create effective data visualization:
 
 [Why Americans Are So Damn Unhealthy, In 4 Shocking Charts](https://www.buzzfeednews.com/article/peteraldhous/american-health-care)   [*Buzzfeed Replication Files*](https://github.com/BuzzFeedNews/2017-05-us-health-care)
 
@@ -360,8 +361,6 @@ Examples of loops used to create effective data visualization:
 
 **Due {{page.projects.r-package}}**
 
-*To receive credit for the assignment, submit the URL to your package on GitHub.*
-  
 <hr> 
   
 
@@ -381,8 +380,8 @@ The documentation will also be inspected to ensure there are complete instructio
 
 You will receive a grade of zero if you package cannot be installed or run, and you will lose 5 points if documentation is unavailable. 
 
-
-
+*To receive credit for the assignment, submit the URL to your package on GitHub.*
+  
 <br> 
 <br> 
   
@@ -412,12 +411,6 @@ You will receive a grade of zero if you package cannot be installed or run, and 
 
 ## Unit Overview 
 
-<hr> 
-
-<a class="uk-button uk-button-default" href="../lectures/week-03/">LECTURE NOTES</a>
-
-<hr>  
-  
 **Text as Data:**
 
 This week comes with an up-front warning. You can get a PhD in Natural Language Processing, which is an entire field devote to computation analysis using text as data. We have two weeks to cover the topic! We obviously cannot go deep into this interesting field, but we can introduce some foundational tools and R functions for text processing. 
@@ -431,6 +424,10 @@ Let's get started by motivating the topic with a couple of cool examples.
 [Sentiment Analysis](https://www.kaggle.com/rtatman/tutorial-sentiment-analysis-in-r)
 
 These examples all demonstrate interesting uses of text as data. They are also examples of the types of insight that can come from analysis with big data - the patterns are hiding in plain sight but our brains cannot hold enough information at one time to see it.  Once we can find a system to extract hidden patterns from language we can go beyond seeking large public databases to generate insights, and we can start using all of Twitter, all published news stories, or all of the internet to identify trends and detect outliers. 
+
+**Lecture Notes**
+
+<a class="uk-button uk-button-default" href="../lectures/week-03/">LECTURE NOTES</a>
 
 
 <br>
@@ -502,7 +499,7 @@ These examples all demonstrate interesting uses of text as data. They are also e
 
 This week will use regular expressions you developed during the prior week and some additional text analysis tools from the package **quanteda** to practice working with text as data. 
 
-## Required Reading 
+**Required Reading**
 
 Review some of the examples from last week in order to see content analysis (counts and pattens of words) and sentiment analysis in practice: 
 
@@ -599,12 +596,6 @@ Focus on:
 
 ## Unit Overview
 
-<hr> 
-
-<a class="uk-button uk-button-default" href="../lectures/week-05/">LECTURE NOTES</a>
-
-<hr>  
-
 A big part of every analysts job is trying to find ways to distill large volumes of data and information down to meaningful bites of knowledge, often for diverse stakeholder audiences that have varying degrees of technical expertise. For this reason, communication skills are extremely valuable for data scientists. You will constantly be challenged to find the interesting story that emerges from an overwhelming amount of data, and find creative ways to tell the story so that information becomes actionable. 
 
 Although it might not sound as edgy as building a machine learning classifier, the ability to create customized reporting formats and automate various steps of analysis will both make you more efficient and also more effective at communication. 
@@ -615,6 +606,12 @@ More generally, we will learn how to build templates that can be used in website
 
 Templates use the same basic tools for both HTML pages and R Markdown reports. Some basic familiarity with CSS, page containers, and responsive design can go a long way toward empowering you to automate organizational reporting processes. 
 
+**Lecture Notes** 
+
+<a class="uk-button uk-button-default" href="../lectures/week-05/">LECTURE NOTES</a>
+
+<br>
+<br>
 <br>
 
 
