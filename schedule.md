@@ -552,26 +552,21 @@ Since it is a game with simple and explicit rules we can build our own virtual v
 
 In Lab 01 we will use control structures to build a virtual version of the game. In Lab 02 we will use simulation to play the game thousands of times so that we can get stable estimates of the payoff of each strategy. 
 
+<hr>
 
 <a class="uk-button uk-button-default" href="../labs/lab-01-instructions.html">LAB-01 Instructions</a>
 
-**Submit Solutions to Canvas:** 
-
 <a class="uk-button uk-button-primary" href="{{page.canvas.assignment_url}}">SUBMIT LAB</a>
 
-<br>
+<hr><br>
 
 
 
 ## YellowDig Practice Problems
 
 **Post on {{page.yellowdig.post-02}}**
-
-<hr>
   
 <a class="uk-button uk-button-default" href="../practice/week-01/">PRACTICE PROBLEMS</a>
-
-<hr>
 
 <a class="uk-button uk-button-primary" href="{{page.yellowdig_url}}">YELLOWDIG</a>
 
@@ -829,10 +824,6 @@ plot_ci( df=results )
 
 <a class="uk-button uk-button-default" href="../labs/lab-02-instructions.html">LAB-02 Instructions</a>
 
-<hr>
-
-**Submit Solutions to Canvas:**
-
 <a class="uk-button uk-button-primary" href="{{page.canvas.assignment_url}}">SUBMIT LAB</a>
 
 <hr>
@@ -848,8 +839,6 @@ plot_ci( df=results )
 **Post on {{page.yellowdig.post-03}}**
   
 <a class="uk-button uk-button-default" href="../practice/week-02/">PRACTICE PROBLEMS</a>
-
-<hr>
 
 <a class="uk-button uk-button-primary" href="{{page.yellowdig_url}}">YELLOWDIG</a>
 
