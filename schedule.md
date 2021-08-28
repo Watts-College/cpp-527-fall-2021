@@ -615,25 +615,29 @@ Once you have completed this section you will be able to
 * be mindful of the collector vector needed for the loop 
 
 
-## Assigned Reading
-
-Required:
-
-[Building Simulations in R: Mastering Loops](https://ds4ps.org/cpp-527-spr-2020/lectures/p-02-loops.html)
-
-[Creating Animations with Loops](https://ds4ps.org/cpp-527-spr-2020/lectures/Animations.html)
-
-Recommended: these readings are a slightly more advanced treatment of loops and control structures used in simulations. Dive in or bookmark them for later. 
-
-[Don't Loop - Apply](https://bookdown.org/rdpeng/rprogdatascience/loop-functions.html)
-
-[Simulation](https://bookdown.org/rdpeng/rprogdatascience/simulation.html) 
-
 Examples of loops used to create effective data visualization:
 
 [Why Americans Are So Damn Unhealthy, In 4 Shocking Charts](https://www.buzzfeednews.com/article/peteraldhous/american-health-care)
 
 [Buzzfeed Replication Files](https://github.com/BuzzFeedNews/2017-05-us-health-care)
+
+![](../assets/img/buzzfeed-gif.gif)
+
+## Assigned Reading
+
+**Required:**
+
+<a class="uk-button uk-button-default" href="../lectures/p-02-loops.html">Building Simulations in R: Mastering Loops</a>
+<a class="uk-button uk-button-default" href="../lectures/Animations.html">Creating Animations with Loops</a>
+
+**Recommended:** 
+
+These readings are a slightly more advanced treatment of loops and control structures used in simulations. Dive in or bookmark them for later. 
+
+[Don't Loop - Apply](https://bookdown.org/rdpeng/rprogdatascience/loop-functions.html)
+
+[Simulation](https://bookdown.org/rdpeng/rprogdatascience/simulation.html) 
+
 
 <br>
 
