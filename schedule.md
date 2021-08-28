@@ -242,19 +242,17 @@ These questions are similar to riddles or brain teasers that help sharpen your c
 
 For the topics this week, you will find that reviewing the lecture notes on one-dimensional data types useful: [VECTORS IN R](http://ds4ps.org/dp4ss-textbook/ch-050-vectors.html).
   
-<hr>
-<a class="uk-button uk-button-default" href="../practice/week-01/">PRACTICE PROBLEMS</a>
-<hr>
-
 **Post your ideas to YellowDig** 
-  
-Each question has it's own pin. Share your solutions by adding comments to the pins.  
+
+Each question has it's own pin. Share your solutions by adding comments to the pins. 
 
 <hr>
+ 
+<a class="uk-button uk-button-default" href="../practice/week-01/">PRACTICE PROBLEMS</a>
+
 <a class="uk-button uk-button-primary" href="{{page.yellowdig_url}}">YELLOWDIG</a>
-<hr>
 
-  
+<hr>
 <br>
 <br>
 <br>
