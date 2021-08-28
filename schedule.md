@@ -644,6 +644,40 @@ This example demonstrates the use of loops to create a simulation to examine the
 
 In this case we are taking repeated random draws of size N from a population, then calculating the slope and confidence interval of the slope. We want to note cases where b1 contains zero since these would represent NULL results in our study.
 
+For a single sample we calculate the slope and confidence interval as follows: 
+  
+```r 
+# regression model: Y = b0 + b1(X)
+d.sample <- dplyr::sample_n( d, size=N )
+m <- lm( y ~ x, data=d.sample )
+b1 <- (coef( m ))[2]
+ci <- confint( m )
+ci.b1.lower <- ci[2,1]
+ci.b1.upper <- ci[2,2]
+```
+  
+Then to examine lots of scenarios we can just repeat this code inside of a loop. 
+  
+```r
+get_slope <- function( d, N=10 )
+{             
+  d.sample <- dplyr::sample_n( d, size=N )
+  m <- lm( y ~ x, data=d.sample )
+  b1 <- (coef( m ))[2]
+  ci <- confint( m )
+  ci.b1.lower <- ci[2,1]
+  ci.b1.upper <- ci[2,2]
+  df <- data.frame( b1, ci.b1.lower, ci.b1.upper )
+}
+
+results <- NULL                 
+for( i in 1:100 )
+{
+   one.model <- get_slope( d )
+   results <- dplyr::bind_rows( results, one.model )
+}
+```
+
 ![](https://raw.githubusercontent.com/lecy/regression-simulations/master/GIFS/confidence-interval-of-slope.gif)
  
 These types of **bootstrapping** simulations are very useful for generating robust versions of sampling statistics when the data is irregular or closed-form solutions do not exist.
