@@ -22,9 +22,11 @@ image-width: 150px
 
 ## What is an API?
 
-*An application programming interface, or API, is a way for two programs to communicate. An API might provide a way to change the color of a light bulb or post on Twitter. In the case of data APIs, they offer a way to get some small slice of some large data set that lives on a server.*
+An application programming interface, or API, is a way for two programs to communicate. 
+  
+An API might provide a way to change the color of a light bulb on a "smart" christmas tree or post a message on Twitter. In the case of data APIs, they offer a way to get some small slice of some large data set that lives on a server.
 
-*APIs let you use other people’s databases and coding wizardry to enhance your own applications or analysis scripts. For instance you might have a spreadsheet with street addresses you need to turn into GPS coordinates so you can map them.*
+APIs let you use other people’s databases and coding wizardry to enhance your own applications or analysis scripts. For instance you might have a spreadsheet with street addresses you need to turn into GPS coordinates so you can map them.
 
 **Examples Airport Status API**
 
