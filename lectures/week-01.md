@@ -185,17 +185,15 @@ Here are some helpful examples:
 
 
   
-## Scope
+## Function Scope
 
 Many people are familiar with the expression "What happens in Las Vegas stays in Vegas."
 
 Scope is the rule that "what happens inside of functions stays inside of functions". 
 
-It is very common to use variables like **X** or **dat** to represent objects in R. If you have defined a variable called X, and a different object called X is defined inside of a function you just called, how does R manage the conflict of having two objects X active at the same time? 
+It is very common to use variables like **X** or **dat** to represent objects in R. This has the potential to create conflicts where one X is over-written when a new X is created later on in the code. 
 
-Scope prevents actions inside of a function from impacting your active work environment. 
-
-For example, why is X not altered here when we call the *two.plus.two()* function since the value of 4 is assigned to X inside the function? 
+Specifically, if you have defined X in your script, then you call a function that uses X, how does R manage the conflict of having two objects X active at the same time? 
 
 ```r
 x <- 10 
@@ -206,17 +204,16 @@ two.plus.two <- function()
   return( x )
 }
 
-two.plus.two()
-# [1] 4
-x
-# [1] 10
- 
-x <- two.plus.two()
-x
-# [1] 4
+two.plus.two()    # calls:   x <- 2 + 2
+[1] 4
+  
+x       # our original X was protected from X inside the function
+[1] 10
 ```
 
-Note that the function **two.plus.two()** returns the object **x**, but after calling the function it does not replace the object **x=10** that is active in the main environment. The function is returning values held by the variable x, but not exporting the object x itself. 
+Scope prevents actions inside of a function from impacting your active work environment. 
+
+Note that the function **two.plus.two()** returns the object **x**, but after calling the function it does not replace the object **x=10** that is active in the main environment. The function is returning values held by the variable X, but not exporting the object X itself. 
 
 In order to replace the X that is active in the environment, you need to assign the function results to the object. 
 
@@ -230,13 +227,14 @@ fix_names <- function( x )
 }
 
 fix_names( x )
-# [1] "INIGO MONTOYA"
+[1] "INIGO MONTOYA"
+       
 x
-# [1] "iNiGo MoNtoyA"
+[1] "iNiGo MoNtoyA"
  
 x <- fix_names( x )
 x
-# [1] "INIGO MONTOYA"
+[1] "INIGO MONTOYA"
 ```
 
 You need to be familiar with the general concept of **scope** (what happens inside functions stays inside functions), but only at a superficial level for now. 
