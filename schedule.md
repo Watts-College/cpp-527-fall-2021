@@ -628,6 +628,7 @@ Examples of loops used to create effective data visualization:
 **Required:**
 
 <a class="uk-button uk-button-default" href="../lectures/p-02-loops.html">Building Simulations in R: Mastering Loops</a>
+
 <a class="uk-button uk-button-default" href="../lectures/Animations.html">Creating Animations with Loops</a>
 
 **Recommended:** 
