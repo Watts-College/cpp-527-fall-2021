@@ -7,10 +7,6 @@ image-width: 150px
 
 <div class = "uk-container uk-container-small">
 
-<br>
-<br>
-
-
 # Week 02
 
 -----------------------
