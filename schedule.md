@@ -88,9 +88,9 @@ For easy reference, you have the following due dates this term:
 
 **Projects:**
 
-* R Package: {{page.projects.r-package}}
-* Code Through: {{page.projects.code-through}}  
-* Customized Report Template: {{page.projects.report-template}} 
+* **R Package**: {{page.projects.r-package}}
+* **Code Through**: {{page.projects.code-through}}  
+* **Customized Report Template**: {{page.projects.report-template}} 
 
 <br>
 <br>
