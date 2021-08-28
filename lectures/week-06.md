@@ -1,6 +1,6 @@
 ---
 layout: lab
-title: Lecture Title   
+title: Week 06   
 image: model.svg
 image-width: 150px
 ---
