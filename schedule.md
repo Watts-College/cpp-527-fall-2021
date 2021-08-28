@@ -830,12 +830,6 @@ plot_ci( df=results )
 
 **Due {{page.labs.lab-02}}**
 
-<hr>
-
-This lab uses material from the simulation slides: 
-
-[Building Simulations in R: Mastering Loops](../lectures/p-02-loops.html)
-
 <a class="uk-button uk-button-default" href="../labs/lab-02-instructions.html">LAB-02 Instructions</a>
 
 <hr>
@@ -855,9 +849,6 @@ This lab uses material from the simulation slides:
 ## YellowDig Practice Problems
 
 **Post on {{page.yellowdig.post-03}}**
-
-
-<hr>
   
 <a class="uk-button uk-button-default" href="../practice/week-02/">PRACTICE PROBLEMS</a>
 
