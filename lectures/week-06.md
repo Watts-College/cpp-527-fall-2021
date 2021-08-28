@@ -87,11 +87,16 @@ The Data Science Toolkit site has a lot of nice examples of these type of APIs i
 
 These mostly have user interfaces where you paste some input data into a search box and it returns data based upon your inputs. 
 
-[Data Science Toolkit](http://www.datasciencetoolkit.org/)
-
 For example, you can type an address and it will return a set of latitude and longitude coordinates. 
 
-Alternatively, if you want to query news sources for stories on specific topics check out: 
+
+The original website [Data Science Toolkit](http://www.datasciencetoolkit.org/) is not defunct but all of the APIs have all been added to an R package called RDSTK (R data science toolkit): 
+
+[RDSTK](https://cran.r-project.org/web/packages/RDSTK/RDSTK.pdf) 
+  
+**News APIs:**
+  
+If you want to query news sources for stories on specific topics check out: 
 
 [News API Examples](https://newsapi.org/)  
 
