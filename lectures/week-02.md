@@ -16,25 +16,6 @@ image-width: 150px
 
 ## Loops 
   
-**Required Reading:**
-
-<a class="uk-button uk-button-default" href="../p-02-loops.html">Building Simulations in R: Mastering Loops</a>
-
-<a class="uk-button uk-button-default" href="../Animations.html">Creating Animations with Loops</a>
-
-**Recommended:** 
-
-These readings are a slightly more advanced treatment of loops and control structures used in simulations. Dive in or bookmark them for later. 
-
-[Don't Loop - Apply](https://bookdown.org/rdpeng/rprogdatascience/loop-functions.html)
-
-[Simulation](https://bookdown.org/rdpeng/rprogdatascience/simulation.html) 
-
-
-<br>
-
-
-### Loop Example 
 
 This example demonstrates the use of loops to create a simulation to examine the how model statistics might vary for a given sampling framework.
 
@@ -200,6 +181,14 @@ head( results )
 plot_ci( df=results )
 ```
 
+## Additional Reading 
+
+
+These readings are a slightly more advanced treatment of loops and control structures used in simulations. Dive in or bookmark them for later. 
+
+[Don't Loop - Apply](https://bookdown.org/rdpeng/rprogdatascience/loop-functions.html)
+
+[Simulation](https://bookdown.org/rdpeng/rprogdatascience/simulation.html) 
 
 
 <br>
