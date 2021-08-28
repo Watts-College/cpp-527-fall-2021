@@ -926,22 +926,7 @@ Share your insights with classmates on YellowDig.
 
 
 
-
-
-
-
-
-
-
-
-
-# Week 7 - Customized Reporting
-
-
-
-
-
-## Code-Through Assignment
+## Code-Through 
 
 **Due {{page.projects.code-through}}**
 
@@ -1000,7 +985,18 @@ Note that these are rules related to one single vector type! It can be helpful t
 
 
 
-## Build a Report Template
+
+
+
+
+
+# Week 7 - Customized Reporting
+
+
+
+## FINAL PROJECT 
+
+Build a Report Template
 
 **Due {{page.projects.report-template}}**
 
