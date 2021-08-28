@@ -741,14 +741,7 @@ summary( slopes )
 #    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
 #  -2.194   1.596   2.176   2.088   2.600   4.868
 
-=======
-summary( slopes )  
-#    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-#  -2.194   1.596   2.176   2.088   2.600   4.868
-
->>>>>>> Stashed changes
 hist( slopes, breaks=25, col="gray20", border="white" )
-
 ```
 
 ![](../lectures/figures/bootstrapped-sample-slopes.png)
