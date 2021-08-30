@@ -667,15 +667,13 @@ For example, 19 contains one nine, 99 contains two nines.
 
 For example, 19 contains a nine. 
 
-**Q6-C: Count all 17's in the vector X.**
-
-X is a vector containing the numbers 1 to 1,000.
+**Q6-C: Count all 17's in a vector X containing all integers from 1 to 2,000.**
 
 ```r
-x <- 1:1000
+x <- 1:2000
 ```
 
-How can you count the number of times "17" occurs in the vector? 
+How many times does "17" occur in the vector? 
 
 For example, the number 117 contains a 17. The number 170 also contains a 17. 
 
