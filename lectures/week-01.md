@@ -39,8 +39,8 @@ Make sure you are clear about:
 
 temp.in.celsius <- 100
 temp.in.fahrenheit <- ( temp.in.celsius * 9/5 ) + 32
-temp.in.fahrenheit # print the new temp  
-
+temp.in.fahrenheit  # print the new temp  
+[1] 212
   
 ### repackage the recipe as a function
 
@@ -51,6 +51,31 @@ celsius_to_fahrenheit <- function( temp.in.celsius=100 )
 }
                        
 celsius_to_fahrenheit( 100 )  # test the function 
+[1] 212
+
+# if we don't provide a temperature 
+# the function uses the DEFAULT ARGUMENT VALUE provided: 
+# temp.in.celsius=100
+  
+celsius_to_fahrenheit( )  
+[1] 212
+
+# if we provide a temperature it replaces the default value
+
+celsius_to_fahrenheit( 38 )
+[1] 100.4
+
+# EXPLICIT use of arguments requires the name: 
+
+celsius_to_fahrenheit( temp.in.celsius=38 )
+[1] 100.4
+  
+# IMPLICIT use of arguments requires position only
+# (we only have one argument here so position doesn't matter
+#  but you get the idea):  
+
+celsius_to_fahrenheit( 38 )
+[1] 100.4
 ```
   
 
