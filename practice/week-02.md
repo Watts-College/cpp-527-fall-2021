@@ -55,7 +55,9 @@ open_goat_door <- function( game, a.pick )
    return( opened.door ) 
 }
 ```
-  
+ 
+See the solutions from Lab 01 for some examples of writing unit tests. 
+
 <br>
 <br>
 <hr>
