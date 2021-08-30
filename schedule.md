@@ -285,9 +285,9 @@ Once you have completed this section you will be able to
 
 <a class="uk-button uk-button-default" href="../lectures/week-02/">LECTURE NOTES</a> 
 
-<a class="uk-button uk-button-default" href="../p-02-loops.html">Building Simulations in R: Mastering Loops</a>
+<a class="uk-button uk-button-default" href="../lectures/p-02-loops.html">Building Simulations in R: Mastering Loops</a>
 
-<a class="uk-button uk-button-default" href="../Animations.html">Creating Animations with Loops</a>
+<a class="uk-button uk-button-default" href="../lectures/Animations.html">Creating Animations with Loops</a>
 
 **Example:** 
 
