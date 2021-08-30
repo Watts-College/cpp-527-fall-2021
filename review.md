@@ -13,7 +13,7 @@ session:
   sample-code: 'week-01-control-structures.R' 
   session-code: 'week-01-control-structures.Rhistory' 
 - week2:
-  date:  ''  
+  date:  'Mon Aug 30'  
   video: ''
   password: ''
   sample-code: 'week-02-loops.R' 
