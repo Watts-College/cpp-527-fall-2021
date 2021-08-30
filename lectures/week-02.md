@@ -1,6 +1,6 @@
 ---
 layout: lab
-title: Regular Expressions  
+title: Simulations  
 image: model.svg
 image-width: 150px
 ---
