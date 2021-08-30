@@ -34,6 +34,25 @@ Make sure you are clear about:
 * Return values in R 
 * Function scope 
 
+```r
+###  data recipe to convert celsius to fahrenheit
+
+temp.in.celsius <- 100
+temp.in.fahrenheit <- ( temp.in.celsius * 9/5 ) + 32
+temp.in.fahrenheit # print the new temp  
+
+  
+### repackage the recipe as a function
+
+celsius_to_fahrenheit <- function( temp.in.celsius=100 )
+{
+  temp.in.fahrenheit <- ( temp.in.celsius * 9/5 ) + 32
+  return( temp.in.fahrenheit )
+}
+                       
+celsius_to_fahrenheit( 100 )  # test the function 
+```
+  
 
 ## Logical Statements
 
@@ -50,7 +69,17 @@ Recall that logical operators like EQUALS, NOT EQUAL, AND, OR, and OPPOSITE are 
 Recall that logical statements are used to construct groups. Group membership is encoded into logical vectors, where TRUE indicates membership and FALSE indicates cases that do not belong to the group. For example, identifying commercial properties in downtown Syracuse: 
 
 ```r
+# logical statement to identify commercial properties:
+
 these <- downtown$landuse == "Commercial"
+
+# vector "these" contains TRUE and FALSE values,
+# TRUE = belongs to the group specified by the logical statement (commercial parcels)
+# FALSE = does not belong (anything other than commercial) 
+
+# if the property belongs to the desired group (these == TRUE), 
+# assign firebrick red as the color, otherwise assign gray as the property color 
+
 group.colors <- ifelse( these, "firebrick", "gray90" )     
 plot( downtown,  border="gray70", col=group.colors )     
 ```
@@ -59,7 +88,7 @@ plot( downtown,  border="gray70", col=group.colors )
 Compound logical statements require combining multiple criteria to define a group:
 
 ```r
-study.group == "TREATMENT" & gender == "FEMALE" 
+study.group == "TREATMENT"   &   gender == "FEMALE" 
 ```
 
 If you need a refresher, review the chapter on [LOGICAL STATEMENTS](http://ds4ps.org/dp4ss-textbook/p-050-business-logic.html).
@@ -81,7 +110,7 @@ IF
 
 The most frequent control structures do the following: 
 
-* Only implement code if certain requirements are met (if-then or if-else functions) 
+* Only execute a chunk of code if certain requirements are met (if-then or if-else functions) 
 * Implement code as long as a requirement is met (while loops) 
 * Repeat the same code for each item in a set (for loops) 
 
@@ -218,6 +247,10 @@ Note that the function **two.plus.two()** returns the object **x**, but after ca
 In order to replace the X that is active in the environment, you need to assign the function results to the object. 
 
 ```r
+# We use X to store the original name and also 
+# as a variable inside the function, so there
+# is a possible conflict. 
+
 x <- "iNiGo MoNtoyA"
 
 fix_names <- function( x )
@@ -226,12 +259,29 @@ fix_names <- function( x )
   return( x )
 }
 
-fix_names( x )
-[1] "INIGO MONTOYA"
-       
-x
-[1] "iNiGo MoNtoyA"
  
+# If we call the function will it
+# overwrite the original X?     
+
+# Call the function and print the results
+     
+fix_names( x )  
+[1] "INIGO MONTOYA"
+
+# Now check the original X: 
+# the function did not change the original value
+# because of function scope - the variable X inside 
+# the function does not interfere with the  
+# object X in the global environment 
+# (what happens inside functions stays inside functions) 
+      
+x
+[1] "iNiGo MoNtoyA"   
+
+# Replace the original X by assigning the 
+# function results back to the object: 
+# now the change is permanent 
+
 x <- fix_names( x )
 x
 [1] "INIGO MONTOYA"
