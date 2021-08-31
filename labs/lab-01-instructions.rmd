@@ -54,6 +54,24 @@ The first function that creates a new game, for example, does not require any ad
 For the final function, however, in order to determine if the player has won we need information about the door they have selected and the game set-up in order to evaluate whether they win the car or the goat. 
 
 
+
+**Unit Tests:**  (*some helpful vocabulary*)  
+
+A **UNIT TEST** is code that is written to check if your code is running properly. 
+
+If you are building new functions or conducting complex analysis **it is never sufficient to check that the code runs without producing an error.** You need to check that the code is producing the correct or expected results. 
+
+This requires actually knowing what a right answer looks like. 
+
+Unit tests typically test the code using multiple examples of input data that is well-understood and the answers are known. 
+
+It will also include **edge cases**, scenarios where the data may contain extreme or unexpected values or data types.
+
+
+
+<br>
+<br>
+
 ---
 
 
@@ -163,6 +181,12 @@ The host will always open a door with a goat behind it. But it can't be a door t
 Note that if the contestant selects the car on the first guess the host can open either door, but if the contestant selects a goat the host only has one option. 
 
 
+**Psuedocode** 
+
+```
+# describe your logic here
+```
+
 ```{r}
 open_goat_door <- function( game, a.pick )
 {
@@ -199,6 +223,11 @@ open_goat_door( this.game, my.initial.pick )
 
 The contestant is given the option to change from their initial selection to the other door that is still closed. The function will represent the game-playing strategy as the argument **stay=TRUE** or **stay=FALSE**. 
 
+**Psuedocode** 
+
+```
+# describe your logic here
+```
 
 ```{r}
 change_door <- function( stay=T, opened.door, a.pick )
@@ -239,6 +268,12 @@ my.final.pick
 
 
 ## STEP 5 - DETERMINE IF CONTENSTANT HAS WON
+
+**Psuedocode** 
+
+```
+# describe your logic here
+```
 
 
 ```{r, eval=F}
@@ -349,6 +384,7 @@ Try these out. If you can figure out a solution include it with your submission 
 
 
 
+
 ## PART 01:
 
 Let's change the rules a little to make outcomes more interesting. Create a board with 5 doors and 2 cars. After the contestant makes an initial selection the host will open one car door and one goat door. If the contestant decides to switch they then have to select from the two remaining doors.
@@ -372,6 +408,64 @@ How would you change the code to build this game?
 
 Note that in the first game the user would only have to specify their strategy (stay or switch). Here the user would have to specify the game size, the number of cars, and their strategy. So game size and number of cars would be added as arguments to the **build_game()** function. 
 
+<br>
+<br>
+
+## UNIT TESTS
+
+Each chunk includes some testing code afterwards to demonstrate proper use. 
+
+Add unit tests as well. Instead of randomly selecting the game set-up and initial selection, assign these values so that you know the current state of the game. 
+
+With this information you can also determine the outcome under each strategy (stay and switch). So **given any game set-up you can evaluate if your functions produce the correct answer**. 
+
+Create variables that stores the correct answers and use them to evaluate your code: 
+
+```{r, eval=F}
+# UNIT TEST A
+
+this.game <- c("goat","car","goat")
+my.initial.pick <- 2
+
+A.STAY <- "WIN"
+A.SWITCH <- "LOSE"
+
+my.final.pick <- change_door( stay=T, 
+                              opened.door=opened.door, 
+                              a.pick=my.initial.pick )
+
+outcome.stay <- determine_winner( final.pick=my.final.pick, 
+                  game=this.game )
+
+my.final.pick <- change_door( stay=F, 
+                              opened.door=opened.door, 
+                              a.pick=my.initial.pick )
+
+outcome.switch <- determine_winner( final.pick=my.final.pick, 
+                  game=this.game )
+
+case.stay <- outcome.stay == A.STAY
+case.switch <- outcome.switch == A.SWITCH 
+
+passes <- all( case.stay & case.switch )
+```
+
+Define several unit tests to inspect the efficacy of your code. 
+
+Include several in your file after Step 5. 
+
+````{md, eval=F}
+
+**Unit Test A:** 
+  
+Game Setup: **`r paste0( toupper(this.game), collapse=" " )`**  
+Initial selection: **`r my.initial.pick`**  
+Passes unit test:  **`r passes`**
+
+````
+
+<br>
+<br>
 
 
 ## Formatting Results for Inspection
@@ -472,59 +566,6 @@ paste0( "  ", win.lose[1], "     ", win.lose[2], "     ", win.lose[3], "  " )
 <br>
 
 
-## Unit Tests 
-
-
-**A UNIT TEST** is code that is written to check if your code is running properly. 
-
-If you are building new functions or conducting complex analysis **it is never sufficient to check that the code runs without producing an error.** You need to check that the code is producing the correct or expected results. 
-
-This requires actually knowing what a right answer looks like. Unit tests typically test the code using multiple examples of input data that is well-understood and the answers are known. It will also include **edge cases**, scenarios where the data may contain extreme or unexpected values or data types. 
-
-For example, we will often use log transformations to minimize the influence of extremely outliers in regression analysis. Before applying the transformation, however, we need to be sure the log transformation is defines for all values of our data. 
-
-```{r}
-log( 10000 )  # fine
-log(  1000 )  # fine
-log(   100 )  # fine 
-log(    10 )  # fine 
-log(     1 )  # fine 
-log(     0 )  # uh oh
-log(   -10 )  # not defined 
-```
-
-Technically the log function is defined at zero, but instead of removing outliers we have not introduced an even bigger one (negative infinity). 
-
-And if we try to apply the log to negative numbers it is not defined so we are basically systematically deleting all of the cases that have negative values for that variable, thus likely introducing bias. 
-
-So log transformations, it turns out, are not great when our quantitative data is not all positive and non-zero (we can actually add 1 to the vector to deal with the cases that are zero, but negative values still cause problems). 
-
-If it's been awhile since you have worked with logs and you are trying to understand their behavior **the code chunk above is a great example of the type of unit test you would write to make sure you are not corrupting your data** through the variable transformation. 
-
-It includes typical values for your variable (x=10 to x=10000), and also edge cases (x=0 or x<0). When working with numeric variables the min, the max, and zero are all possible edge cases. 
-
----
-
-In this game edge cases might be things like picking a car on the first try. 
-
-The function below prints out all of the details of a single game - the initial game set-up, the initial and final door selections, and whether the contestant won. 
-
-You are checking whether your functions work by inspecting the results to see if the code follows all of the rules: 
-
-1. The host can't open a car door or the current pick. 
-2. If the contestant has a strategy of SWITCH does the door selection change? 
-3. If the contestant has a strategy of STAY does the door selection remain the same? 
-4. The second pick can't be the first pick or the open door. 
-5. The game outcome is determined by evaluating whether the final selection was a door with a car behind it. 
-
-Since the game utilizes randomization to create the game set-up and pick the doors you should run this check several times and inspect results to ensure your solutions are robust to different scenarios. 
-
-**What sorts of unit tests would you want to run to ensure your code is working properly here?**
-
-Specifically, which scenarios would be helpful to test.  
-
-<br>
-<br>
 
 
 
