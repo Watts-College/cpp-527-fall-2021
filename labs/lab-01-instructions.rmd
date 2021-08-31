@@ -284,9 +284,196 @@ determine_winner( final.pick=my.final.pick,
 
 ## TESTING YOUR CODE
 
-Note that each step includes an extra chunk that allows you to run the code you just wrote to see if it works. 
+Use the following code to test your game and print results. 
 
-These are examples of unit tests.
+Add the argument echo=F to your R chunk for a more readable print-out.  
+
+
+````markdown
+`r ''````{r, echo=F}
+
+# your game "recipe" 
+this.game <- create_game()
+my.initial.pick <- select_door()
+opened.goat.door <- open_goat_door( this.game, my.initial.pick )
+
+# save results for both strategies for the game
+my.final.pick.stay <- change_door( stay=T, 
+                                   opened.door=opened.goat.door, 
+                                   a.pick=my.initial.pick )
+my.final.pick.switch <- change_door( stay=F, 
+                                     opened.door=opened.goat.door, 
+                                     a.pick=my.initial.pick )
+
+# print game details and if you won
+
+# if you stayed:
+paste0( "GAME SETUP" )
+this.game
+paste0( "My initial selection: ", my.initial.pick )
+paste0( "The opened goat door: ", opened.goat.door )
+paste0( "My final selection: ", my.final.pick.stay )
+paste0( "GAME OUTCOME:" )
+determine_winner( final.pick=my.final.pick.stay, 
+                  game=this.game )
+
+# if you switched:
+paste0( "GAME SETUP" )
+this.game
+paste0( "My initial selection: ", my.initial.pick )
+paste0( "The opened goat door: ", opened.goat.door )
+paste0( "My final selection: ", my.final.pick.switch )
+paste0( "GAME OUTCOME:" )
+determine_winner( final.pick=my.final.pick.switch, 
+                  game=this.game )
+
+`r ''````
+````
+
+
+
+<br>
+<br>
+<hr>
+<br>
+<br>
+
+
+
+
+# Challenge Questions
+
+<br>
+
+Try these out. If you can figure out a solution include it with your submission and post it to YellowDig to get bonus admiration points from your classmates. 
+
+
+
+## PART 01:
+
+Let's change the rules a little to make outcomes more interesting. Create a board with 5 doors and 2 cars. After the contestant makes an initial selection the host will open one car door and one goat door. If the contestant decides to switch they then have to select from the two remaining doors.
+
+How does this new board change the pay-off from the game? Is switching still the best strategy? 
+
+
+<br>
+
+## PART 02:
+
+We are building functions to play a game in a static world. There are always three doors, one car, and two goats. 
+
+What happens if we are in a dynamic world? 
+
+The game can have three or more doors (in a game with two doors there would be no switching so there is no strategy to study). 
+
+And we can also have one or more cars up to N-2 (N being the number of doors, there always need to be at least two goats so that the host can open a goat door, even if the contestant selected a goat in the first round). 
+
+How would you change the code to build this game? 
+
+Note that in the first game the user would only have to specify their strategy (stay or switch). Here the user would have to specify the game size, the number of cars, and their strategy. So game size and number of cars would be added as arguments to the **build_game()** function. 
+
+
+
+## Formatting Results for Inspection
+
+Try using the following code to present your results in a more visual manner. 
+
+*NOTE, the code itself might not make much sense yet but you will see why it's easier to inspect game results to see if your code is working when you are using a visual layout of game results.*  
+
+
+Copy and paste the first part (IF CONTESTANT STAYS chunk) directly into your RMD document - it is regular markdown text with inline code. 
+
+````{md, eval=F}
+### IF CONTESTANT STAYS
+
+Game Setup: **`r paste0( toupper(this.game), collapse=" " )`**  
+Initial selection: **`r my.initial.pick`**  
+The opened goat door: **`r opened.goat.door`**  
+Final door selection: **`r my.final.pick.stay`**
+Game outcome: **`r game.outcome.stay`**
+
+````
+
+Copy and paste the following R chunk below that.
+
+
+````markdown
+`r ''````{r, echo=F}
+this.game[ this.game == "car" ] <- "car "
+this.game <- toupper( this.game )
+
+first.pick <- c("        ","        ","        ")
+first.pick[ my.initial.pick ] <- "1st Pick"
+open.door <- c("        ","        ","        ")
+open.door[ opened.goat.door ] <- " Opened "
+final <- c("        ","        ","        ")
+final[ my.final.pick.stay ] <- " Final  " 
+
+win.lose <- final
+win.lose[ my.final.pick.stay ] <- paste0( "! ", game.outcome.stay, " !" )
+
+outcome <- paste0( rep( paste0( "! ", game.outcome.stay, " !" ), 5 ), collapse="" )
+  
+paste0( "  | ", this.game[1], " |     | ", this.game[2], " |     | ", this.game[3], " |  " )
+paste0( "  ", first.pick[1], "     ", first.pick[2], "     ", first.pick[3], "  " )
+paste0( "  ", open.door[1], "     ", open.door[2], "     ", open.door[3], "  " )
+paste0( "  ", final[1], "     ", final[2], "     ", final[3], "  " )
+paste0( "  ", win.lose[1], "     ", win.lose[2], "     ", win.lose[3], "  " )
+
+`r ''````
+````
+
+
+Repeat these steps with the second part (IF CONTESTANT SWITCHES): 
+
+
+```{md, eval=F}
+### IF CONTESTANT SWITCHES
+
+Game Setup: **`r paste0( toupper(this.game), collapse=" " )`**  
+Initial selection: **`r my.initial.pick`**  
+The opened goat door: **`r opened.goat.door`**  
+Final door selection: **`r my.final.pick.switch`**  
+Game outcome: **`r game.outcome.switch`**   
+
+```
+
+
+
+````markdown
+`r ''````{r, echo=F}
+
+this.game[ this.game == "car" ] <- "car "
+this.game <- toupper( this.game )
+first.pick <- c("        ","        ","        ")
+first.pick[ my.initial.pick ] <- "1st Pick"
+open.door <- c("        ","        ","        ")
+open.door[ opened.goat.door ] <- " Opened "
+final <- c("        ","        ","        ")
+final[ my.final.pick.switch ] <- " Final  " 
+outcome <- paste0( rep( paste0( " ", game.outcome.switch, "! " ), 5 ), collapse="" )
+
+win.lose <- final
+win.lose[ my.final.pick.switch ] <- paste0( "! ", game.outcome.switch, " !" )
+
+paste0( "  | ", this.game[1], " |     | ", this.game[2], " |     | ", this.game[3], " |  " )
+paste0( "  ", first.pick[1], "     ", first.pick[2], "     ", first.pick[3], "  " )
+paste0( "  ", open.door[1], "     ", open.door[2], "     ", open.door[3], "  " )
+paste0( "  ", final[1], "     ", final[2], "     ", final[3], "  " )
+paste0( "  ", win.lose[1], "     ", win.lose[2], "     ", win.lose[3], "  " )
+
+
+`r ''````
+````
+
+
+
+<br>
+<br>
+
+
+## Unit Tests 
+
 
 **A UNIT TEST** is code that is written to check if your code is running properly. 
 
@@ -332,81 +519,12 @@ You are checking whether your functions work by inspecting the results to see if
 
 Since the game utilizes randomization to create the game set-up and pick the doors you should run this check several times and inspect results to ensure your solutions are robust to different scenarios. 
 
-**TEST THE GAME** 
+**What sorts of unit tests would you want to run to ensure your code is working properly here?**
 
-
-```{r}
-# your game "recipe" 
-this.game <- create_game()
-my.initial.pick <- select_door()
-opened.goat.door <- open_goat_door( this.game, my.initial.pick )
-
-# save results for both strategies for the game
-my.final.pick.stay <- change_door( stay=T, 
-                                   opened.door=opened.goat.door, 
-                                   a.pick=my.initial.pick )
-my.final.pick.switch <- change_door( stay=F, 
-                                     opened.door=opened.goat.door, 
-                                     a.pick=my.initial.pick )
-
-# print game details and if you won
-
-# if you stayed:
-paste0( "GAME SETUP" )
-this.game
-paste0( "My initial selection: ", my.initial.pick )
-paste0( "The opened goat door: ", opened.goat.door )
-paste0( "My final selection: ", my.final.pick.stay )
-paste0( "GAME OUTCOME:" )
-determine_winner( final.pick=my.final.pick.stay, 
-                  game=this.game )
-
-# if you switched:
-paste0( "GAME SETUP" )
-this.game
-paste0( "My initial selection: ", my.initial.pick )
-paste0( "The opened goat door: ", opened.goat.door )
-paste0( "My final selection: ", my.final.pick.switch )
-paste0( "GAME OUTCOME:" )
-determine_winner( final.pick=my.final.pick.switch, 
-                  game=this.game )
-```
-
+Specifically, which scenarios would be helpful to test.  
 
 <br>
 <br>
-
-
-# Challenge Questions
-
-<br>
-
-Try these out. If you can figure out a solution include it with your submission and post it to YellowDig to get bonus admiration points from your classmates. 
-
-
-
-## PART 01:
-
-Let's change the rules a little to make outcomes more interesting. Create a board with 5 doors and 2 cars. After the contestant makes an initial selection the host will open one car door and one goat door. If the contestant decides to switch they then have to select from the two remaining doors.
-
-How does this new board change the pay-off from the game? Is switching still the best strategy? 
-
-
-<br>
-
-## PART 02:
-
-We are building functions to play a game in a static world. There are always three doors, one car, and two goats. 
-
-What happens if we are in a dynamic world? 
-
-The game can have three or more doors (in a game with two doors there would be no switching so there is no strategy to study). 
-
-And we can also have one or more cars up to N-2 (N being the number of doors, there always need to be at least two goats so that the host can open a goat door, even if the contestant selected a goat in the first round). 
-
-How would you change the code to build this game? 
-
-Note that in the first game the user would only have to specify their strategy (stay or switch). Here the user would have to specify the game size, the number of cars, and their strategy. So game size and number of cars would be added as arguments to the **build_game()** function. 
 
 
 
