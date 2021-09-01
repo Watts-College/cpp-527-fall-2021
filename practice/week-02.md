@@ -91,9 +91,11 @@ while( cash > 0 )
 
 ### Q2-A: Visualize the Game
 
-Similar to the lecture notes, create a visualization of the cash that a player has at each round of the game until they go broke. 
+Similar to the lecture notes, create a visualization of the cash that a player has at each round of the game until they go broke. Similar to this example but animated: 
 
 ![](https://watts-college.github.io/cpp-527-fall-2021/lectures/p-02-loops_files/figure-html/unnamed-chunk-32-1.png)
+ 
+           
            
 ### Q2-B: You've got to know when to fold them
 
@@ -101,7 +103,7 @@ Starting with $10 in the game, how long does it take the **typical** player to g
 
 If you don't want to do a complicated mathematical proof,  create a simulation, play the game 10,000 times, then report the **average** duration of each game.
 
-*Side note, would the mean or the median be a better measure of the average here?*
+*Would the **mean** or the **median** be a better measure of the average here?*
 
 I would suggest wrapping the code above into a **play_game()** function and calling that function repeatedly inside your loop. 
 
@@ -160,6 +162,8 @@ Use the loop above to generate particle positions.
 Create an animation to visualize the movement of the particle.
 
 Discuss the package or app you used to generate the GIF. 
+  
+  
 
 ### Q3-B: Shadow of the past
 
