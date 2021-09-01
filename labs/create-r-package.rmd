@@ -72,6 +72,7 @@ devtools::install_github( "yourGitHubName/montyhall" )
 ```
 
 
+_Note, if you make a mistake or encounter an error delete the new **montyhall** folder before starting over._
 
 The examples below will walk you through the steps. You will also need to download the Monty Hall Problem functions that we completed during Labs 01 and 02 from the link below. This script contains some roxygen text to get you started with the process of documentation. 
 
@@ -107,12 +108,27 @@ devtools::has_devel()
 ## Build a Package Skeleton
 
 ```{r, eval=F}
+# set your directory if you want the package 
+# created in a folder other than the default "documents" 
+
+setwd( "some/path/here" )
+```
+
+```{r, eval=F}
 # devtools::create_package() has been deprecated
-# set your directory
-# setwd()
 usethis::create_package( "montyhall" )
 ```
 
+This example is using the default "documents" directory: 
+
+```
+getwd()  # documents in this example
+usethis::create_package( "montyhall" )
+
+documents     # package created inside documents 
+├─ montyhall  # new folder that will appear after create_package()
+│  ├─ R
+```
 
 What you should see:
 
@@ -145,7 +161,7 @@ You will now have a directory in your current folder called **montyhall**. This 
 
 ![](images/new-r-package.png)
 
-*Note, some of these files like gitignore are from GitHub - they will appear after completing Step 05. Files may vary by operating system, but you should at the very least have the R folder, a DESCRIPTION file, and a NAMESPACE file.
+*Note, some of these files like gitignore are from GitHub - they will appear after completing Step 05. Files may vary by operating system, but you should at the very least have the R folder, a DESCRIPTION file, and a NAMESPACE file.*
 
 ## Document Your Functions
 
@@ -189,12 +205,22 @@ sum <- function(..., na.rm = TRUE) {}
 ```
 
 Note that good documentation describes all of the arguments needed by the function, including the required data types of each object. And clearly describe what will be returned when the function runs (type of object, what it contains). 
+*Roxygen, unlike R, is sensitive to the number of spaces your use. So don't alter the formatting of the default comments in your script.*
 
 Place your documented R scripts into the "R" folder in your package directory, then try:
 
+
+
 ```{r, eval=F}
 setwd( "montyhall" )
+getwd()   # 'C:/Users/username/Documents/montyhall'
 devtools::document()
+```
+
+```
+documents  
+├─ montyhall    # should be inside here now
+│  ├─ R         # your R scripts should be in here  
 ```
 
 You should see: 
@@ -211,15 +237,30 @@ You will see some errors as well if you have not yet finished documenting your f
 
 _**Depending upon your OS and your R devtools version you may be required to complete ALL documentation before preceding to the next steps. At the very least each function should have a title.**_
 
-You will now have a new folder in your *montyhall* directory called "man", short for "manuals". The documentation files have an .Rd (R documentation) extension. 
+You will now have a new folder in your *montyhall* directory called "man", short for "manuals".  The documentation files have an .Rd (R documentation) extension. The *man* folder should contain one .Rd file for each exported function in your script (*change_door.Rd*, *create_game.Rd*, etc.).
 
 
 ## Install Your Package
 
-Go up one level in your directory so you are outside of the package folder, but in the same folder where the package folder lives. Then run the command to install your new package. 
+Go up one level in your directory so you are outside of the package folder, but in the same folder where the package folder lives. 
 
 ```{r, eval=F}
 setwd( ".." )
+getwd()   # back to documents 
+devtools::install( "montyhall" )
+```
+
+
+```
+documents     # should be back here 
+├─ montyhall  
+│  ├─ R
+│  ├─ man     # new *.rd files will be here 
+```
+
+Then run the command to install your new package. 
+
+```{r, eval=F}
 devtools::install( "montyhall" )
 ```
 
@@ -265,8 +306,6 @@ If successful you will see messages like this:
 # ** testing if installed package keeps a record of temporary installation path
 # * DONE (montyhall)
 ```
-
-
 
 
 
