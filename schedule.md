@@ -365,6 +365,8 @@ It uses loops to create effective data visualization:
 
 **Due {{page.projects.r-package}}**
 
+*To receive credit for the assignment, submit the URL to your package on GitHub through Canvas.*
+
 <hr> 
   
 
@@ -384,8 +386,7 @@ The documentation will also be inspected to ensure there are complete instructio
 
 You will receive a grade of zero if you package cannot be installed or run, and you will lose 5 points if documentation is unavailable. 
 
-*To receive credit for the assignment, submit the URL to your package on GitHub.*
-  
+
 <br> 
 <br> 
   
