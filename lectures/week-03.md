@@ -32,7 +32,7 @@ So regular expressions can be very useful for searching large databases for gene
 
 [Slides](https://github.com/DS4PS/cpp-527-spr-2020/raw/master/lectures/string-processing-slides.pdf)
 
-[Slides](../../raw/main/lectures/string-processing-slides.pdf)
+[Slides](../../raw/master/lectures/string-processing-slides.pdf)
 
 **Helpful Reference Material:**
 
