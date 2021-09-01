@@ -23,15 +23,17 @@ image-width: 150px
 We encountered a strange bug in the Monty Hall problem that arises from the behavior of the sample function in these scenarios: 
   
 ```r
+# case a
 sample( x=2, size=1, replace=FALSE )  # x turns into 1:2 or c(1,2)
+# case b
 sample( x=3, size=1, replace=FALSE )  # x turns into c(1,2,3)
 # would not matter
 sample( x=1, size=1, replace=FALSE )  # x is 1:1 so still just 1  
 ```
   
-I have made the conjecture that this bug will result in the wrong door opened in 18% of games played. *The error rate of game outcomes would 
+I have made the conjecture that this bug will result in the wrong door opened in 18% of games played.
   
-> In those two scenarios there is a 50% chance and 33% chance of returning the correct value from the sample function (random draws from [1,2] and [1,2,3] when correct values are 2 and 3 respectively).
+> In case A there is a 50% chance of returning the correct value from the sample function (random draw from [1,2] when the correct door is 2) and in Case B a 33% chance of returning the correct door (random draw from [1,2,3] when the correct door is 3).
 > 
 > We encounter each scenario 2 times out of 9: car in 1st position and we pick 3rd door, and vice-versa. Or car in second position and we pick 1st door, and vice-versa.
 > 
