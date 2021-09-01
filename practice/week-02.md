@@ -29,7 +29,7 @@ sample( x=3, size=1, replace=FALSE )  # x turns into c(1,2,3)
 sample( x=1, size=1, replace=FALSE )  # x is 1:1 so still just 1  
 ```
   
-I have made the conjecture that this bug will result in errors in 18% of games played. 
+I have made the conjecture that this bug will result in the wrong door opened in 18% of games played. *The error rate of game outcomes would 
   
 > In those two scenarios there is a 50% chance and 33% chance of returning the correct value from the sample function (random draws from [1,2] and [1,2,3] when correct values are 2 and 3 respectively).
 > 
@@ -37,10 +37,26 @@ I have made the conjecture that this bug will result in errors in 18% of games p
 > 
 > So we expect the error to occur in (2/9)(1/2) + (2/9)(1/3) = 0.185 proportion of games played. 
 
-Use the problematic open_goat_door() function below and write an automated unit test to measure the error rate. 
+Use the problematic open_goat_door() function below and write an automated unit test to measure the error rate **at the stage of opening the goat door after the contestant makes the first selection** (you don't have to model the stay/switch step or final outcome step - you are only evaluating whether the correct door was opened here). 
   
-In your unit test you must visit each scenario the same number of times (or approximately the same number). 
+In your unit test visit each game scenario the same number of times (or approximately the same number). 
 
+```
+# example scenarios - will be 9 total 
+  
+game <- c("goat","goat","car")
+first.pick <- 1
+correct.open.door <- 2
+
+game <- c("goat","goat","car")
+first.pick <- 2
+correct.open.door <- 1
+
+game <- c("goat","goat","car")
+first.pick <- 3
+correct.open.door <- c(1,2)
+```
+  
 Play 10,000 games and compare the results of the open_goat_door() function to a set of correct outcomes (you will need to define these for each scenario). 
   
 Share your solution and report the average error rate of the function. 
