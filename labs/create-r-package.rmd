@@ -83,7 +83,10 @@ Note that you will update this script and place it in the montyhall/R folder aft
 The package code has been provided for you. You just need to complete the documentation and develop the test code for each function (you can adapt these from the unit testing examples in the labs). You place the **montyhall.R** script directly in the folder. You should not be using RMD files in this assignment. 
 
 
-## Install Development Packages
+
+## STEPS: 
+
+### Install Development Packages
 
 ```{r, eval=F}
 install.packages(c("devtools", "roxygen2","usethis","testthat","knitr"))
@@ -105,7 +108,7 @@ devtools::has_devel()
 
 
 
-## Build a Package Skeleton
+### Build a Package Skeleton
 
 ```{r, eval=F}
 # set your directory if you want the package 
@@ -163,7 +166,7 @@ You will now have a directory in your current folder called **montyhall**. This 
 
 *Note, some of these files like gitignore are from GitHub - they will appear after completing Step 05. Files may vary by operating system, but you should at the very least have the R folder, a DESCRIPTION file, and a NAMESPACE file.*
 
-## Document Your Functions
+### Document Your Functions
 
 Add your roxygen comments to your R scripts:
 
@@ -240,7 +243,65 @@ _**Depending upon your OS and your R devtools version you may be required to com
 You will now have a new folder in your *montyhall* directory called "man", short for "manuals".  The documentation files have an .Rd (R documentation) extension. The *man* folder should contain one .Rd file for each exported function in your script (*change_door.Rd*, *create_game.Rd*, etc.).
 
 
-## Install Your Package
+*You can skip to the testing step below if you want to see if the package is functional.* 
+
+
+### Update Your Package Description 
+
+Navigate to the main "montyhall" package folder on your computer and open the file called "DESCRIPTION" in a text editor (your computer will have a text editor like notebook). You will see something like this: 
+
+```{r, eval=F}
+Package: montyhall
+Title: What the Package Does (One Line, Title Case)
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "First",
+           family = "Last",
+           role = c("aut", "cre"),
+           email = "first.last@example.com",
+           comment = c(ORCID = "YOUR-ORCID-ID"))
+Description: What the package does (one paragraph).
+License: What license it uses
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.1.1
+```
+
+Since we use dplyr in the package, we need to add another line to import and attach it. Add: 
+
+```
+Depends: 
+   dplyr
+```
+
+Now complete the rest of the fields from "Title" to "Description". 
+
+
+```{r, eval=F}
+Package: montyhall
+Title: What the Package Does (One Line, Title Case)
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "First",
+           family = "Last",
+           role = c("aut", "cre"),
+           email = "first.last@example.com",
+           comment = c(ORCID = "YOUR-ORCID-ID"))
+Description: What the package does (one paragraph).
+Depends:
+	dplyr
+License: What license it uses
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.1.1
+```
+
+
+
+
+## TEST IT: 
+
+### Install Your Package
 
 Go up one level in your directory so you are outside of the package folder, but in the same folder where the package folder lives. 
 
@@ -311,7 +372,7 @@ If successful you will see messages like this:
 
 
 
-## Test It 
+### Try Loading  
 
 In a new R session try:
 
@@ -333,10 +394,27 @@ create_game()
 create_game()
 ```
 
+### Removing Packages
+
+If you encounter an error or the package is not working properly, you might need to fix your code and try again. 
+
+You should be able to update the package then simply reinstall it. R will recognize that there are changes to the package and will install the most recent version. 
+
+If you run into problems you can force a package deletion then install fresh. 
+
+```{r, eval=F}
+# library() attaches the package to the current environment
+# detach is the opposite of library() - closes the package 
+detach( "package:montyhall" )  # closes the package so not locked
+remove.packages( "montyhall" ) # deletes from your computer 
+```
+
+If that fails, you probably have the package loaded in another R session or have package files locked by editing them in another program. 
+
+If all else fails, you can delete the package manually from your personal R packages library, which usually lives in your Documents folder. 
 
 
-
-## Check Help Files
+### Check Help Files
 
 You should be able to preview the help files that you created with your roxygen comments. 
 
@@ -345,64 +423,18 @@ help( "create_game" )
 ```
 
 
-## Update Your Package Description 
-
-Navigate to the main "montyhall" package folder on your computer and open the file called "DESCRIPTION" in a text editor (your computer will have a text editor like notebook). You will see something like this: 
-
-```{r, eval=F}
-Package: montyhall
-Title: What the Package Does (One Line, Title Case)
-Version: 0.0.0.9000
-Authors@R: 
-    person(given = "First",
-           family = "Last",
-           role = c("aut", "cre"),
-           email = "first.last@example.com",
-           comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
-License: What license it uses
-Encoding: UTF-8
-LazyData: true
-RoxygenNote: 6.1.1
-```
-
-Since we use dplyr in the package, we need to add another line to import and attach it. Add: 
-
-```
-Depends: 
-   dplyr
-```
-
-Now complete the rest of the fields from "Title" to "Description". 
-
-
-```{r, eval=F}
-Package: montyhall
-Title: What the Package Does (One Line, Title Case)
-Version: 0.0.0.9000
-Authors@R: 
-    person(given = "First",
-           family = "Last",
-           role = c("aut", "cre"),
-           email = "first.last@example.com",
-           comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
-Depends:
-	dplyr
-License: What license it uses
-Encoding: UTF-8
-LazyData: true
-RoxygenNote: 6.1.1
-```
 
 
 
-# GitHub Hosting
+## SHARE YOUR PACKAGE: 
+
 
 
 You have a couple of options for sharing your new package with others. You could submit the package to the CRAN so that everyone in the world could install it in R using **install.packages("montyhall")**. 
 
 We cannot use this option because (1) it's a homework assignment so we don't want to burden people with the task of reviewing a new package, (2) package names on the CRAN must be unique so everyone from the class would have to name it something different, and (3) the CRAN requires that the package passes some robustness checks to ensure everything is documented correctly and all of the code is running smoothly. 
+
+### Hosting on GitHub
 
 A simpler option is to host your package on GitHub. Complete the following steps to upload your code to a new repository on GitHub:
 
@@ -420,13 +452,31 @@ A simpler option is to host your package on GitHub. Complete the following steps
 11. You should see the files appear in the GitHub Desktop app. In the "summary" field type something like "initial commit" and at the bottom left select "Commit to master". 
 12. Now up at the top select "Push origin". 
 
-This last step sends all of the files to GitHub. They sould appear on your repo page shortly. 
+This last step sends all of the files to GitHub. They should appear on your repo page shortly. 
 
 Now others should be able to install your package by typing: 
 
 ```{r, eval=F}
 devtools::install_github( "yourGitHubName/montyhall" )
 ```
+
+
+### Test from GitHub
+
+If you want to test whether installation works from GitHub first delete the version you installed earlier from your local machine. It will prevent conflicts when trying to install an identical version of the package, just from a different location.  
+
+```{r, eval=F}
+remove.packages( "montyhall" ) # deletes from your computer 
+devtools::install_github( "yourGitHubName/montyhall" )
+montyhall::create_game()
+```
+
+See notes above on removing packages for more details. 
+
+
+<br>
+<hr>
+<br>
 
 
 
@@ -447,5 +497,17 @@ These are a few good resources for reference:
 <hr>
 <br>
 <br>
+
+```{r, eval=F, echo=F}
+#dd4814
+```
+
+
+<style>
+h1{ font-size: 40px }
+h2 { margin-top: 80px;
+     color: brown }
+h3 { margin-top: 50px }
+</style>
 
 
