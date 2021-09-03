@@ -3,6 +3,9 @@ layout: lab
 title: Regular Expressions  
 image: model.svg
 image-width: 150px
+
+pdf_base: 'https://github.com/watts-college/cpp-527-fall-2021/raw/master/'  
+
 ---
 
 <div class = "uk-container uk-container-small">
@@ -32,7 +35,7 @@ So regular expressions can be very useful for searching large databases for gene
 
 [Slides](https://github.com/DS4PS/cpp-527-spr-2020/raw/master/lectures/string-processing-slides.pdf)
 
-[Slides](../../raw/master/lectures/string-processing-slides.pdf)
+[Slides]({{pdf_base}}lectures/string-processing-slides.pdf)
 
 **Helpful Reference Material:**
 
