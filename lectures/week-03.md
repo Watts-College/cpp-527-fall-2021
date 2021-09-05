@@ -31,13 +31,19 @@ The core of all text analysis requires two sets of skills. Text is computer scie
 
 So regular expressions can be very useful for searching large databases for general classes of text, or alternatively for searching for generic text that occurs only in a very specific context (at the beginning or end of a word, in the middle of a phrase, etc.). 
 
-[Chapter](../string-processing.html)
+<a class="uk-button uk-button-default" href="../string-processing.html">CHAPTER</a>
 
-[Slides](https://github.com/DS4PS/cpp-527-spr-2020/raw/master/lectures/string-processing-slides.pdf)
+<a class="uk-button uk-button-default" href="https://github.com/DS4PS/cpp-527-spr-2020/raw/master/lectures/string-processing-slides.pdf">SLIDES</a>
 
-[Slides]({{pdf_base}}lectures/string-processing-slides.pdf)
+<a class="uk-button uk-button-default" href="../lectures/string-processing-slides.pdf">SLIDES</a>
 
-**Helpful Reference Material:**
+
+## Character Encoding in ASCII  
+
+<a class="uk-button uk-button-default" href="../ascii/">Character Encoding</a>
+  
+  
+## Helpful Reference Material
 
 [stringR package](https://cran.r-project.org/web/packages/stringr/vignettes/stringr.html)
 
