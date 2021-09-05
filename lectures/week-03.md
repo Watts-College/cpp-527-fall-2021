@@ -40,7 +40,31 @@ So regular expressions can be very useful for searching large databases for gene
 
 ## Character Encoding in ASCII  
 
-<a class="uk-button uk-button-default" href="../ascii/">Character Encoding</a>
+You have learned that R stores factors as a numeric vector with a hash table to lookup the category labels: 
+  
+```r
+f
+[1] cat   dog   cat   mouse dog  
+Levels: cat dog mouse
+
+as.numeric(f)
+[1] 1 2 1 3 2
+
+# hash table 
+# 1 = "cat"
+# 2 = "dog"
+# 3 = "mouse"
+```  
+  
+A **hash table** is a table used to translate values from one representation to another. For example, the Morse Code is a famous system used to translate short and long beeps (sound) into written letters: 
+  
+![](https://www.boxentriq.com/img/morse-code/morse-code-overview.png)
+  
+Computers use a similar encoding system to represent text in word processors and browsers called the **ASCII Table**.
+  
+Here you will find some basic background information on character encoding to help make sense of strange behaviors you might encounter while working with text: 
+  
+<a class="uk-button uk-button-default" href="../ascii/">CHARACTER ENCODING</a>
   
   
 ## Helpful Reference Material
