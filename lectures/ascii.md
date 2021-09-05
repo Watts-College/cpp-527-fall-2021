@@ -40,6 +40,9 @@ When computers render raw digital files for human consumption they are translati
 01010100  = T
 ```
 
+<br>
+<br>
+
 ## ASCII Tables 
 
 Each character is stored as a separate code in an ASCII hash table, the universal table all computers use to map digits to text.  
@@ -70,6 +73,9 @@ Similar to how R loads packages at the beginning of scripts, raw HTML files list
 </head>
 ```
 
+<br>
+<br>
+
 ## Stylized Characters 
 
 Modern word processors and browsers have started replacing regular quote marks with stylized open and closed quote marks for visual design purposes. 
@@ -91,6 +97,9 @@ gsub( "we're", "we are", x )
 Spaces are actually one of the biggest issues - word processors and browsers have started using narrow spaces and wide spaces in addition to the regular space. They are different characters but are almost invisible to the naked eye, so can cause issues when trying to remove spaces. 
 
 As a consequence, when you are loading text data you need to be conscious of whether these special characters have been introduced into your data. 
+
+<br>
+<br>
 
 ## ASCII Errors 
 
@@ -119,9 +128,20 @@ https://www.i18nqa.com/debug/utf8-debug.html
 
 Which can help you work backwards to figure out what the character was supposed to be. 
 
+<br>
+<br>
 
 ## Pre-Processing Data in Text Analysis 
 
-Typically these issues are reconciled at the data load and data cleaning step in text analysis. Sometimes you can simply delete anything from the extended ASCII table if it is not pertinent to your analysis. Other times you would basically search for all of these weird codes and replace them with the intended text. 
+Typically these issues are reconciled at the data load and data cleaning step in text analysis. 
+
+Sometimes you can simply delete anything from the extended ASCII table if it is not pertinent to your analysis. Other times you would basically search for all of these weird codes and replace them with the intended text. 
 
 There are, of course, R packages for all of this. 
+
+<br>
+<br>
+<hr>
+<br>
+<br>
+
