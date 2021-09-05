@@ -39,7 +39,7 @@ Even if not conducting text analysis, you will use string processing functions +
 
 <a class="uk-button uk-button-default" href="https://github.com/DS4PS/cpp-527-spr-2020/raw/master/lectures/string-processing-slides.pdf">SLIDES</a>
 
-<a class="uk-button uk-button-default" href="../lectures/string-processing-slides.pdf">SLIDES</a>
+<a class="uk-button uk-button-default" href="../string-processing-slides.pdf">SLIDES</a>
 
 <br>
 <hr>
