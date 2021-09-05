@@ -23,13 +23,17 @@ pdf_base: 'https://github.com/Watts-College/cpp-527-fall-2021/raw/main/'
 
 The core of all text analysis requires two sets of skills. Text is computer science is referred to as "strings", a reference to the fact that spoken languages mean nothing to computers so they just treat them as strings of letters (words) or strings of words (sentences). String processing refers to a set of functions and conventions that are used to manipulate text as data. If you think about the data steps for regular data, we clean combine, transform, and merge data inside of data frames. Similarly there are operations for important text datasets (often lots of documents full of words), cleaning them (removing words, fixing spelling errors), merging documents, etc. Core R contains many string processing functions, and there are lots of great packages. 
 
-"Regular expression" are a set of functions used to aid in processing text by defining very precise ways to query a text database by looking for specific strings, or more often strings that match some specific pattern that has meaning. For example, if I gave you the following text with everything but punctuation replaced by X, you could still tell me what the word are for: 
+"Regular expression" are a set of functions used to aid in processing text by defining very precise ways to query a text database by looking for specific strings, or more often strings that match some specific pattern that has meaning. 
+  
+For example, even with all of the actual letters replaced by X here you can still tell me what each of these represent: 
 
 * xxxxx@xxx.com   (email address) 
 * www.xxxxxxxx.xxx   (web URL)
 * @xxxxxxx  (social media handle) 
 
 So regular expressions can be very useful for searching large databases for general classes of text, or alternatively for searching for generic text that occurs only in a very specific context (at the beginning or end of a word, in the middle of a phrase, etc.). 
+
+Even if not conducting text analysis, you will use string processing functions + regular expressions extensively to clean your data. 
 
 <a class="uk-button uk-button-default" href="../string-processing.html">CHAPTER</a>
 
