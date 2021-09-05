@@ -65,7 +65,13 @@ Computers use a similar encoding system to represent text in word processors and
 Here you will find some basic background information on character encoding to help make sense of strange behaviors you might encounter while working with text: 
   
 <a class="uk-button uk-button-default" href="../ascii/">CHARACTER ENCODING</a>
+
+
+![](http://www.plcdev.com/files/plcdev/images/Simple%20ASCII%20Table_0.gif)  
   
+<br>
+<hr>
+<br>
   
 ## Helpful Reference Material
 
