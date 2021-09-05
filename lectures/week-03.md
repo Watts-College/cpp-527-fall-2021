@@ -58,7 +58,7 @@ as.numeric(f)
   
 A **hash table** is a table used to translate values from one representation to another. For example, the Morse Code is a famous system used to translate short and long beeps (sound) into written letters: 
   
-![](https://www.boxentriq.com/img/morse-code/morse-code-overview.png)
+![](images/morse-code.png)
   
 Computers use a similar encoding system to represent text in word processors and browsers called the **ASCII Table**.
   
@@ -67,7 +67,7 @@ Here you will find some basic background information on character encoding to he
 <a class="uk-button uk-button-default" href="../ascii/">CHARACTER ENCODING</a>
 
 
-![](http://www.plcdev.com/files/plcdev/images/Simple%20ASCII%20Table_0.gif)  
+![](images/simple-ascii.gif)  
   
 <br>
 <hr>
