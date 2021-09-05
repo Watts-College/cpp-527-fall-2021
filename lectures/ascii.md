@@ -54,7 +54,11 @@ Your computer will use the BIN (8 bit or one byte binary version) to store a cha
 
 The ASCII table can store 256 unique characters (2^8=256). The first 128 characters in the ASCII table are universal - all computers use the same symbols for english-language documents. 
 
+![](images/simple-ascii.gif)
+
 The second half of the table is called the **Extended ASCII** set. There are multiple versions for the second half of the table, depending upon which style you prefer or which language you are trying to encode. You need to know which version of the extended ASCII table you are working with otherwise you won't know which character a specific code represents. 
+
+![](images/extended-ascii.gif)
 
 Similar to how R loads packages at the beginning of scripts, raw HTML files list a bunch of libraries and arguments at the top of each page so that the browser can use the correct character encoding rules: 
 
