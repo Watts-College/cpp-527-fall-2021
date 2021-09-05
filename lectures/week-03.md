@@ -37,6 +37,9 @@ So regular expressions can be very useful for searching large databases for gene
 
 <a class="uk-button uk-button-default" href="../lectures/string-processing-slides.pdf">SLIDES</a>
 
+<br>
+<hr>
+<br>
 
 ## Character Encoding in ASCII  
 
