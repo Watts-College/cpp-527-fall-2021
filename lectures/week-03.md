@@ -4,7 +4,7 @@ title: Regular Expressions
 image: model.svg
 image-width: 150px
 
-pdf_base: 'https://github.com/watts-college/cpp-527-fall-2021/raw/master/'  
+pdf_base: 'https://github.com/Watts-College/cpp-527-fall-2021/raw/main/'  
 
 ---
 
