@@ -81,6 +81,33 @@ These notes present some basic background information on character encoding to h
   
 ## Helpful Reference Material
 
+The **stringR** package is one of the most intuitive string processing packages in R. If you work extensively with text you will probably use this package. 
+  
+**For the labs in this class please use Core R string processing functions and refrain from using this package.** It is a useful wrapper package that provides slightly more intuitive syntax, but also limits arguments and flexibility of Core R functions. 
+  
+For example, all stringR functions start with "str_" and they use verbs (str_replace) instead of abbreviations (gsub = global substitution). 
+  
+Once you understand the string processing functions you can use stringR to write code faster, but it is helpful to understand the Core R functions first because (1) they are slightly more flexible and (2) you will likely encounter them on discussion boards or in help files.  
+  
+```r
+x <- c("why", "video", "cross", "extra", "deal", "authority")
+
+
+# core R
+grep( "e", x, value=TRUE )
+> [1] "video"     "extra"     "deal"
+# stringR
+str_subset( x, "e" )
+> [1] "video"     "extra"     "deal"
+
+# core R
+gsub( "[aeiou]", "?", x )
+> [1] "why"       "v?deo"     "cr?ss"     "?xtra"     "d?al"      "?uthority"
+# stringR
+str_replace( x, "[aeiou]", "?" )
+> [1] "why"       "v?deo"     "cr?ss"     "?xtra"     "d?al"      "?uthority"
+```
+  
 [stringR package](https://cran.r-project.org/web/packages/stringr/vignettes/stringr.html)
 
 [One Page RegEx Cheat Sheet](https://github.com/DS4PS/cpp-527-spr-2020/raw/master/lectures/regular-expressions%20one-page-cheat-sheet.pdf) 
