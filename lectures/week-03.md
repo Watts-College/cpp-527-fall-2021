@@ -81,6 +81,11 @@ These notes present some basic background information on character encoding to h
   
 ## Helpful Reference Material
 
+[One Page RegEx Cheat Sheet](https://github.com/DS4PS/cpp-527-spr-2020/raw/master/lectures/regular-expressions%20one-page-cheat-sheet.pdf) 
+
+[RegEx cheat sheet in R](https://github.com/DS4PS/cpp-527-spr-2020/raw/master/lectures/RegExCheatsheetInR.pdf)
+
+
 The **stringR** package is one of the most intuitive string processing packages in R. If you work extensively with text you will probably use this package. 
   
 **For the labs in this class please use Core R string processing functions and refrain from using this package.** It is a useful wrapper package that provides slightly more intuitive syntax, but also limits arguments and flexibility of Core R functions. 
@@ -110,9 +115,6 @@ str_replace( x, "[aeiou]", "?" )
   
 [stringR package](https://cran.r-project.org/web/packages/stringr/vignettes/stringr.html)
 
-[One Page RegEx Cheat Sheet](https://github.com/DS4PS/cpp-527-spr-2020/raw/master/lectures/regular-expressions%20one-page-cheat-sheet.pdf) 
-
-[RegEx cheat sheet in R](https://github.com/DS4PS/cpp-527-spr-2020/raw/master/lectures/RegExCheatsheetInR.pdf)
 
   
 <br>
