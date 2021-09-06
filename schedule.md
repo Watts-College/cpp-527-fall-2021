@@ -183,7 +183,7 @@ Once you have completed this unit you will be able to:
 <br>
 
 
-## Lab-01 - Control Structures 
+## Lab-01: Control Structures 
 
 <hr>
   
