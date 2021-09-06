@@ -20,7 +20,7 @@ yellowdig:
 labs:
   lab-01:  'Thursday, Aug 26th' 
   lab-02:  'Tuesday, August 31st'
-  lab-03:  'Tuesday, September 7th'
+  lab-03:  'Thursday, September 9th'
   lab-04:  'Tuesday, September 14th'
   lab-05:  'Tuesday, September 21st'
   lab-06:  'Tuesday, September 28th'
