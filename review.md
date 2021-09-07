@@ -20,8 +20,8 @@ session:
   session-code: 'week-02-loops.Rhistory' 
 - week3:
   date:  'Tue Sept 7'  
-  video: ''
-  password: ''
+  video: 'https://asu.zoom.us/rec/share/lQcia9gNFCRnw8l9M1OybAWFox2Vd4fu85VAU-lDYYyLJj48sZmBQOUMcqU6nB1e.vJSzKLN19a9pZpxe'
+  password: '*uEUeMa3'
   sample-code: 'week-03-regular-expressions.R' 
 - week4:
   date:  'Mon Sept 13'  
