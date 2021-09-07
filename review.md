@@ -23,6 +23,7 @@ session:
   video: 'https://asu.zoom.us/rec/share/lQcia9gNFCRnw8l9M1OybAWFox2Vd4fu85VAU-lDYYyLJj48sZmBQOUMcqU6nB1e.vJSzKLN19a9pZpxe'
   password: '*uEUeMa3'
   sample-code: 'week-03-regular-expressions.R' 
+  session-code: 'week-03-regular-expressions.Rhistory' 
 - week4:
   date:  'Mon Sept 13'  
   video: ''
