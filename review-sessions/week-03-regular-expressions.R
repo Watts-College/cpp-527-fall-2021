@@ -76,14 +76,41 @@ grep("ho{1,2}t", strings, value = TRUE)
 
 
 
+strings <- c("ded", "dead","dad","deed", "deaad", "deeed" )
 
-### ESCAPE OPERATOR
+# wildcard character
+grep( "dead", strings, value=TRUE )
+grep( "de.d", strings, value=TRUE )
 
-# Searching for special characters using escape
+# quantifiers go after character x
+# x? = 0 or 1 times 
+# x* = 0 or more times 
+# x+ = 1 or more times 
 
-regexpr( "*", "abcd*efghi" )
+# equivalent to quantifiers:
+# x? = x{0,1) 
+# x* = x{0,}
+# x+ = x{1,}
 
-regexpr( "\\*", "abcd*efghi" )
+# any repeated letters
+# .+ = .{1,)
+
+grep( "dead", strings, value=TRUE )
+
+grep( "dea?d", strings, value=TRUE )
+grep( "dea{0,1}d", strings, value=TRUE )
+
+grep( "dea*d", strings, value=TRUE )
+grep( "dea{0,}d", strings, value=TRUE )
+
+grep( "dea+d", strings, value=TRUE )
+grep( "dea{1,}d", strings, value=TRUE )
+
+grep( "de.+d", strings, value=TRUE )
+
+# note operator position and scope: 
+# ^d  e|a  d$
+grep( "^de|ad$", strings, value=TRUE )
 
 
 
@@ -97,6 +124,33 @@ my.text <- c( "FormA", "FormC", "FormE" )
 grep( pattern="Form[ABC]", my.text )
 
 grep( pattern="h[oi]t" , c("hot","hat","hit","hop") )
+
+
+# note different OR options
+# string1 | string2 (order matters)
+# [abcd]  (set of letters)
+#  e|a      e or a only
+# [ea]{2}   ee, aa, ea, or ae
+# [ea]{1,2} e, a, ee, aa, ea, or ae
+
+strings <- c("ded", "dead","dad","deed", "deaad", "deeed" )
+
+grep( "^de|ad$", strings, value=TRUE )
+grep( "^dee|ad$", strings, value=TRUE )
+grep( "^d[ea]d$", strings, value=TRUE )
+grep( "^d[ea]{2}d$", strings, value=TRUE )
+ 
+
+
+### ESCAPE OPERATOR
+
+# Searching for special characters using escape
+
+regexpr( "*", "abcd*efghi" )
+
+regexpr( "\\*", "abcd*efghi" )
+
+
 
 
 
@@ -174,6 +228,46 @@ grep( pattern="plo?to", my.text )
 
 
 grep( pattern="mi*", my.text )
+
+
+
+
+
+
+# URL SLUG - no caps, spaces, or special chars
+#
+# <title> The Hangover Part 3 </title>
+# <content> A silly comedy movie </content>
+# <slug> the-hangover-part-3 </slug>
+
+
+# regex to search for slugs in URLs: 
+# match patterns xxx-xx-xxxxx-xxx
+
+x <- c( "https://www.imdb.com/title/the-hangover-part-3", 
+        "the-hangover-part-3", 
+        "https://www.imdb.com/title/the-hangover-part-3/cast" )
+
+grep( "[a-z0-9-]+", x, value=TRUE )
+grep( "/[a-z0-9-]+/", x, value=TRUE )
+grep( "^[a-z0-9-]+$", x, value=TRUE )
+
+
+x <- c( "The Hangover Part 3",
+        "the-hangover-part-3",  # slugified
+        "The Hangover Part #", 
+        "The-Hangover-Part-3",  # contains capitals
+        "the-hangover-part-&" ) # contains special chars
+
+# regex pseudocode: [a-z0-9-]
+# contains lowercase a-z
+# contains numbers 0-9
+# contains dash -
+
+grep( "^[a-z0-9-]+$", x, value=TRUE )
+grep( "^[a-z0-9-]+$", x, value=TRUE, ignore.case=TRUE )
+grep( "^[a-zA-Z0-9-]+$", x, value=TRUE, ignore.case=TRUE )
+
 
 
 
