@@ -5,28 +5,32 @@ output:
     theme: readable
     df_print: paged
     highlight: tango
+    number_sections: true
+    toc: true
+    toc_float: false
     css: textbook.css
 ---
 
 
-Lecture 11 - String Processing in R
+String Processing in R
 ========================================================
 
 You will inevitably encounter situations where you need to process strings. Text processing is a large and complex field, but a handful of functions will suffice for most simple tasks.
 
 
-## Some Vocabulary
+# Vocabulary
 
 When you work with text in computer programs, it is called 'string processing' because the computer does not know anything about words or concepts, so it treats text as strings of characters. 
 
 ![](figures/namebracelet.JPG)
 
+Some basic vocabulary common to tasks that treat text as data: 
 
-*String*- anything comprised of characters or characters + numbers.  
-*Text* - the full document, sometimes called a corpus.  
-*Word* - text surrounded by spaces, sometimes called tokens.  
+* **String**- anything comprised of characters or characters + numbers.  
+* **Text** - the full document, sometimes called a corpus.  
+* **Word** - text surrounded by spaces, sometimes called **tokens**.  
 
-We can vectorize text by breaking it into sentences, words, letters, etc. 
+We can **atomize** a large body of text by breaking it into sentences, words, letters, etc. 
 
 
 ```{r}
@@ -48,6 +52,8 @@ unlist( strsplit( x, "" ) )
 ```
 
 
+
+# Basic Text Functions in R
 
 There are a handful of functions that you will use to work with strings. These functions find specific words or characters in your data, find parts of words, and replace them with other words or characters. There are also some functions to break text apart, put text together, or format it.
 
@@ -73,7 +79,7 @@ Let's look at some examples of these functions in action.
 
 
 
-# Combining Numbers and Words
+## Combining Numbers and Words
 
 
 We often need to combine several pieces of text into one string, called concatenation. R's function for this is paste().
@@ -94,7 +100,7 @@ paste("x",1:3,sep="")
 ```
 
 
-# Format Case
+## Format Case
 
 
 ```{r}
@@ -106,7 +112,7 @@ tolower( "AbCdEfG" )
 
 
 
-# Counting Characters
+## Counting Characters
 
 
 Need to sort a column of text by the length of words? You count characters with the function nchar():
@@ -116,7 +122,7 @@ nchar( c("micky","snuffleupagus") )
 ```
 
 
-# Counting Words
+## Counting Words
 
 
 This is a little more complicated since text is often processed as a single character string.
@@ -144,7 +150,7 @@ length( strsplit( "This is all one piece of text.", split="" )[[1]] )
 ```
 
 
-# Extracting Part of Text
+## Extracting Part of Text
 
 
 Recall that the census downloads contain a field called GEO.id which consists of several fips codes pasted together. If we inspect this ID we can see that the county fips (the one we often use for merges) is includes as the last five digits. How can we use this variable to exta the county fips codes?
@@ -168,7 +174,7 @@ GEO.id
 
 
 
-# Search Text for a Match
+## Search Text for a Match
 
 
 If we want to search text for a keyword we use **grep()**.
@@ -197,7 +203,7 @@ grep( "new", c("california","new york","new jersey","tennessee"), value=T )
 ```
 
 
-# Replacing Text
+## Replacing Text
 
 
 Find and replace the first case in a string with **sub()** or all cases with **gsub()**:
@@ -263,21 +269,33 @@ Here are the uses of some of these:
 Operator | Use
 -------|----------
 .      | matches any single character (wild card for single character)
-*      | matches 0 or more characters (wild card for any number of characters)
 ^      | start of a string
 $      | end of a string
-?      | match any time a character appears 0 or 1 times
-+      | match any time a character appears 1 or more times
+?      | match any time a preceding character appears 0 or 1 times
+*      | match any time a preceding character appears 0 or more times 
++      | match any time a preceding character appears 1 or more times
 \|      | OR statement - match either statement given
 [ ]    | OR statement - match any of the characters given
 [^ ]   | match any characters EXCEPT those given in the list
 \\      | escape character - turns an operator into plain text
 
 
+Note that the position of RegEx operators matters and they are not all the same. For example, the position of anchors change with the anchor type: 
+
+```{r, eval=F}
+"^word"  # start of string anchor acts on W, precedes letter
+"word$"  # end of string anchor acts on D, follows letter
+```
+
+The quantifiers ?, * and + always follow the letter they act upon. 
+
+```{r, eval=F}
+"loo?se"  # matches lose or loose 
+```
+
+
 ```{r}
-
 strings <- c("^ab", "ab", "abc", "abd", "abe", "ab 12", "ab$")
-
 
 # match anything that starts with ab followed by any character
 
@@ -641,7 +659,7 @@ seq( from=a, to=c, by="month" ) # end date does not land on the 15th
 
 
 
-# Removing Non-ASCII Characters
+# Non-ASCII Characters
 
 
 ASCII stands for the American Standard Code for Information Interchange, a standard table of letters, numbers and punctuation based upon the American alphabet. ASCII defines 128 characters, 95 print characters (letters, numbers, etc.) and 33 control characters (end of line, tab, etc.). The American alphabet is limited to text without accent marks or special characters. ASCII was originally the standard character encoding of the World Wide Web but it was changed to UTF-8, a more flexible global standard.
