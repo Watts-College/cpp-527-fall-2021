@@ -327,8 +327,8 @@ div.tocify {
 </div>
 
 
-<div id="creating-an-r-package" class="section level1">
-<h1>Creating an R Package</h1>
+<div id="creating-an-r-package" class="section level1" number="1">
+<h1 number="1"><span class="header-section-number">1</span> Creating an R Package</h1>
 <p>This tutorial will take you through the steps of creating a new package in R.</p>
 <p>There are five primary tasks:</p>
 <ol style="list-style-type: decimal">
@@ -367,14 +367,18 @@ div.tocify {
 <span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="co"># step 5: close R and re-open new console</span></span>
 <span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>( <span class="st">&quot;yourGitHubName/montyhall&quot;</span> )</span></code></pre></div>
 <p><em>Note, if you make a mistake or encounter an error delete the new <strong>montyhall</strong> folder before starting over.</em></p>
-<p>The examples below will walk you through the steps. You will also need to download the Monty Hall Problem functions that we completed during Labs 01 and 02 from the link below. This script contains some roxygen text to get you started with the process of documentation.</p>
-<p><a href="https://www.dropbox.com/s/u8k1co2bb7eldzj/monty-hall-problem.R?dl=1">Download R Script</a></p>
+<div id="download-the-template" class="section level2" number="1.1">
+<h2 number="1.1"><span class="header-section-number">1.1</span> Download the Template</h2>
+<p>You will need to download the Monty Hall Problem functions that we completed during Labs 01 and 02 from the link below. This script contains some roxygen text to get you started with the process of documentation.</p>
+<p><a href="https://www.dropbox.com/s/u8k1co2bb7eldzj/monty-hall-problem.R?dl=1">DOWNLOAD THE TEMPLATE: monty-hall-problem.R</a></p>
 <p>Note that you will update this script and place it in the montyhall/R folder after you complete Step 01 and the package skeleton has been created (the working directories for your package are built).</p>
-<p>The package code has been provided for you. You just need to complete the documentation and develop the test code for each function (you can adapt these from the unit testing examples in the labs). You place the <strong>montyhall.R</strong> script directly in the folder. You should not be using RMD files in this assignment.</p>
-<div id="steps" class="section level2">
-<h2>STEPS:</h2>
-<div id="install-development-packages" class="section level3">
-<h3>Install Development Packages</h3>
+<p>The package code is provided - you just need to complete the documentation and develop the test code for each function (you can adapt these from the unit testing examples in the labs).</p>
+<p>After completing documentation will place the template file <strong>monty-hall-problem.R</strong> directly in the R folder. You should not be using RMD files in this assignment.</p>
+</div>
+<div id="package-creation-steps" class="section level2" number="1.2">
+<h2 number="1.2"><span class="header-section-number">1.2</span> PACKAGE CREATION STEPS:</h2>
+<div id="install-development-packages" class="section level3" number="1.2.1">
+<h3 number="1.2.1"><span class="header-section-number">1.2.1</span> Install Development Packages</h3>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="fu">c</span>(<span class="st">&quot;devtools&quot;</span>, <span class="st">&quot;roxygen2&quot;</span>,<span class="st">&quot;usethis&quot;</span>,<span class="st">&quot;testthat&quot;</span>,<span class="st">&quot;knitr&quot;</span>))</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># if devtools is not working try</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># devtools::build_github_devtools() </span></span></code></pre></div>
@@ -383,8 +387,8 @@ div.tocify {
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">has_devel</span>()</span></code></pre></div>
 <pre><code>## Your system is ready to build packages!</code></pre>
 </div>
-<div id="build-a-package-skeleton" class="section level3">
-<h3>Build a Package Skeleton</h3>
+<div id="build-a-package-skeleton" class="section level3" number="1.2.2">
+<h3 number="1.2.2"><span class="header-section-number">1.2.2</span> Build a Package Skeleton</h3>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># set your directory if you want the package </span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co"># created in a folder other than the default &quot;documents&quot; </span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -423,8 +427,8 @@ documents     # package created inside documents
 <p><img src="data:image/png;base64,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" /></p>
 <p><em>Note, some of these files like gitignore are from GitHub - they will appear after completing Step 05. Files may vary by operating system, but you should at the very least have the R folder, a DESCRIPTION file, and a NAMESPACE file.</em></p>
 </div>
-<div id="document-your-functions" class="section level3">
-<h3>Document Your Functions</h3>
+<div id="document-your-functions" class="section level3" number="1.2.3">
+<h3 number="1.2.3"><span class="header-section-number">1.2.3</span> Document Your Functions</h3>
 <p>Add your roxygen comments to your R scripts:</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; @title</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; Sum of vector elements.</span></span>
@@ -474,134 +478,138 @@ documents     # package created inside documents
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Writing NAMESPACE</span></span>
 <span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Loading montyhall</span></span>
 <span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Writing create_game.Rd</span></span></code></pre></div>
+<pre><code>documents     
+├─ montyhall  
+│  ├─ R
+│  ├─ man     # new *.rd files will be here </code></pre>
 <p>You will see some errors as well if you have not yet finished documenting your functions. Ignore them for now.</p>
 <p><em><strong>Depending upon your OS and your R devtools version you may be required to complete ALL documentation before preceding to the next steps. At the very least each function should have a title.</strong></em></p>
 <p>You will now have a new folder in your <em>montyhall</em> directory called “man”, short for “manuals”. The documentation files have an .Rd (R documentation) extension. The <em>man</em> folder should contain one .Rd file for each exported function in your script (<em>change_door.Rd</em>, <em>create_game.Rd</em>, etc.).</p>
-<p><em>You can skip to the testing step below if you want to see if the package is functional.</em></p>
+<p><em>Skip to the testing step below if you want to see if the package is now functional.</em></p>
 </div>
-<div id="update-your-package-description" class="section level3">
-<h3>Update Your Package Description</h3>
+<div id="update-your-package-description" class="section level3" number="1.2.4">
+<h3 number="1.2.4"><span class="header-section-number">1.2.4</span> Update Your Package Description</h3>
 <p>Navigate to the main “montyhall” package folder on your computer and open the file called “DESCRIPTION” in a text editor (your computer will have a text editor like notebook). You will see something like this:</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>Package<span class="sc">:</span> montyhall</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>Title<span class="sc">:</span> What the Package <span class="fu">Does</span> (One Line, Title Case)</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>Version<span class="sc">:</span> <span class="dv">0</span>.<span class="dv">0</span>.<span class="fl">0.9000</span></span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>Authors<span class="sc">@</span>R<span class="sc">:</span> </span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">person</span>(<span class="at">given =</span> <span class="st">&quot;First&quot;</span>,</span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>           <span class="at">family =</span> <span class="st">&quot;Last&quot;</span>,</span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>           <span class="at">role =</span> <span class="fu">c</span>(<span class="st">&quot;aut&quot;</span>, <span class="st">&quot;cre&quot;</span>),</span>
-<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>           <span class="at">email =</span> <span class="st">&quot;first.last@example.com&quot;</span>,</span>
-<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>           <span class="at">comment =</span> <span class="fu">c</span>(<span class="at">ORCID =</span> <span class="st">&quot;YOUR-ORCID-ID&quot;</span>))</span>
-<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>Description<span class="sc">:</span> What the package <span class="fu">does</span> (one paragraph).</span>
-<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>License<span class="sc">:</span> What license it uses</span>
-<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>Encoding<span class="sc">:</span> UTF<span class="dv">-8</span></span>
-<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>LazyData<span class="sc">:</span> true</span>
-<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>RoxygenNote<span class="sc">:</span> <span class="dv">6</span>.<span class="fl">1.1</span></span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>Package<span class="sc">:</span> montyhall</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>Title<span class="sc">:</span> What the Package <span class="fu">Does</span> (One Line, Title Case)</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>Version<span class="sc">:</span> <span class="dv">0</span>.<span class="dv">0</span>.<span class="fl">0.9000</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>Authors<span class="sc">@</span>R<span class="sc">:</span> </span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">person</span>(<span class="at">given =</span> <span class="st">&quot;First&quot;</span>,</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>           <span class="at">family =</span> <span class="st">&quot;Last&quot;</span>,</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>           <span class="at">role =</span> <span class="fu">c</span>(<span class="st">&quot;aut&quot;</span>, <span class="st">&quot;cre&quot;</span>),</span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>           <span class="at">email =</span> <span class="st">&quot;first.last@example.com&quot;</span>,</span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>           <span class="at">comment =</span> <span class="fu">c</span>(<span class="at">ORCID =</span> <span class="st">&quot;YOUR-ORCID-ID&quot;</span>))</span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>Description<span class="sc">:</span> What the package <span class="fu">does</span> (one paragraph).</span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>License<span class="sc">:</span> What license it uses</span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>Encoding<span class="sc">:</span> UTF<span class="dv">-8</span></span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>LazyData<span class="sc">:</span> true</span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a>RoxygenNote<span class="sc">:</span> <span class="dv">6</span>.<span class="fl">1.1</span></span></code></pre></div>
 <p>Since we use dplyr in the package, we need to add another line to import and attach it. Add:</p>
 <pre><code>Depends: 
    dplyr</code></pre>
 <p>Now complete the rest of the fields from “Title” to “Description”.</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>Package<span class="sc">:</span> montyhall</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>Title<span class="sc">:</span> What the Package <span class="fu">Does</span> (One Line, Title Case)</span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>Version<span class="sc">:</span> <span class="dv">0</span>.<span class="dv">0</span>.<span class="fl">0.9000</span></span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>Authors<span class="sc">@</span>R<span class="sc">:</span> </span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">person</span>(<span class="at">given =</span> <span class="st">&quot;First&quot;</span>,</span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>           <span class="at">family =</span> <span class="st">&quot;Last&quot;</span>,</span>
-<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>           <span class="at">role =</span> <span class="fu">c</span>(<span class="st">&quot;aut&quot;</span>, <span class="st">&quot;cre&quot;</span>),</span>
-<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>           <span class="at">email =</span> <span class="st">&quot;first.last@example.com&quot;</span>,</span>
-<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>           <span class="at">comment =</span> <span class="fu">c</span>(<span class="at">ORCID =</span> <span class="st">&quot;YOUR-ORCID-ID&quot;</span>))</span>
-<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>Description<span class="sc">:</span> What the package <span class="fu">does</span> (one paragraph).</span>
-<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>Depends<span class="sc">:</span></span>
-<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>    dplyr</span>
-<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>License<span class="sc">:</span> What license it uses</span>
-<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a>Encoding<span class="sc">:</span> UTF<span class="dv">-8</span></span>
-<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a>LazyData<span class="sc">:</span> true</span>
-<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a>RoxygenNote<span class="sc">:</span> <span class="dv">6</span>.<span class="fl">1.1</span></span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>Package<span class="sc">:</span> montyhall</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>Title<span class="sc">:</span> What the Package <span class="fu">Does</span> (One Line, Title Case)</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>Version<span class="sc">:</span> <span class="dv">0</span>.<span class="dv">0</span>.<span class="fl">0.9000</span></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>Authors<span class="sc">@</span>R<span class="sc">:</span> </span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">person</span>(<span class="at">given =</span> <span class="st">&quot;First&quot;</span>,</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>           <span class="at">family =</span> <span class="st">&quot;Last&quot;</span>,</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>           <span class="at">role =</span> <span class="fu">c</span>(<span class="st">&quot;aut&quot;</span>, <span class="st">&quot;cre&quot;</span>),</span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>           <span class="at">email =</span> <span class="st">&quot;first.last@example.com&quot;</span>,</span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>           <span class="at">comment =</span> <span class="fu">c</span>(<span class="at">ORCID =</span> <span class="st">&quot;YOUR-ORCID-ID&quot;</span>))</span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>Description<span class="sc">:</span> What the package <span class="fu">does</span> (one paragraph).</span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>Depends<span class="sc">:</span></span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>    dplyr</span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>License<span class="sc">:</span> What license it uses</span>
+<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a>Encoding<span class="sc">:</span> UTF<span class="dv">-8</span></span>
+<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a>LazyData<span class="sc">:</span> true</span>
+<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a>RoxygenNote<span class="sc">:</span> <span class="dv">6</span>.<span class="fl">1.1</span></span></code></pre></div>
 </div>
 </div>
-<div id="test-it" class="section level2">
-<h2>TEST IT:</h2>
-<div id="install-your-package" class="section level3">
-<h3>Install Your Package</h3>
+<div id="test-it" class="section level2" number="1.3">
+<h2 number="1.3"><span class="header-section-number">1.3</span> TEST IT:</h2>
+<div id="install-your-package" class="section level3" number="1.3.1">
+<h3 number="1.3.1"><span class="header-section-number">1.3.1</span> Install Your Package</h3>
 <p>Go up one level in your directory so you are outside of the package folder, but in the same folder where the package folder lives.</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>( <span class="st">&quot;..&quot;</span> )</span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">getwd</span>()   <span class="co"># back to documents </span></span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install</span>( <span class="st">&quot;montyhall&quot;</span> )</span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>( <span class="st">&quot;..&quot;</span> )</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">getwd</span>()   <span class="co"># back to documents </span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install</span>( <span class="st">&quot;montyhall&quot;</span> )</span></code></pre></div>
 <pre><code>documents     # should be back here 
 ├─ montyhall  
 │  ├─ R
 │  ├─ man     # new *.rd files will be here </code></pre>
 <p>Then run the command to install your new package.</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install</span>( <span class="st">&quot;montyhall&quot;</span> )</span></code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install</span>( <span class="st">&quot;montyhall&quot;</span> )</span></code></pre></div>
 <p>If successful you will see messages like this:</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Updating montyhall documentation</span></span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Updating roxygen version in C:\Users\jdlecy\Documents\montyhall/DESCRIPTION</span></span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Writing NAMESPACE</span></span>
-<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Loading montyhall</span></span>
-<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Writing create_game.Rd</span></span>
-<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a><span class="co"># &gt; getwd()</span></span>
-<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a><span class="co"># [1] &quot;C:/Users/jdlecy/Documents/montyhall&quot;</span></span>
-<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a><span class="co"># &gt; setwd( &quot;..&quot; )</span></span>
-<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a><span class="co"># &gt; devtools::install( &quot;montyhall&quot; )</span></span>
-<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a><span class="co"># √  checking for file &#39;C:\Users\jdlecy\Documents\montyhall/DESCRIPTION&#39;</span></span>
-<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a><span class="co"># -  preparing &#39;montyhall&#39;:</span></span>
-<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a><span class="co"># √  checking DESCRIPTION meta-information ... </span></span>
-<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a><span class="co"># -  checking for LF line-endings in source and make files and shell scripts</span></span>
-<span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a><span class="co"># -  checking for empty or unneeded directories</span></span>
-<span id="cb19-15"><a href="#cb19-15" aria-hidden="true" tabindex="-1"></a><span class="co"># -  building &#39;montyhall_0.0.0.9000.tar.gz&#39;</span></span>
-<span id="cb19-16"><a href="#cb19-16" aria-hidden="true" tabindex="-1"></a><span class="co">#    </span></span>
-<span id="cb19-17"><a href="#cb19-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Running &quot;C:/PROGRA~1/R/R-36~1.1/bin/x64/Rcmd.exe&quot; INSTALL \</span></span>
-<span id="cb19-18"><a href="#cb19-18" aria-hidden="true" tabindex="-1"></a><span class="co">#   &quot;C:\Users\jdlecy\AppData\Local\Temp\RtmpKetkbm/montyhall_0.0.0.9000.tar.gz&quot; --install-tests </span></span>
-<span id="cb19-19"><a href="#cb19-19" aria-hidden="true" tabindex="-1"></a><span class="co"># * installing to library &#39;C:/Users/jdlecy/Documents/R/win-library/3.6&#39;</span></span>
-<span id="cb19-20"><a href="#cb19-20" aria-hidden="true" tabindex="-1"></a><span class="co"># * installing *source* package &#39;montyhall&#39; ...</span></span>
-<span id="cb19-21"><a href="#cb19-21" aria-hidden="true" tabindex="-1"></a><span class="co"># ** using staged installation</span></span>
-<span id="cb19-22"><a href="#cb19-22" aria-hidden="true" tabindex="-1"></a><span class="co"># ** R</span></span>
-<span id="cb19-23"><a href="#cb19-23" aria-hidden="true" tabindex="-1"></a><span class="co"># ** byte-compile and prepare package for lazy loading</span></span>
-<span id="cb19-24"><a href="#cb19-24" aria-hidden="true" tabindex="-1"></a><span class="co"># ** help</span></span>
-<span id="cb19-25"><a href="#cb19-25" aria-hidden="true" tabindex="-1"></a><span class="co"># *** installing help indices</span></span>
-<span id="cb19-26"><a href="#cb19-26" aria-hidden="true" tabindex="-1"></a><span class="co"># &#39;montyhall&#39;g help for package     finding HTML links ...</span></span>
-<span id="cb19-27"><a href="#cb19-27" aria-hidden="true" tabindex="-1"></a><span class="co">#  done</span></span>
-<span id="cb19-28"><a href="#cb19-28" aria-hidden="true" tabindex="-1"></a><span class="co"># -reate_game                             html  </span></span>
-<span id="cb19-29"><a href="#cb19-29" aria-hidden="true" tabindex="-1"></a><span class="co"># ** building package indices</span></span>
-<span id="cb19-30"><a href="#cb19-30" aria-hidden="true" tabindex="-1"></a><span class="co"># ** testing if installed package can be loaded from temporary location</span></span>
-<span id="cb19-31"><a href="#cb19-31" aria-hidden="true" tabindex="-1"></a><span class="co"># *** arch - i386</span></span>
-<span id="cb19-32"><a href="#cb19-32" aria-hidden="true" tabindex="-1"></a><span class="co"># *** arch - x64</span></span>
-<span id="cb19-33"><a href="#cb19-33" aria-hidden="true" tabindex="-1"></a><span class="co"># ** testing if installed package can be loaded from final location</span></span>
-<span id="cb19-34"><a href="#cb19-34" aria-hidden="true" tabindex="-1"></a><span class="co"># *** arch - i386</span></span>
-<span id="cb19-35"><a href="#cb19-35" aria-hidden="true" tabindex="-1"></a><span class="co"># *** arch - x64</span></span>
-<span id="cb19-36"><a href="#cb19-36" aria-hidden="true" tabindex="-1"></a><span class="co"># ** testing if installed package keeps a record of temporary installation path</span></span>
-<span id="cb19-37"><a href="#cb19-37" aria-hidden="true" tabindex="-1"></a><span class="co"># * DONE (montyhall)</span></span></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Updating montyhall documentation</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Updating roxygen version in C:\Users\jdlecy\Documents\montyhall/DESCRIPTION</span></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Writing NAMESPACE</span></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Loading montyhall</span></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Writing create_game.Rd</span></span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a><span class="co"># &gt; getwd()</span></span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a><span class="co"># [1] &quot;C:/Users/jdlecy/Documents/montyhall&quot;</span></span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a><span class="co"># &gt; setwd( &quot;..&quot; )</span></span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a><span class="co"># &gt; devtools::install( &quot;montyhall&quot; )</span></span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a><span class="co"># √  checking for file &#39;C:\Users\jdlecy\Documents\montyhall/DESCRIPTION&#39;</span></span>
+<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a><span class="co"># -  preparing &#39;montyhall&#39;:</span></span>
+<span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a><span class="co"># √  checking DESCRIPTION meta-information ... </span></span>
+<span id="cb20-13"><a href="#cb20-13" aria-hidden="true" tabindex="-1"></a><span class="co"># -  checking for LF line-endings in source and make files and shell scripts</span></span>
+<span id="cb20-14"><a href="#cb20-14" aria-hidden="true" tabindex="-1"></a><span class="co"># -  checking for empty or unneeded directories</span></span>
+<span id="cb20-15"><a href="#cb20-15" aria-hidden="true" tabindex="-1"></a><span class="co"># -  building &#39;montyhall_0.0.0.9000.tar.gz&#39;</span></span>
+<span id="cb20-16"><a href="#cb20-16" aria-hidden="true" tabindex="-1"></a><span class="co">#    </span></span>
+<span id="cb20-17"><a href="#cb20-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Running &quot;C:/PROGRA~1/R/R-36~1.1/bin/x64/Rcmd.exe&quot; INSTALL \</span></span>
+<span id="cb20-18"><a href="#cb20-18" aria-hidden="true" tabindex="-1"></a><span class="co">#   &quot;C:\Users\jdlecy\AppData\Local\Temp\RtmpKetkbm/montyhall_0.0.0.9000.tar.gz&quot; --install-tests </span></span>
+<span id="cb20-19"><a href="#cb20-19" aria-hidden="true" tabindex="-1"></a><span class="co"># * installing to library &#39;C:/Users/jdlecy/Documents/R/win-library/3.6&#39;</span></span>
+<span id="cb20-20"><a href="#cb20-20" aria-hidden="true" tabindex="-1"></a><span class="co"># * installing *source* package &#39;montyhall&#39; ...</span></span>
+<span id="cb20-21"><a href="#cb20-21" aria-hidden="true" tabindex="-1"></a><span class="co"># ** using staged installation</span></span>
+<span id="cb20-22"><a href="#cb20-22" aria-hidden="true" tabindex="-1"></a><span class="co"># ** R</span></span>
+<span id="cb20-23"><a href="#cb20-23" aria-hidden="true" tabindex="-1"></a><span class="co"># ** byte-compile and prepare package for lazy loading</span></span>
+<span id="cb20-24"><a href="#cb20-24" aria-hidden="true" tabindex="-1"></a><span class="co"># ** help</span></span>
+<span id="cb20-25"><a href="#cb20-25" aria-hidden="true" tabindex="-1"></a><span class="co"># *** installing help indices</span></span>
+<span id="cb20-26"><a href="#cb20-26" aria-hidden="true" tabindex="-1"></a><span class="co"># &#39;montyhall&#39;g help for package     finding HTML links ...</span></span>
+<span id="cb20-27"><a href="#cb20-27" aria-hidden="true" tabindex="-1"></a><span class="co">#  done</span></span>
+<span id="cb20-28"><a href="#cb20-28" aria-hidden="true" tabindex="-1"></a><span class="co"># -reate_game                             html  </span></span>
+<span id="cb20-29"><a href="#cb20-29" aria-hidden="true" tabindex="-1"></a><span class="co"># ** building package indices</span></span>
+<span id="cb20-30"><a href="#cb20-30" aria-hidden="true" tabindex="-1"></a><span class="co"># ** testing if installed package can be loaded from temporary location</span></span>
+<span id="cb20-31"><a href="#cb20-31" aria-hidden="true" tabindex="-1"></a><span class="co"># *** arch - i386</span></span>
+<span id="cb20-32"><a href="#cb20-32" aria-hidden="true" tabindex="-1"></a><span class="co"># *** arch - x64</span></span>
+<span id="cb20-33"><a href="#cb20-33" aria-hidden="true" tabindex="-1"></a><span class="co"># ** testing if installed package can be loaded from final location</span></span>
+<span id="cb20-34"><a href="#cb20-34" aria-hidden="true" tabindex="-1"></a><span class="co"># *** arch - i386</span></span>
+<span id="cb20-35"><a href="#cb20-35" aria-hidden="true" tabindex="-1"></a><span class="co"># *** arch - x64</span></span>
+<span id="cb20-36"><a href="#cb20-36" aria-hidden="true" tabindex="-1"></a><span class="co"># ** testing if installed package keeps a record of temporary installation path</span></span>
+<span id="cb20-37"><a href="#cb20-37" aria-hidden="true" tabindex="-1"></a><span class="co"># * DONE (montyhall)</span></span></code></pre></div>
 </div>
-<div id="try-loading" class="section level3">
-<h3>Try Loading</h3>
+<div id="try-loading" class="section level3" number="1.3.2">
+<h3 number="1.3.2"><span class="header-section-number">1.3.2</span> Try Loading</h3>
 <p>In a new R session try:</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>( montyhall )</span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="fu">create_game</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>( montyhall )</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="fu">create_game</span>()</span></code></pre></div>
 <pre><code>## [1] &quot;goat&quot; &quot;goat&quot; &quot;car&quot;</code></pre>
 </div>
-<div id="removing-packages" class="section level3">
-<h3>Removing Packages</h3>
-<p>If you encounter an error or the package is not working properly, you might need to fix your code and try again.</p>
-<p>You should be able to update the package then simply reinstall it. R will recognize that there are changes to the package and will install the most recent version.</p>
-<p>If you run into problems you can force a package deletion then install fresh.</p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># library() attaches the package to the current environment</span></span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="co"># detach is the opposite of library() - closes the package </span></span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="fu">detach</span>( <span class="st">&quot;package:montyhall&quot;</span> )  <span class="co"># closes the package so not locked</span></span>
-<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="fu">remove.packages</span>( <span class="st">&quot;montyhall&quot;</span> ) <span class="co"># deletes from your computer </span></span></code></pre></div>
-<p>If that fails, you probably have the package loaded in another R session or have package files locked by editing them in another program.</p>
-<p>If all else fails, you can delete the package manually from your personal R packages library, which usually lives in your Documents folder.</p>
-</div>
-<div id="check-help-files" class="section level3">
-<h3>Check Help Files</h3>
+<div id="check-help-files" class="section level3" number="1.3.3">
+<h3 number="1.3.3"><span class="header-section-number">1.3.3</span> Check Help Files</h3>
 <p>You should be able to preview the help files that you created with your roxygen comments.</p>
 <div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">help</span>( <span class="st">&quot;create_game&quot;</span> )</span></code></pre></div>
 </div>
+<div id="removing-packages" class="section level3" number="1.3.4">
+<h3 number="1.3.4"><span class="header-section-number">1.3.4</span> Removing Packages</h3>
+<p>If you encounter an error or the package is not working properly, you might need to fix your code and try again.</p>
+<p>You should be able to update the package then simply reinstall it. R will recognize that there are changes to the package and will install the most recent version.</p>
+<p>If you run into problems you can force a package deletion then install fresh.</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># library() attaches the package to the current environment</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="co"># detach is the opposite of library() - closes the package </span></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="fu">detach</span>( <span class="st">&quot;package:montyhall&quot;</span> )  <span class="co"># closes the package so not locked</span></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="fu">remove.packages</span>( <span class="st">&quot;montyhall&quot;</span> ) <span class="co"># deletes from your computer </span></span></code></pre></div>
+<p>If that fails, you probably have the package loaded in another R session or have package files locked by editing them in another program.</p>
+<p>If all else fails, you can delete the package manually from your personal R packages library, which usually lives in your Documents folder.</p>
 </div>
-<div id="share-your-package" class="section level2">
-<h2>SHARE YOUR PACKAGE:</h2>
+</div>
+<div id="share-your-package" class="section level2" number="1.4">
+<h2 number="1.4"><span class="header-section-number">1.4</span> SHARE YOUR PACKAGE:</h2>
 <p>You have a couple of options for sharing your new package with others. You could submit the package to the CRAN so that everyone in the world could install it in R using <strong>install.packages(“montyhall”)</strong>.</p>
 <p>We cannot use this option because (1) it’s a homework assignment so we don’t want to burden people with the task of reviewing a new package, (2) package names on the CRAN must be unique so everyone from the class would have to name it something different, and (3) the CRAN requires that the package passes some robustness checks to ensure everything is documented correctly and all of the code is running smoothly.</p>
-<div id="hosting-on-github" class="section level3">
-<h3>Hosting on GitHub</h3>
+<div id="hosting-on-github" class="section level3" number="1.4.1">
+<h3 number="1.4.1"><span class="header-section-number">1.4.1</span> Hosting on GitHub</h3>
 <p>A simpler option is to host your package on GitHub. Complete the following steps to upload your code to a new repository on GitHub:</p>
 <ol style="list-style-type: decimal">
 <li>Install the git client on your computer: <a href="https://git-scm.com/downloads">LINK</a>.</li>
@@ -619,14 +627,14 @@ documents     # package created inside documents
 </ol>
 <p>This last step sends all of the files to GitHub. They should appear on your repo page shortly.</p>
 <p>Now others should be able to install your package by typing:</p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>( <span class="st">&quot;yourGitHubName/montyhall&quot;</span> )</span></code></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>( <span class="st">&quot;yourGitHubName/montyhall&quot;</span> )</span></code></pre></div>
 </div>
-<div id="test-from-github" class="section level3">
-<h3>Test from GitHub</h3>
+<div id="test-from-github" class="section level3" number="1.4.2">
+<h3 number="1.4.2"><span class="header-section-number">1.4.2</span> Test from GitHub</h3>
 <p>If you want to test whether installation works from GitHub first delete the version you installed earlier from your local machine. It will prevent conflicts when trying to install an identical version of the package, just from a different location.</p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">remove.packages</span>( <span class="st">&quot;montyhall&quot;</span> ) <span class="co"># deletes from your computer </span></span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>( <span class="st">&quot;yourGitHubName/montyhall&quot;</span> )</span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>montyhall<span class="sc">::</span><span class="fu">create_game</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">remove.packages</span>( <span class="st">&quot;montyhall&quot;</span> ) <span class="co"># deletes from your computer </span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>( <span class="st">&quot;yourGitHubName/montyhall&quot;</span> )</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>montyhall<span class="sc">::</span><span class="fu">create_game</span>()</span></code></pre></div>
 <p>See notes above on removing packages for more details.</p>
 <br>
 <hr>
@@ -634,8 +642,8 @@ documents     # package created inside documents
 </div>
 </div>
 </div>
-<div id="additional-resources" class="section level1">
-<h1>Additional Resources</h1>
+<div id="additional-resources" class="section level1" number="2">
+<h1 number="2"><span class="header-section-number">2</span> Additional Resources</h1>
 <p>These are a few good resources for reference:</p>
 <p><a href="http://tinyheero.github.io/jekyll/update/2015/07/26/making-your-first-R-package.html">A nice tutorial by Fong Chun Chan</a></p>
 <p><a href="https://r-pkgs.org/index.html">The official R Packages book by Hadley Wickham and Jenny Bryant</a></p>

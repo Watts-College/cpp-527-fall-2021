@@ -4,6 +4,7 @@ output:
     theme: united
     df_print: paged
     highlight: tango
+    number_sections: true
     smart: false
     toc: yes
     toc_float: yes
@@ -71,20 +72,24 @@ create_game()
 devtools::install_github( "yourGitHubName/montyhall" )
 ```
 
-
 _Note, if you make a mistake or encounter an error delete the new **montyhall** folder before starting over._
 
-The examples below will walk you through the steps. You will also need to download the Monty Hall Problem functions that we completed during Labs 01 and 02 from the link below. This script contains some roxygen text to get you started with the process of documentation. 
 
-[Download R Script](https://www.dropbox.com/s/u8k1co2bb7eldzj/monty-hall-problem.R?dl=1)
+## Download the Template
+
+You will need to download the Monty Hall Problem functions that we completed during Labs 01 and 02 from the link below. This script contains some roxygen text to get you started with the process of documentation. 
+
+[DOWNLOAD THE TEMPLATE: monty-hall-problem.R](https://www.dropbox.com/s/u8k1co2bb7eldzj/monty-hall-problem.R?dl=1)
 
 Note that you will update this script and place it in the montyhall/R folder after you complete Step 01 and the package skeleton has been created (the working directories for your package are built). 
 
-The package code has been provided for you. You just need to complete the documentation and develop the test code for each function (you can adapt these from the unit testing examples in the labs). You place the **montyhall.R** script directly in the folder. You should not be using RMD files in this assignment. 
+The package code is provided - you just need to complete the documentation and develop the test code for each function (you can adapt these from the unit testing examples in the labs). 
+
+After completing documentation will place the template file **monty-hall-problem.R** directly in the R folder. You should not be using RMD files in this assignment. 
 
 
 
-## STEPS: 
+## PACKAGE CREATION STEPS:
 
 ### Install Development Packages
 
@@ -236,6 +241,14 @@ You should see:
 # Writing create_game.Rd
 ```
 
+
+```
+documents     
+├─ montyhall  
+│  ├─ R
+│  ├─ man     # new *.rd files will be here 
+```
+
 You will see some errors as well if you have not yet finished documenting your functions. Ignore them for now. 
 
 _**Depending upon your OS and your R devtools version you may be required to complete ALL documentation before preceding to the next steps. At the very least each function should have a title.**_
@@ -243,7 +256,7 @@ _**Depending upon your OS and your R devtools version you may be required to com
 You will now have a new folder in your *montyhall* directory called "man", short for "manuals".  The documentation files have an .Rd (R documentation) extension. The *man* folder should contain one .Rd file for each exported function in your script (*change_door.Rd*, *create_game.Rd*, etc.).
 
 
-*You can skip to the testing step below if you want to see if the package is functional.* 
+*Skip to the testing step below if you want to see if the package is now functional.* 
 
 
 ### Update Your Package Description 
@@ -394,6 +407,18 @@ create_game()
 create_game()
 ```
 
+
+### Check Help Files
+
+You should be able to preview the help files that you created with your roxygen comments. 
+
+```{r, eval=F}
+help( "create_game" )
+```
+
+
+
+
 ### Removing Packages
 
 If you encounter an error or the package is not working properly, you might need to fix your code and try again. 
@@ -414,13 +439,6 @@ If that fails, you probably have the package loaded in another R session or have
 If all else fails, you can delete the package manually from your personal R packages library, which usually lives in your Documents folder. 
 
 
-### Check Help Files
-
-You should be able to preview the help files that you created with your roxygen comments. 
-
-```{r, eval=F}
-help( "create_game" )
-```
 
 
 
