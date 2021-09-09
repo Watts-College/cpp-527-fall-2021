@@ -86,11 +86,28 @@ These notes present some basic background information on character encoding to h
 
 The **stringR** package is one of the most intuitive string processing packages in R. If you work extensively with text you will probably use this package. 
   
-**For the labs in this class please use Core R string processing functions and refrain from using this package.** It is a useful wrapper package that provides slightly more intuitive syntax, but also limits arguments and flexibility of Core R functions. 
+**For the labs in this class please use Core R string processing functions and refrain from using this package.** 
   
-For example, all stringR functions start with "str_" and they use verbs (str_replace) instead of abbreviations (gsub = global substitution). 
+stringR is a useful wrapper package that provides slightly more intuitive syntax. For example, all stringR functions start with "str_" and they use literal verbs (str_replace) instead of abbreviations used in Core R functions (gsub = global substitution). 
   
-Once you understand the string processing functions you can use stringR to write code faster, but it is helpful to understand the Core R functions first because (1) they are slightly more flexible and (2) you will likely encounter them on discussion boards or in help files.  
+The character vector (object X) is also the first argument in all stringR functions, where the order annoyingly changes in core R text functions:
+  
+```r
+ # CORE R - position of X changes
+grep( "e", x )       # find and return subset match
+gsub( "a", "e", x )  # find and replace
+strsplit( x, " " )   # split string into parts
+
+# VS stringR
+str_subset( x, "e" )         # find and return subset match
+str_replace( x, "a", "e" )   # find and replace
+str_split( x, " " )          # split string into parts
+``` 
+  
+But it is helpful to understand the Core R functions first because (1) they are slightly more flexible and (2) you will likely encounter them on discussion boards or in help files.  
+  
+Once you understand the string processing functions you can use stringR to write code faster, but try to avoid too much dependence on packages when you are first learning the code! 
+  
   
 ```r
 x <- c("why", "video", "cross", "extra", "deal", "authority")
