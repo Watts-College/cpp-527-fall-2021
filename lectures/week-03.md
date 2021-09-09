@@ -96,14 +96,14 @@ The character vector (object X) is also the first argument in all stringR functi
   
 ```r
  # CORE R - position of X changes
-grep( "e", x )       # find and return subset match
-gsub( "a", "e", x )  # find and replace
-strsplit( x, " " )   # split string into parts
+grep(     "e", x )       # find and return subset match
+gsub(     "a", "e", x )  # find and replace
+strsplit(  x, " " )      # split string into parts
 
 # VS stringR
-str_subset( x, "e" )         # find and return subset match
-str_replace( x, "a", "e" )   # find and replace
-str_split( x, " " )          # split string into parts
+str_subset(  x, "e" )          # find and return subset match
+str_replace( x, "a", "e" )     # find and replace
+str_split(   x, " " )          # split string into parts
 ``` 
   
 But it is helpful to understand the Core R functions first because (1) they are slightly more flexible and (2) you will likely encounter them on discussion boards or in help files.  
