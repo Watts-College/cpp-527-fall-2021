@@ -1,5 +1,5 @@
 ---
-title: "String Processing"
+title: "String Processing in R"
 output:
   html_document:
     theme: readable
@@ -12,10 +12,12 @@ output:
 ---
 
 
-String Processing in R
-========================================================
 
-You will inevitably encounter situations where you need to process strings. Text processing is a large and complex field, but a handful of functions will suffice for most simple tasks.
+**Working with Text:** 
+
+As a data analyst you will inevitably encounter situations where you need to process *STRINGS*. It might be to conduct a simple content analysis (counting word occurrences), but most likely you will use these tools at the data cleaning and database preparation steps. 
+
+Text analysis is a large and complex field with packages that specialize in natural language processing tools, but you will be surprised at how sophisticated you can get with a handful of core R string functions.
 
 
 # Vocabulary
