@@ -85,6 +85,8 @@ These notes present some basic background information on character encoding to h
 
 
 The **stringR** package is one of the most intuitive string processing packages in R. If you work extensively with text you will probably use this package. 
+
+[stringR package](https://cran.r-project.org/web/packages/stringr/vignettes/stringr.html)
   
 **For the labs in this class please use Core R string processing functions and refrain from using this package.** 
   
@@ -128,8 +130,6 @@ str_replace( x, "[aeiou]", "?" )
 > [1] "why"       "v?deo"     "cr?ss"     "?xtra"     "d?al"      "?uthority"
 ```
   
-[stringR package](https://cran.r-project.org/web/packages/stringr/vignettes/stringr.html)
-
 
   
 <br>
