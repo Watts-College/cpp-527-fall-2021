@@ -531,75 +531,75 @@ documents     # package created inside documents
 <div id="install-your-package" class="section level3" number="1.3.1">
 <h3 number="1.3.1"><span class="header-section-number">1.3.1</span> Install Your Package</h3>
 <p>Go up one level in your directory so you are outside of the package folder, but in the same folder where the package folder lives.</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>( <span class="st">&quot;..&quot;</span> )</span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">getwd</span>()   <span class="co"># back to documents </span></span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install</span>( <span class="st">&quot;montyhall&quot;</span> )</span></code></pre></div>
 <pre><code>documents     # should be back here 
 ├─ montyhall  
 │  ├─ R
 │  ├─ man     # new *.rd files will be here </code></pre>
 <p>Then run the command to install your new package.</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install</span>( <span class="st">&quot;montyhall&quot;</span> )</span></code></pre></div>
+<p>The install() command is looking for a folder called “montyhall”. It can’t find the folder if we are currently inside the folder. Thus we move up one level in the directory first:</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>( <span class="st">&quot;..&quot;</span> )  <span class="co"># move up one level with two periods</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">getwd</span>()        <span class="co"># should be /documents NOT /montyhall </span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install</span>( <span class="st">&quot;montyhall&quot;</span> )</span></code></pre></div>
 <p>If successful you will see messages like this:</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Updating montyhall documentation</span></span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Updating roxygen version in C:\Users\jdlecy\Documents\montyhall/DESCRIPTION</span></span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Writing NAMESPACE</span></span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Loading montyhall</span></span>
-<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Writing create_game.Rd</span></span>
-<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a><span class="co"># &gt; getwd()</span></span>
-<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a><span class="co"># [1] &quot;C:/Users/jdlecy/Documents/montyhall&quot;</span></span>
-<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a><span class="co"># &gt; setwd( &quot;..&quot; )</span></span>
-<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a><span class="co"># &gt; devtools::install( &quot;montyhall&quot; )</span></span>
-<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a><span class="co"># √  checking for file &#39;C:\Users\jdlecy\Documents\montyhall/DESCRIPTION&#39;</span></span>
-<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a><span class="co"># -  preparing &#39;montyhall&#39;:</span></span>
-<span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a><span class="co"># √  checking DESCRIPTION meta-information ... </span></span>
-<span id="cb20-13"><a href="#cb20-13" aria-hidden="true" tabindex="-1"></a><span class="co"># -  checking for LF line-endings in source and make files and shell scripts</span></span>
-<span id="cb20-14"><a href="#cb20-14" aria-hidden="true" tabindex="-1"></a><span class="co"># -  checking for empty or unneeded directories</span></span>
-<span id="cb20-15"><a href="#cb20-15" aria-hidden="true" tabindex="-1"></a><span class="co"># -  building &#39;montyhall_0.0.0.9000.tar.gz&#39;</span></span>
-<span id="cb20-16"><a href="#cb20-16" aria-hidden="true" tabindex="-1"></a><span class="co">#    </span></span>
-<span id="cb20-17"><a href="#cb20-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Running &quot;C:/PROGRA~1/R/R-36~1.1/bin/x64/Rcmd.exe&quot; INSTALL \</span></span>
-<span id="cb20-18"><a href="#cb20-18" aria-hidden="true" tabindex="-1"></a><span class="co">#   &quot;C:\Users\jdlecy\AppData\Local\Temp\RtmpKetkbm/montyhall_0.0.0.9000.tar.gz&quot; --install-tests </span></span>
-<span id="cb20-19"><a href="#cb20-19" aria-hidden="true" tabindex="-1"></a><span class="co"># * installing to library &#39;C:/Users/jdlecy/Documents/R/win-library/3.6&#39;</span></span>
-<span id="cb20-20"><a href="#cb20-20" aria-hidden="true" tabindex="-1"></a><span class="co"># * installing *source* package &#39;montyhall&#39; ...</span></span>
-<span id="cb20-21"><a href="#cb20-21" aria-hidden="true" tabindex="-1"></a><span class="co"># ** using staged installation</span></span>
-<span id="cb20-22"><a href="#cb20-22" aria-hidden="true" tabindex="-1"></a><span class="co"># ** R</span></span>
-<span id="cb20-23"><a href="#cb20-23" aria-hidden="true" tabindex="-1"></a><span class="co"># ** byte-compile and prepare package for lazy loading</span></span>
-<span id="cb20-24"><a href="#cb20-24" aria-hidden="true" tabindex="-1"></a><span class="co"># ** help</span></span>
-<span id="cb20-25"><a href="#cb20-25" aria-hidden="true" tabindex="-1"></a><span class="co"># *** installing help indices</span></span>
-<span id="cb20-26"><a href="#cb20-26" aria-hidden="true" tabindex="-1"></a><span class="co"># &#39;montyhall&#39;g help for package     finding HTML links ...</span></span>
-<span id="cb20-27"><a href="#cb20-27" aria-hidden="true" tabindex="-1"></a><span class="co">#  done</span></span>
-<span id="cb20-28"><a href="#cb20-28" aria-hidden="true" tabindex="-1"></a><span class="co"># -reate_game                             html  </span></span>
-<span id="cb20-29"><a href="#cb20-29" aria-hidden="true" tabindex="-1"></a><span class="co"># ** building package indices</span></span>
-<span id="cb20-30"><a href="#cb20-30" aria-hidden="true" tabindex="-1"></a><span class="co"># ** testing if installed package can be loaded from temporary location</span></span>
-<span id="cb20-31"><a href="#cb20-31" aria-hidden="true" tabindex="-1"></a><span class="co"># *** arch - i386</span></span>
-<span id="cb20-32"><a href="#cb20-32" aria-hidden="true" tabindex="-1"></a><span class="co"># *** arch - x64</span></span>
-<span id="cb20-33"><a href="#cb20-33" aria-hidden="true" tabindex="-1"></a><span class="co"># ** testing if installed package can be loaded from final location</span></span>
-<span id="cb20-34"><a href="#cb20-34" aria-hidden="true" tabindex="-1"></a><span class="co"># *** arch - i386</span></span>
-<span id="cb20-35"><a href="#cb20-35" aria-hidden="true" tabindex="-1"></a><span class="co"># *** arch - x64</span></span>
-<span id="cb20-36"><a href="#cb20-36" aria-hidden="true" tabindex="-1"></a><span class="co"># ** testing if installed package keeps a record of temporary installation path</span></span>
-<span id="cb20-37"><a href="#cb20-37" aria-hidden="true" tabindex="-1"></a><span class="co"># * DONE (montyhall)</span></span></code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Updating montyhall documentation</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Updating roxygen version in C:\Users\jdlecy\Documents\montyhall/DESCRIPTION</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Writing NAMESPACE</span></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Loading montyhall</span></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Writing create_game.Rd</span></span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a><span class="co"># &gt; getwd()</span></span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a><span class="co"># [1] &quot;C:/Users/jdlecy/Documents/montyhall&quot;</span></span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a><span class="co"># &gt; setwd( &quot;..&quot; )</span></span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a><span class="co"># &gt; devtools::install( &quot;montyhall&quot; )</span></span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a><span class="co"># √  checking for file &#39;C:\Users\jdlecy\Documents\montyhall/DESCRIPTION&#39;</span></span>
+<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a><span class="co"># -  preparing &#39;montyhall&#39;:</span></span>
+<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a><span class="co"># √  checking DESCRIPTION meta-information ... </span></span>
+<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a><span class="co"># -  checking for LF line-endings in source and make files and shell scripts</span></span>
+<span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a><span class="co"># -  checking for empty or unneeded directories</span></span>
+<span id="cb19-15"><a href="#cb19-15" aria-hidden="true" tabindex="-1"></a><span class="co"># -  building &#39;montyhall_0.0.0.9000.tar.gz&#39;</span></span>
+<span id="cb19-16"><a href="#cb19-16" aria-hidden="true" tabindex="-1"></a><span class="co">#    </span></span>
+<span id="cb19-17"><a href="#cb19-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Running &quot;C:/PROGRA~1/R/R-36~1.1/bin/x64/Rcmd.exe&quot; INSTALL \</span></span>
+<span id="cb19-18"><a href="#cb19-18" aria-hidden="true" tabindex="-1"></a><span class="co">#   &quot;C:\Users\jdlecy\AppData\Local\Temp\RtmpKetkbm/montyhall_0.0.0.9000.tar.gz&quot; --install-tests </span></span>
+<span id="cb19-19"><a href="#cb19-19" aria-hidden="true" tabindex="-1"></a><span class="co"># * installing to library &#39;C:/Users/jdlecy/Documents/R/win-library/3.6&#39;</span></span>
+<span id="cb19-20"><a href="#cb19-20" aria-hidden="true" tabindex="-1"></a><span class="co"># * installing *source* package &#39;montyhall&#39; ...</span></span>
+<span id="cb19-21"><a href="#cb19-21" aria-hidden="true" tabindex="-1"></a><span class="co"># ** using staged installation</span></span>
+<span id="cb19-22"><a href="#cb19-22" aria-hidden="true" tabindex="-1"></a><span class="co"># ** R</span></span>
+<span id="cb19-23"><a href="#cb19-23" aria-hidden="true" tabindex="-1"></a><span class="co"># ** byte-compile and prepare package for lazy loading</span></span>
+<span id="cb19-24"><a href="#cb19-24" aria-hidden="true" tabindex="-1"></a><span class="co"># ** help</span></span>
+<span id="cb19-25"><a href="#cb19-25" aria-hidden="true" tabindex="-1"></a><span class="co"># *** installing help indices</span></span>
+<span id="cb19-26"><a href="#cb19-26" aria-hidden="true" tabindex="-1"></a><span class="co"># &#39;montyhall&#39;g help for package     finding HTML links ...</span></span>
+<span id="cb19-27"><a href="#cb19-27" aria-hidden="true" tabindex="-1"></a><span class="co">#  done</span></span>
+<span id="cb19-28"><a href="#cb19-28" aria-hidden="true" tabindex="-1"></a><span class="co"># -reate_game                             html  </span></span>
+<span id="cb19-29"><a href="#cb19-29" aria-hidden="true" tabindex="-1"></a><span class="co"># ** building package indices</span></span>
+<span id="cb19-30"><a href="#cb19-30" aria-hidden="true" tabindex="-1"></a><span class="co"># ** testing if installed package can be loaded from temporary location</span></span>
+<span id="cb19-31"><a href="#cb19-31" aria-hidden="true" tabindex="-1"></a><span class="co"># *** arch - i386</span></span>
+<span id="cb19-32"><a href="#cb19-32" aria-hidden="true" tabindex="-1"></a><span class="co"># *** arch - x64</span></span>
+<span id="cb19-33"><a href="#cb19-33" aria-hidden="true" tabindex="-1"></a><span class="co"># ** testing if installed package can be loaded from final location</span></span>
+<span id="cb19-34"><a href="#cb19-34" aria-hidden="true" tabindex="-1"></a><span class="co"># *** arch - i386</span></span>
+<span id="cb19-35"><a href="#cb19-35" aria-hidden="true" tabindex="-1"></a><span class="co"># *** arch - x64</span></span>
+<span id="cb19-36"><a href="#cb19-36" aria-hidden="true" tabindex="-1"></a><span class="co"># ** testing if installed package keeps a record of temporary installation path</span></span>
+<span id="cb19-37"><a href="#cb19-37" aria-hidden="true" tabindex="-1"></a><span class="co"># * DONE (montyhall)</span></span></code></pre></div>
 </div>
 <div id="try-loading" class="section level3" number="1.3.2">
 <h3 number="1.3.2"><span class="header-section-number">1.3.2</span> Try Loading</h3>
 <p>In a new R session try:</p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>( montyhall )</span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="fu">create_game</span>()</span></code></pre></div>
-<pre><code>## [1] &quot;goat&quot; &quot;goat&quot; &quot;car&quot;</code></pre>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>( montyhall )</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="fu">create_game</span>()</span></code></pre></div>
+<pre><code>## [1] &quot;goat&quot; &quot;car&quot;  &quot;goat&quot;</code></pre>
 </div>
 <div id="check-help-files" class="section level3" number="1.3.3">
 <h3 number="1.3.3"><span class="header-section-number">1.3.3</span> Check Help Files</h3>
 <p>You should be able to preview the help files that you created with your roxygen comments.</p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">help</span>( <span class="st">&quot;create_game&quot;</span> )</span></code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">help</span>( <span class="st">&quot;create_game&quot;</span> )</span></code></pre></div>
 </div>
 <div id="removing-packages" class="section level3" number="1.3.4">
 <h3 number="1.3.4"><span class="header-section-number">1.3.4</span> Removing Packages</h3>
 <p>If you encounter an error or the package is not working properly, you might need to fix your code and try again.</p>
 <p>You should be able to update the package then simply reinstall it. R will recognize that there are changes to the package and will install the most recent version.</p>
 <p>If you run into problems you can force a package deletion then install fresh.</p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># library() attaches the package to the current environment</span></span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="co"># detach is the opposite of library() - closes the package </span></span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="fu">detach</span>( <span class="st">&quot;package:montyhall&quot;</span> )  <span class="co"># closes the package so not locked</span></span>
-<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="fu">remove.packages</span>( <span class="st">&quot;montyhall&quot;</span> ) <span class="co"># deletes from your computer </span></span></code></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># library() attaches the package to the current environment</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="co"># detach is the opposite of library() - closes the package </span></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="fu">detach</span>( <span class="st">&quot;package:montyhall&quot;</span> )  <span class="co"># closes the package so not locked</span></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="fu">remove.packages</span>( <span class="st">&quot;montyhall&quot;</span> ) <span class="co"># deletes from your computer </span></span></code></pre></div>
 <p>If that fails, you probably have the package loaded in another R session or have package files locked by editing them in another program.</p>
 <p>If all else fails, you can delete the package manually from your personal R packages library, which usually lives in your Documents folder.</p>
 </div>
@@ -627,14 +627,14 @@ documents     # package created inside documents
 </ol>
 <p>This last step sends all of the files to GitHub. They should appear on your repo page shortly.</p>
 <p>Now others should be able to install your package by typing:</p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>( <span class="st">&quot;yourGitHubName/montyhall&quot;</span> )</span></code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>( <span class="st">&quot;yourGitHubName/montyhall&quot;</span> )</span></code></pre></div>
 </div>
 <div id="test-from-github" class="section level3" number="1.4.2">
 <h3 number="1.4.2"><span class="header-section-number">1.4.2</span> Test from GitHub</h3>
 <p>If you want to test whether installation works from GitHub first delete the version you installed earlier from your local machine. It will prevent conflicts when trying to install an identical version of the package, just from a different location.</p>
-<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">remove.packages</span>( <span class="st">&quot;montyhall&quot;</span> ) <span class="co"># deletes from your computer </span></span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>( <span class="st">&quot;yourGitHubName/montyhall&quot;</span> )</span>
-<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>montyhall<span class="sc">::</span><span class="fu">create_game</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">remove.packages</span>( <span class="st">&quot;montyhall&quot;</span> ) <span class="co"># deletes from your computer </span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>( <span class="st">&quot;yourGitHubName/montyhall&quot;</span> )</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>montyhall<span class="sc">::</span><span class="fu">create_game</span>()</span></code></pre></div>
 <p>See notes above on removing packages for more details.</p>
 <br>
 <hr>

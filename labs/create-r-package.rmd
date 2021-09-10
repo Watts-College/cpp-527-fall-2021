@@ -318,13 +318,6 @@ RoxygenNote: 6.1.1
 
 Go up one level in your directory so you are outside of the package folder, but in the same folder where the package folder lives. 
 
-```{r, eval=F}
-setwd( ".." )
-getwd()   # back to documents 
-devtools::install( "montyhall" )
-```
-
-
 ```
 documents     # should be back here 
 ├─ montyhall  
@@ -334,9 +327,14 @@ documents     # should be back here
 
 Then run the command to install your new package. 
 
+The install() command is looking for a folder called "montyhall". It can't find the folder if we are currently inside the folder. Thus we move up one level in the directory first: 
+
 ```{r, eval=F}
+setwd( ".." )  # move up one level with two periods
+getwd()        # should be /documents NOT /montyhall 
 devtools::install( "montyhall" )
 ```
+
 
 
 If successful you will see messages like this: 
