@@ -506,13 +506,13 @@ This week will use regular expressions you developed during the prior week and s
 
 **Required Reading**
 
-Review some of the examples from last week in order to see content analysis (counts and pattens of words) and sentiment analysis in practice: 
+Motivation for the topic this week comes from the Urban Institute's new [Racial Equity Analytics Lab](https://www.urban.org/racial-equity-analytics-lab). 
 
-[Which Hip-Hop Artist Has the Largest Vocabulary?](https://pudding.cool/projects/vocabulary/index.html)
+One of the challenges of bringing a data-driven approach to issues like racial equity is that tracking patterns and trends requires the ability to observe groups that might not be explicitly included in the data. 
 
-[Who is the Anonymous Op-Ed Writer inside the Trump Administration?](http://varianceexplained.org/r/op-ed-text-analysis/)
+One useful application of text analysis is using words to identify whether specific entities belong to a study group of interest. In this case, do foundations and nonprofits work with diverse communities? See: 
 
-[Sentiment Analysis](https://www.kaggle.com/rtatman/tutorial-sentiment-analysis-in-r)
+[Addressing Racial Funding Gaps in the Nonprofit Sector Requires New Data Approaches](https://www.urban.org/urban-wire/addressing-racial-funding-gaps-nonprofit-sector-requires-new-data-approaches)
 
 **Quanteda**
 
@@ -553,7 +553,7 @@ Focus on:
 
 <hr> 
 
-<a class="uk-button uk-button-default" href="https://ds4ps.org/cpp-527-spr-2020/labs/lab-04-instructions.html">INSTRUCTIONS</a>
+<a class="uk-button uk-button-default" href="../labs/lab-04-instructions.html">INSTRUCTIONS</a>
 
 <a class="uk-button uk-button-primary" href="{{page.canvas.assignment_url}}">SUBMIT LAB</a>
 
