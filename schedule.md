@@ -281,6 +281,16 @@ Once you have completed this section you will be able to
 * select appropriate iterators 
 * be mindful of the collector vector needed for the loop 
 
+---------
+
+![](figures/math-v-code-v2.png)
+
+> "I was working on my master’s degree before I realized … that code was intuitive to me, but math notation was not." ~ [JD Long](https://twitter.com/CMastication/status/1437025651903582220)
+
+----------
+
+<br>
+
 **Lecture Notes:** 
 
 <a class="uk-button uk-button-default" href="../lectures/week-02/">LECTURE NOTES</a> 
