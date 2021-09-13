@@ -4,7 +4,7 @@ output:
   html_document:
     theme: readable
     df_print: paged
-    highlight: tango
+    highlight: zenburn
     toc: true
     self_contained: false
     number_sections: false
@@ -15,9 +15,6 @@ output:
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set( echo = TRUE, message=F, warning=F, fig.width=10, fig.height=12 )
-library( dplyr )
-library( quanteda )
-library( pander )
 ```
 
 
@@ -42,6 +39,27 @@ Part III asks you to use text functions and regular expressions to search missio
 
 
 
+
+## Packages
+
+```{r, eval=F}
+# REMEMBER TO RUN ONCE AND NEVER INCLUDE
+# INSTALL STEPS IN RMD FILES!
+
+quanteda.bundle <- c( "quanteda", "quanteda.textmodels",
+                      "quanteda.textstats", "quanteda.textplots" )
+install.packages( quanteda.bundle )
+```
+
+
+```{r}
+library( dplyr )
+library( pander )
+library( quanteda )
+library( quanteda.textmodels )
+library( quanteda.textstats )
+library( quanteda.textplots )
+```
 
 
 ## Data
