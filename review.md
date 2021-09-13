@@ -26,16 +26,16 @@ session:
   session-code: 'week-03-regular-expressions.Rhistory' 
 - week4:
   date:  'Mon Sept 13'  
-  video: ''
-  password: ''
+  video: 'https://asu.zoom.us/rec/share/hfjqWi4xGzslm0c0Puig8viw2AOA_RK4L-ci9aTPwZmdeujFbBKKgcPK9NZ6m7MA.952pSGmuLyFKqJIg'
+  password: 'Passcode: 0%yvn!50'
   sample-code: 'week-03-regular-expressions.R'
   session-code: 'week-03-regular-expressions.Rhistory'
 - week5:
-  date:  ''  
+  date:  'Mon Sept 20'  
   video: ''
   password: ''
 - week6:
-  date:  ''  
+  date:  'Mon Sept 27'  
   video: ''
   password: ''
   sample-code: 'week-06-data-apis.R'
