@@ -38,9 +38,10 @@ Part II asks you to use the **quanteda** package, a popular text analysis packag
 Part III asks you to use text functions and regular expressions to search mission statements to develop a sample of specific nonprofits using keywords and phrases. 
 
 
+## Setup
 
 
-## Packages
+### Packages
 
 ```{r, eval=F}
 # REMEMBER TO RUN ONCE AND NEVER INCLUDE
@@ -62,7 +63,7 @@ library( quanteda.textplots )
 ```
 
 
-## Data
+### Data
 
 IRS documentation on 1023-EZ forms are [available here](https://www.irs.gov/charities-non-profits/exempt-organizations-form-1023ez-approvals). 
 
@@ -70,9 +71,16 @@ IRS documentation on 1023-EZ forms are [available here](https://www.irs.gov/char
 
 <br>
 
+Use this archived version of the data for the lab: 
+
 ```{r}
 URL <- "https://github.com/DS4PS/cpp-527-spr-2020/blob/master/labs/data/IRS-1023-EZ-MISSIONS.rds?raw=true"
 dat <- readRDS(gzcon(url( URL )))
+```
+
+We will be working primarily with the nonprofit activity codes and mission text for this assignment: 
+
+```{r}
 head( dat[ c("orgname","codedef01","mission") ] ) %>% pander()
 ```
 
@@ -134,7 +142,7 @@ grep(  pattern="some.reg.ex", x="mission statements", value=TRUE )
 You will print and count matches as follows. As an example, let's search for missions that contain numbers. 
 
 ```{r}
-grep( pattern="[0-9]", x=dat$mission, value=TRUE ) %>% head() %>% pander()
+grep( pattern="[0-9]", x=dat$mission, value=TRUE ) %>% head()
 grepl( "[0-9]", dat$mission ) %>% sum()
 ```
 
@@ -333,11 +341,26 @@ d.immigrant %>% head(25) %>% pander()
 ```
 
 
-For your deliverables for Part III: 
+### For your deliverables for Part III: 
 
-1. Report the total count of organizations you have identified as serving Black communities.   
-2. Take a random sample of 20 of the organizations in your sample and verify that your search criteria are identifying nonprofits that serve Black communities. Report your rate of false positives. 
-3. Similar to the immigrant example, print a data frame that contains the nonprofit names, activity codes (see above on how to combine them), and their mission statements. Print the full data frame for your sample so all mission are visible.  
+**P3-Q1.** Report the total count of organizations you have identified as serving Black communities.  
+
+
+**P3-Q2.** Take a random sample of 20 of the organizations in your sample and verify that your search criteria are identifying nonprofits that serve Black communities.  
+
+```{r}
+sample <- dplyr::sample_n( d.immigrant, 20 )
+```
+
+**Report your rate of false positives in this sample (how many organizations in your sample do NOT belong there).** 
+
+Note that an error rate of 10% in a classification model is very good. An error rate above 40% suggests poor performance. 
+
+We are measuring false positives, here, not overall accuracy. You can have a very low false positive rate by using extremely narrow search criteria, but then you will miss a large portion of the population you are trying to capture and study (the false negative rate). 
+
+The more inclusive your criteria are, the larger your false positive rate will be. The goal is to design search criteria that identify a large number of organizations while keeping false positive rates reasonable.
+
+**P3-Q3.** Similar to the immigrant example, print a data frame that contains the nonprofit names, activity codes (see above on how to combine them), and their mission statements. Print the full data frame for your sample so all missions are visible.  
 
 <br>
 <br>
