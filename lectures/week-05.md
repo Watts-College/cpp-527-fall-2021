@@ -20,13 +20,31 @@ image-width: 150px
 
 Skim the following chapters, reading to get a general sense of **concepts, vocabulary, and the basics** of each component. *You can skip sections that explain the code in detail.* 
   
-I am more concerned that you understand how these basic pieces fit together, and when you hear terms like "responsive" you conceptually know what people are talking about. 
+I am more concerned that you understand how these basic pieces fit together, and when you hear terms like "responsive" you conceptually know what people are talking about. At a minimum you should understand the bulleted vocabulary under each section:
 
-[Hello CSS](https://www.internetingishard.com/html-and-css/hello-css/)
+[Basic Webpage Architecture](https://www.internetingishard.com/html-and-css/basic-web-pages/)
 
+* tags (headings, formatting, lists)
+* page elements (head, body) 
+* structure versus presentation 
+* line breaks 
+  
+[Style Sheets: CSS](https://www.internetingishard.com/html-and-css/hello-css/)
+
+* style tags 
+* properties 
+* values 
+* units of measure (pixels **px** versus relative scaling **EM**) 
+* principle of cascading style and style hierarchy 
+  
 [Responsive Design](https://www.internetingishard.com/html-and-css/responsive-design/)
 
+* screen size (desktop vs mobile vs tablet) 
+* containers 
+
 [Bootstrap (wikipedia entry)](https://en.wikipedia.org/wiki/Bootstrap_(front-end_framework))
+
+* pre-existing CSS libraries (similar to R packages) 
   
 Helpful overview of how website architectures. Focus on the big picture of what each component does, specifically the concept of **separation of content and style**. Websites leverage **templates** and **style sheets** to create page layouts, containers for data, and consistent look and feel of material. In subsequent weeks we will show you how you can integrate these principles into RMD docs to create report templates and automate reporting. Don't worry about the specifics of HTML code. 
   
