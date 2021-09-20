@@ -56,7 +56,7 @@ I would recommend **cloning** a simple site that was built using Beautiful Jekyl
 
 ## Step 02
 
-After forking or cloning a site, follow the instructions in the README file to begin customizing your page. 
+After forking or cloning a site, follow the instructions in the README file to begin customizing your page (the README file should look this [THIS](https://github.com/DS4PS/beautiful-jekyll/blob/master/README.md)). If you used one of the other demo sites built from Beautiful Jekyll then copy the default [README.md](https://github.com/DS4PS/beautiful-jekyll/blob/master/README.md) file into your repository (or update your existing README file with the markdown text from the default version). 
 
 In the **`_config.yml`** file in the default directory do the following: 
 
