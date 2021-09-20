@@ -16,8 +16,23 @@ image-width: 150px
 
 <br>
   
+## Required Reading
 
+Skim the following chapters, reading to get a general sense of **concepts, vocabulary, and the basics** of each component. *You can skip sections that explain the code in detail.* 
+  
+I am more concerned that you understand how these basic pieces fit together, and when you hear terms like "responsive" you conceptually know what people are talking about. 
 
+[Hello CSS](https://www.internetingishard.com/html-and-css/hello-css/)
+
+[Responsive Design](https://www.internetingishard.com/html-and-css/responsive-design/)
+
+[Bootstrap (wikipedia entry)](https://en.wikipedia.org/wiki/Bootstrap_(front-end_framework))
+  
+Helpful overview of how website architectures. Focus on the big picture of what each component does, don't worry about HTML code. 
+  
+[Introduction to Web Programming](https://www.internetingishard.com/html-and-css/)
+  
+  
 ## GitHub Pages Set-Up
 
 This week's lab will ask you to configure a GitHub page within a repository on your account. GitHub pages are an amazing resource because (1) they allow you to create an unlimited number of websites related to your projects FOR FREE, and (2) they can be created and maintained using Markdown, which simplifies a lot of the complexity of websites. You will learn to link HTML files generated from R Studio so that you can start sharing analytical projects with external audiences. 
@@ -78,18 +93,7 @@ These two pages on the example GitHub site have the same content, but CSS elemen
 
   
   
-## Required Reading
 
-Skim the following chapters, reading to get a general sense of concepts and the basics of how each might function. You can skip sections that explain the code in detail. I am more concerned that you understand how these basic pieces fit together, and when you hear terms like "responsive" you conceptually know what people are talking about. 
-
-[Introduction to Web Programming](https://internetingishard.com/html-and-css/introduction/)
-
-[Hello CSS](https://www.internetingishard.com/html-and-css/hello-css/)
-
-[Responsive Design](https://www.internetingishard.com/html-and-css/responsive-design/)
-
-[Bootstrap (wikipedia entry)](https://en.wikipedia.org/wiki/Bootstrap_(front-end_framework))
-  
 
   
 <br>
