@@ -33,7 +33,7 @@ Start by forking the **beautiful-jekyll** website template:
 
 [Beautiful Jekyll Website Template on GitHub](https://deanattali.com/beautiful-jekyll/)
 
-After forking the files you need to activate the GitHub pages option under Settings >> Pages. Note that GitHub has changed some of the repository settings and is now using the term **Main** to refer to the default folder in a repository instead of **Master**. Older repositories may have a Master branch still, and some of the documentation will use the term Master, so it's helpful to know that these mean the same thing if you run into this discrepancy. 
+After forking the files you need to activate the GitHub pages option under Settings >> Pages. Note that GitHub has changed some of the repository settings and is now using the term **Main** to refer to the default branch in a repository instead of **Master** (you will learn more about branches in CPP 528). Older repositories may have a Master branch still, and some of the documentation will use the term Master, so it's helpful to know that these mean the same thing if you run into this discrepancy. 
   
 **Update:**
 
