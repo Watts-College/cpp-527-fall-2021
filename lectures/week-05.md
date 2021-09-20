@@ -28,7 +28,7 @@ I am more concerned that you understand how these basic pieces fit together, and
 
 [Bootstrap (wikipedia entry)](https://en.wikipedia.org/wiki/Bootstrap_(front-end_framework))
   
-Helpful overview of how website architectures. Focus on the big picture of what each component does, don't worry about HTML code. 
+Helpful overview of how website architectures. Focus on the big picture of what each component does, specifically the concept of **separation of content and style**. Websites leverage **templates** and **style sheets** to create page layouts, containers for data, and consistent look and feel of material. In subsequent weeks we will show you how you can integrate these principles into RMD docs to create report templates and automate reporting. Don't worry about the specifics of HTML code. 
   
 [Introduction to Web Programming](https://www.internetingishard.com/html-and-css/)
   
