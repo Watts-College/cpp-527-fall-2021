@@ -29,27 +29,25 @@ For this lab you will copy and then adapt an existing GitHub pages websites.
 
 ## Step 01
 
-Start by forking the **beautiful-jekyll** website template:
+Start by forking or cloning the **beautiful-jekyll** website template:
 
 [Beautiful Jekyll Website Template on GitHub](https://deanattali.com/beautiful-jekyll/)
 
-After forking the files you need to activate the GitHub pages option under Settings >> Pages. Note that GitHub has changed some of the repository settings and is now using the term **Main** to refer to the default branch in a repository instead of **Master** (you will learn more about branches in CPP 528). Older repositories may have a Master branch still, and some of the documentation will use the term Master, so it's helpful to know that these mean the same thing if you run into this discrepancy. 
+You can see examples of the template in action in the [Featured Sites Gallery](https://beautifuljekyll.com/examples/). 
+
+After forking the files you need to activate the GitHub pages option under Settings >> Pages (select the main branch and root folder). 
   
-**Update:**
+GitHub has changed some of the repository settings recently and is now using the term **Main** to refer to the default branch in a repository instead of **Master** (you will learn more about branches in CPP 528). Note that older repositories may have a Master branch still, and some of the documentation will use the term Master, so if you run across that term generally use "main" instead. 
 
-The Beautiful Jekyll site has been adding new features and additional complexity. For this assignment it helps to start simple. 
+**Forking vs Cloning:** 
 
-I would recommend **cloning** a simple site that was built using Beautiful Jekyll such as one of the [Features Sites](https://beautifuljekyll.com/examples/), or:
+Forking a project on GitHub creates a copy of the project on your account. You can update files without impacting the originals. Forking a project retains the link back to the original project so that you can add updates from the original version and if desired send pull requests back to the original with code updates that improve their project (this is how contributions to open-source projects are made).
 
-[Professor Claudia Hauff](https://chauff.github.io/)
+When you **clone** a site, you copy all of the files to your account (similar to forking), but you sever ties between the two projects. This is done if you want to take the code as it exists and then modify it to create a new project that is distinct from the original. It means you can't incorporate updates from the original project and you can't send suggested code updates back to the original project.
 
-[Website Files on GitHub](https://github.com/chauff/chauff.github.io)
-
-*Note that forking a project on GitHub creates a copy of the project on your account. You can update files without impacting the originals. Forking a project retains the link back to the original project so that you can add updates from the original version and if desired send pull requests back to the original with code updates that improve their project (this is how contributions to open-source projects are made).*
-
-*When you **clone** a site, you copy all of the files to your account (similar to forking), but you sever ties between the two projects. This is done if you want to take the code as it exists and then modify it to create a new project that is distinct from the original. It means you can't incorporate updates from the original project and you can't send suggested code updates back to the original project.*
-
-*You fork a project when you want to continue to contribute back to the original or continue to incorporate updates made in the original project. You clone a repository if you want to take the code as it stands and adapt it as something new. You still need to attribute the original project after cloning, but there will be no formal link between the repositories on GitHub after cloning.*
+You fork a project when you want to continue to contribute back to the original or continue to incorporate updates made in the original project. You clone a repository if you want to take the code as it stands and adapt it as something new. You still need to attribute the original project after cloning, but there will be no formal link between the repositories on GitHub after cloning.
+  
+Forking is fine for this assignment, but in the future if you don't plan to contribute back to a project it is better to clone it. 
 
 -----
 
