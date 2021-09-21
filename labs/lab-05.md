@@ -125,7 +125,7 @@ use-site-title: true
 
 Demonstrate that you are able to apply CSS styles to specific elements of a page. 
 
-Create a new **div** section around Step 1 on the Getting Started page. 
+Create a new **div** section around section 1 **on the Getting Started page** in order to change the style of that section only. 
 
 ```
 ### Overview of steps required
@@ -155,9 +155,9 @@ Note that in order to render markdown text between HTML `<div>` tags you need to
 
 Either will work with GitHub pages, but only the .md files are automatically converted from MD to HTML on the GitHub (kramdown) servers. If you add markdown elements to an HTML file type they will not be converted. 
 
-(2) Add a markdown="1" attribute or double-squirrely brackets 
+(2) Add a markdown="1" attribute or double-squirrely brackets. 
 
-By default any markdown that occurs between HTML div tags is not converted to HTML. To instruct the server-side parser to process the text as markdown you need to add the **markdown="1"** attribute to the div tag, or wrap the markdown text in double-squirrely brackets. 
+By default any markdown that occurs between HTML div tags is not converted to HTML. To instruct the server-side parser to process the text as markdown you need to add the **markdown="1"** attribute to the div tag, or wrap the markdown text in double-squirrely brackets. The first option is much cleaner. 
 
 **Option 1:**
 
