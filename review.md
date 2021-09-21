@@ -32,8 +32,8 @@ session:
   session-code: 'week-03-regular-expressions.Rhistory'
 - week5:
   date:  'Mon Sept 20'  
-  video: ''
-  password: ''
+  video: 'https://asu.zoom.us/rec/share/eE4GA71tq9XxFLnvf_vnmI10MVjuJ_W05OKQSNSdI4yeNyl2LkedM_cItc3GF_QI.toZ8G5685e4Hh17u'
+  password: 'V.c1iWaj'
 - week6:
   date:  'Mon Sept 27'  
   video: ''
