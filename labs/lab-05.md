@@ -29,9 +29,9 @@ For this lab you will copy and then adapt an existing GitHub pages websites.
 
 ## Step 01
 
-Start by forking or cloning the **beautiful-jekyll** website template:
+Start by forking or cloning the **beautiful-jekyll** website template (static version archived here):
 
-[Beautiful Jekyll Website Template on GitHub](https://deanattali.com/beautiful-jekyll/)
+[Beautiful Jekyll Website Template on GitHub](https://github.com/DS4PS/beautiful-jekyll)
 
 You can see examples of the template in action in the [Featured Sites Gallery](https://beautifuljekyll.com/examples/). 
 
@@ -54,7 +54,7 @@ Forking is fine for this assignment, but in the future if you don't plan to cont
 
 ## Step 02
 
-After forking or cloning a site, follow the instructions in the README file to begin customizing your page (the README file should look this [THIS](https://github.com/DS4PS/beautiful-jekyll/blob/master/README.md)). If you used one of the other demo sites built from Beautiful Jekyll then copy the default [README.md](https://github.com/DS4PS/beautiful-jekyll/blob/master/README.md) file into your repository (or update your existing README file with the markdown text from the default version). 
+After forking or cloning a site, follow the instructions in the README file to begin customizing your page (the README file should look this [THIS](https://github.com/DS4PS/beautiful-jekyll/blob/master/README.md)). 
 
 In the **`_config.yml`** file in the default directory do the following: 
 
