@@ -706,20 +706,22 @@ Also share your page link on YellowDig:
 
 ## Lab 06: Creating RMD Templates  
 
-**Due {{page.labs.lab-06}}**
-
 <hr>
+
+**Due {{page.labs.lab-06}}**
 
 <a class="uk-button uk-button-default" href="../labs/lab-06-instructions/">INSTRUCTIONS</a>
 
 <a class="uk-button uk-button-primary" href="{{page.canvas.assignment_url}}">SUBMIT LAB</a>
 
-<br>
+<hr>
 <br>
 
 
 
 ## Practice Problems 
+
+<hr>
 
 <a class="uk-button uk-button-default" href="../practice/week-06/">PRACTICE PROBLEMS</a>
 
