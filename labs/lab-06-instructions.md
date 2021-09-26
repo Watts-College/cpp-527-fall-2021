@@ -107,6 +107,22 @@ So you basically need to add HTML tags around all of the data stored in the YAML
 
 ## Step 1
 
+Create a new RMD file using the following settings: 
+
+````
+---
+title: 'Lab 06'
+output:
+  html_document:
+    theme: readable
+    df_print: paged
+    highlight: zenburn
+    toc: true
+---
+````
+	
+## Step 2
+
 Select three team members from the R Epidemics Consortium page and create a data frame with their information from the YAML fields.
 
 [Team Member Info](https://raw.githubusercontent.com/reconhub/reconhub.github.io/master/people.md) 
@@ -123,7 +139,7 @@ Create the data frame manually:
   
   
   
-## Step 2 
+## Step 3 
 
 Write an R function called build_circle() that will create a single member profile for the team gallery page. 
   
@@ -251,7 +267,7 @@ build_circles( WEBSITE="https://sites.google.com/site/thibautjombart/",
 <br>
   
   
-## Step 3
+## Step 4
 
 Create a loop to generate profile sections for 3 team members using the following chunk: 
 	
@@ -288,7 +304,7 @@ The **cat()** function is similar to **print()** in R.
   
   
   
-## Step 4
+## Step 5
 
 You will also need the custome CSS items contained in the [site main.css file](https://github.com/DS4PS/reconhub.github.io/blob/master/css/main.css) in order to replicate the style of the gallery: 
 
@@ -376,9 +392,9 @@ div {
   
   
 
-## Step 5
+## Step 6
 
-Render your HTML file. 
+Knit your HTML file. 
 
 * Include a chunk showing how you create the dataframe with the 3 team members.
 * Include a chunk with your build_circles() function and do NOT hide the code. 
