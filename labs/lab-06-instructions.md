@@ -21,10 +21,18 @@ image-width: 150px
 
 # Part I - Custom Reporting Functions 
 
-https://www.repidemicsconsortium.org/people/ 
 
-For this lab you will use an existing GitHub pages template (HTML template using liquid tags) and convert it to an RMD template.  
+
+For Part I on this lab you will learn how to create a template function for use in RMD docs.
+
+You will convert the following [R Epidemics Member Gallery](https://www.repidemicsconsortium.org/people/) into a RMD format: 
+
+![](../../lectures/figures/r-epidemics-consortium-people.png)
+
+In order to do this you will convert the existing gallery template (HTML template using liquid tags) and convert it to an R function that can be used to build this gallery in an RMD doc.  
   
+The YAML data on the website looks like this: 
+
 ````
 people-list:
   - name: Thibaut Jombart
@@ -50,7 +58,7 @@ people-list:
     twitter: https://twitter.com/marcbaguelin 
 ````
 
-HTML template with liquid tags contained in the file [list-circles.html](https://github.com/reconhub/reconhub.github.io/blob/master/_includes/list-circles.html)
+The HTML template in the file [list-circles.html](https://github.com/reconhub/reconhub.github.io/blob/master/_includes/list-circles.html) uses liquid tags to convert all of the team members into profile circles. 
   
 ````
 <div class="list-circles">
@@ -91,7 +99,7 @@ HTML template with liquid tags contained in the file [list-circles.html](https:/
 </div>
 ````
 
-Custome CSS items for the people gallery: 
+You will also need the custome CSS items contained in the [site main.css file](https://github.com/DS4PS/reconhub.github.io/blob/master/css/main.css) in order to replicate the style of the gallery: 
 
 ````
 /* --- Lists of circles --- */
@@ -152,8 +160,9 @@ div {
 }
 ````
   
-  
-When the YAML data and the template are combined they create HTML sections like the following: 
+**Intuition:** 
+
+When the YAML data and the gallery template are combined they create HTML sections like the following: 
 
 Data: 
 
