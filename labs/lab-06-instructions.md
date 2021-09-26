@@ -206,9 +206,9 @@ Data + template:
 ````
 
 
-## Instructions 
 
-### Step 1
+
+## Step 1
 
 Write an R function called build_circle() that will create a single member profile for the team gallery page. 
   
@@ -269,12 +269,14 @@ The function should return the following:
   
   
   
-### Step 2 
+## Step 2 
 
 Create a data frame with information for 3 team members contained in the YAML fields on the R Epidemics site.
 
 [Team Member Info](https://raw.githubusercontent.com/reconhub/reconhub.github.io/master/people.md) 
- 
+
+*You will create the data frame manually. Create vectors for each information type (WEBSITE, NAME, etc) and add items from three people on the team. If a person does not list information for an item use an empty string ("") as a placeholder in the vector. Then bind the vectors together into a data frame using the data.frame() function and call it **dat**.* 
+	
 <br>
 <hr>
 <br>
@@ -282,14 +284,17 @@ Create a data frame with information for 3 team members contained in the YAML fi
   
   
   
-### Step 3
+## Step 3
 
-Create a loop to generate profile sections for 3 team members. 
+Create a loop to generate profile sections for 3 team members using the following chunk: 
+	
   
 ````
-<div class="list-circles">
 
 ```{r, results="asis"}
+
+cat( '<div class="list-circles">' )
+	
 for( i in ??? )
 {
    df <- dat[ i , ] # select one row (one team member) 
@@ -300,10 +305,15 @@ for( i in ??? )
      GITHUB=df$GITHUB,
      TWITTER=df$TWITTER  )
 }
+
+cat( '</div>' )
+
 ```
 
-</div>
 ````
+
+The **cat()** function is similar to **print()** in R. 
+
   
 <br>
 <hr>
@@ -337,12 +347,11 @@ Add the list-cicles CSS items to the bottom of your RMD file in a CSS code chunk
 
 Render your HTML file. 
 
+* Include a chunk showing how you create the dataframe with the 3 team members.
 * Include a chunk with your build_circles() function and do NOT hide the code. 
-* Include a chunk showing how you create the dataframe with the 3 team members. 
 * Include a chunk with your loop to add all profiles to the page. 
 
-
-You will submit your RMD file and HTML file for this step. 
+You will submit your RMD file and rendered HTML file for this step. 
   
 <br>  
 <br>
