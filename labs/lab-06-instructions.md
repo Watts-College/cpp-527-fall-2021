@@ -22,14 +22,13 @@ image-width: 150px
 # Part I - Custom Reporting Functions 
 
 
-
 For Part I on this lab you will learn how to create a template function for use in RMD docs.
 
 You will convert the following [R Epidemics Member Gallery](https://www.repidemicsconsortium.org/people/) into a RMD format: 
 
 ![](../../lectures/figures/r-epidemics-consortium-people.png)
 
-In order to do this you will convert the existing gallery template (HTML template using liquid tags) and convert it to an R function that can be used to build this gallery in an RMD doc.  
+In order to do this you will replicate the existing gallery template (HTML template using liquid tags) by creating your own R function to build this identical gallery in an RMD doc.  
   
 The YAML data on the website looks like this: 
 
@@ -48,19 +47,15 @@ people-list:
     website: http://deanattali.com/
     url: http://deanattali.com/
     github: https://github.com/daattali/
-    twitter: https://twitter.com/daattali
-  - name: Marc Baguelin
-    img: /img/people/marc-baguelin.jpg
-    desc: Mathematical modeller and health economist specialised in Public Health intervention. Strong believer in open code and sharing. Public Health England, UK.
-    website: http://www.lshtm.ac.uk/aboutus/people/baguelin.marc
-    url: http://www.lshtm.ac.uk/aboutus/people/baguelin.marc
-    github: https://github.com/MJomaba/
-    twitter: https://twitter.com/marcbaguelin 
+    twitter: https://twitter.com/daattali 
 ````
 
 The HTML template in the file [list-circles.html](https://github.com/reconhub/reconhub.github.io/blob/master/_includes/list-circles.html) uses liquid tags to convert all of the team members into profile circles. 
   
-````
+<blockquote>
+<pre>
+<code>
+
 <div class="list-circles">
   {% for item in include.items %}
     <div class="list-circles-item">
@@ -97,7 +92,10 @@ The HTML template in the file [list-circles.html](https://github.com/reconhub/re
     </div>
   {% endfor %}
 </div>
-````
+
+</blockquote>
+</pre>
+</code>
 
 You will also need the custome CSS items contained in the [site main.css file](https://github.com/DS4PS/reconhub.github.io/blob/master/css/main.css) in order to replicate the style of the gallery: 
 
@@ -210,6 +208,20 @@ Data + template:
 
 ## Step 1
 
+Create a data frame with information for 3 team members contained in the YAML fields on the R Epidemics site.
+
+[Team Member Info](https://raw.githubusercontent.com/reconhub/reconhub.github.io/master/people.md) 
+
+*You will create the data frame manually. Create vectors for each information type (WEBSITE, NAME, etc) and add items from three people on the team. If a person does not list information for an item use an empty string ("") as a placeholder in the vector. Then bind the vectors together into a data frame using the data.frame() function and call it **dat**.* 
+	
+<br>
+<hr>
+<br>
+  
+  
+  
+## Step 2 
+
 Write an R function called build_circle() that will create a single member profile for the team gallery page. 
   
 It should use the following arguments: 
@@ -293,25 +305,34 @@ The function should return the following HTML code with the argument names (anyt
 
 </div>
 ````
+
+To help get you started: 
+
+```r
+build_circles <- function( WEBSITE, IMG )
+{
+
+  cat( '<div class="list-circles-item">' )
+  cat( '\n\n' )  # double line break 
+  cat( paste0( '<a href="', WEBSITE, '"><img src="', IMG, '" class="item-img"></a>' ) )
+  cat( '\n' )  # line break 
+
+}
+
+build_circles( WEBSITE="https://sites.google.com/site/thibautjombart/", 
+               IMG="https://www.repidemicsconsortium.org/img/people/thibaut-jombart.jpg" )
+	       
+```
+
+````
+<div class="list-circles-item">
+
+<a href="https://sites.google.com/site/thibautjombart/"><img src="https://www.repidemicsconsortium.org/img/people/thibaut-jombart.jpg" class="item-img"></a>
+````
+
 <br>
 <hr>
 <br>
-  
-  
-  
-## Step 2 
-
-Create a data frame with information for 3 team members contained in the YAML fields on the R Epidemics site.
-
-[Team Member Info](https://raw.githubusercontent.com/reconhub/reconhub.github.io/master/people.md) 
-
-*You will create the data frame manually. Create vectors for each information type (WEBSITE, NAME, etc) and add items from three people on the team. If a person does not list information for an item use an empty string ("") as a placeholder in the vector. Then bind the vectors together into a data frame using the data.frame() function and call it **dat**.* 
-	
-<br>
-<hr>
-<br>
-  
-  
   
   
 ## Step 3
