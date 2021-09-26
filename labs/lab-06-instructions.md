@@ -56,7 +56,7 @@ You can view the original HTML template in the file [list-circles.html](https://
 
 
   
-**Intuition:** 
+## Intuition
 
 When the YAML data is rendered by the gallery template it is converted to HTML sections like the following: 
 
@@ -72,7 +72,7 @@ Data:
     twitter: https://twitter.com/TeebzR
 ````
 
-Data after conversion to HTML: 
+Data after conversion to HTML will look like this: 
   
 ````
 <div class="list-circles-item">
@@ -101,6 +101,7 @@ Data after conversion to HTML:
 </div>
 ````
 
+So you basically need to add HTML tags around all of the data stored in the YAML table to replicate the HTML code above. 
 
 
 
@@ -135,7 +136,11 @@ It should use the following arguments:
 * GITHUB - URL of personal GitHub page 
 * TWITTER - Twitter URL 
 
-*Note that the IMG location in the YAML header is "/img/people/thibaut-jombart.jpg" but the full URL version is "https://www.repidemicsconsortium.org/img/people/thibaut-jombart.jpg". Since this is for demo purposes only you can use these URLs to load the images in your report section because you are submitting an RMD+HTML file for Part I, not a full website.*
+Note that IMG in the YAML header is a relative path "/img/people/thibaut-jombart.jpg" 
+
+For the assignment use the full URL: "https://www.repidemicsconsortium.org/img/people/thibaut-jombart.jpg"
+
+This loads the image from their site. It's not a good practice to embed images using an external URL because if they make changes it can impact your page. But this is a demo assignment and it gets more complicated if you need to bundle an images directory to do a simple demo. 
 
 Example use - create a circle item for one team member: 
 
@@ -154,7 +159,6 @@ Your function will convert R objects to HTML using the following code logic:
 * add the appropriate tags to the strings using **paste0()** 
 * return the string literal from the function using **cat()** 
 
-*Note that paste0() is a convenient way to call paste( ..., sep="" ) without the extra argument since the default separator for paste() is a space (sep=" ").*
 	
 ```r
 name <- "RUBY TUESDAY"
@@ -177,7 +181,6 @@ add_tags( name, title )  # test it:
 
 ```
 
-*Note that HTML tags use double quotes, so enclose them with single quotes
 
 The function should return the following HTML code with the argument names (anything in caps like WEBSITE, IMG, etc) replaced with their actual values (Thibaut Jombart, etc): 
   
@@ -208,15 +211,25 @@ The function should return the following HTML code with the argument names (anyt
 </div>
 ````
 
-To help get you started: 
+NOTE:  
+* paste0() is a convenient way to call paste( ..., sep="" ) without the extra argument since the default separator for paste() is a space (sep=" ").
+* HTML tags use double quotes around arguments inside the tags, so enclose the HTML elements with single quotes to avoid conflicts.
+
+```r
+paste0( '<a href="', WEBSITE, '"><img src="', IMG, '" class="item-img"></a>' )
+```
+
+Here is some code to get you started: 
 
 ```r
 build_circles <- function( WEBSITE, IMG )
 {
 
   cat( '<div class="list-circles-item">' )
-  cat( '\n\n' )  # double line break 
-  cat( paste0( '<a href="', WEBSITE, '"><img src="', IMG, '" class="item-img"></a>' ) )
+  cat( '\n' )  # line break 
+  cat( paste0( '  <a href="', WEBSITE, '">' ) )
+  cat( '\n' )  # line break 
+  cat( paste0( '  <img src="', IMG, '" class="item-img"></a>' ) )
   cat( '\n' )  # line break 
 
 }
@@ -228,10 +241,11 @@ build_circles( WEBSITE="https://sites.google.com/site/thibautjombart/",
 
 ````
 <div class="list-circles-item">
-
-<a href="https://sites.google.com/site/thibautjombart/"><img src="https://www.repidemicsconsortium.org/img/people/thibaut-jombart.jpg" class="item-img"></a>
+  <a href="https://sites.google.com/site/thibautjombart/">
+  <img src="https://www.repidemicsconsortium.org/img/people/thibaut-jombart.jpg" class="item-img"></a>
 ````
 
+	
 <br>
 <hr>
 <br>
