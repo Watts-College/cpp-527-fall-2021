@@ -123,7 +123,7 @@ output:
 	
 ## Step 2
 
-Select three team members from the R Epidemics Consortium page and create a data frame with their information from the YAML fields.
+Select three team members from the R Epidemics Consortium page and create a data frame with their information from the YAML fields (see Step 3 for the variable names).
 
 [Team Member Info](https://raw.githubusercontent.com/reconhub/reconhub.github.io/master/people.md) 
 
