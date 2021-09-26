@@ -50,117 +50,15 @@ people-list:
     twitter: https://twitter.com/daattali 
 ````
 
-The HTML template in the file [list-circles.html](https://github.com/reconhub/reconhub.github.io/blob/master/_includes/list-circles.html) uses liquid tags to convert all of the team members into profile circles. 
+You can view the original HTML template in the file [list-circles.html](https://github.com/reconhub/reconhub.github.io/blob/master/_includes/list-circles.html). It uses liquid tags to convert all of the team member data from the YAML fields into HTML profiles. 
   
-<blockquote>
-<pre>
-<code>
-
-<div class="list-circles">
-  {% for item in include.items %}
-    <div class="list-circles-item">
-      {% if item.img %}
-        {% if item.url %}
-          <a href="{{ item.url }}"><img src="{{ item.img }}" class="item-img" /></a>
-        {% else %}
-          <img src="{{ item.img }}" class="item-img" />
-        {% endif %}
-      {% endif %}
-      {% if item.name %}
-        <h4 class="item-name">{{ item.name }}</h4>
-      {% endif %} 
-      {% if item.desc %}
-        <div class="item-desc">{{ item.desc }}</div>
-      {% endif %}
-      <div class="item-links">
-        {% if item.website %}
-          <a class="item-link" href="{{ item.website }}" title="Website">
-            <span class="fa fa-home"></span>
-          </a>
-        {% endif %}
-        {% if item.github %}
-          <a class="item-link" href="{{ item.github }}" title="GitHub">
-            <span class="fa fa-github"></span>
-          </a>
-        {% endif %}
-        {% if item.twitter %}
-          <a class="item-link" href="{{ item.twitter }}" title="Twitter">
-            <span class="fa fa-twitter"></span>
-          </a>
-        {% endif %}      
-      </div>
-    </div>
-  {% endfor %}
-</div>
-
-</blockquote>
-</pre>
-</code>
-
-You will also need the custome CSS items contained in the [site main.css file](https://github.com/DS4PS/reconhub.github.io/blob/master/css/main.css) in order to replicate the style of the gallery: 
-
-````
-/* --- Lists of circles --- */
-
-div {
-    display: block;
-}
-  
-.list-circles {
-  text-align: center;
-}
-
-@media only screen and (min-width: 1200px) {
-  .list-circles {
-    width: 150%;
-    margin-left: -25%;
-  }
-}
 
 
-.list-circles-item {
-  display: inline-block;
-  width: 240px;
-  vertical-align: top;
-  margin: 0;
-  padding: 20px;
-}
 
-.list-circles-item:hover {
-  background: #fafafa;
-}
-
-.list-circles-item .item-img {
-  max-width: 200px;
-  height: 200px;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  border-radius: 50%;
-  border: 1px solid #777;
-}
-
-.list-circles-item .item-desc {
-  font-size: 16px;
-}
-
-.list-circles-item .item-links {
-  margin-top: 5px;
-}
-
-.list-circles-item .item-link {
-  margin:0 3px;
-  color: #314f96;
-  text-decoration: none !important;
-}
-
-.list-circles-item .item-link:hover {
-  color: #042265;
-}
-````
   
 **Intuition:** 
 
-When the YAML data and the gallery template are combined they create HTML sections like the following: 
+When the YAML data is rendered by the gallery template it is converted to HTML sections like the following: 
 
 Data: 
 
@@ -174,7 +72,7 @@ Data:
     twitter: https://twitter.com/TeebzR
 ````
 
-Data + template: 
+Data after conversion to HTML: 
   
 ````
 <div class="list-circles-item">
@@ -208,11 +106,15 @@ Data + template:
 
 ## Step 1
 
-Create a data frame with information for 3 team members contained in the YAML fields on the R Epidemics site.
+Select three team members from the R Epidemics Consortium page and create a data frame with their information from the YAML fields.
 
 [Team Member Info](https://raw.githubusercontent.com/reconhub/reconhub.github.io/master/people.md) 
 
-*You will create the data frame manually. Create vectors for each information type (WEBSITE, NAME, etc) and add items from three people on the team. If a person does not list information for an item use an empty string ("") as a placeholder in the vector. Then bind the vectors together into a data frame using the data.frame() function and call it **dat**.* 
+Create the data frame manually: 
+	
+* Create vectors for each information type (WEBSITE, NAME, etc) and add items from three people on the team. 
+* If a person does not list information for an item use an empty string ("") as a placeholder in the vector. 
+* Bind the vectors together into a data frame using the data.frame() function and call it **dat**.
 	
 <br>
 <hr>
@@ -374,6 +276,8 @@ The **cat()** function is similar to **print()** in R.
   
 ### Step 4
 
+You will also need the custome CSS items contained in the [site main.css file](https://github.com/DS4PS/reconhub.github.io/blob/master/css/main.css) in order to replicate the style of the gallery: 
+
 Add the list-cicles CSS items to the bottom of your RMD file in a CSS code chunk as follows: 
 
 ````
@@ -388,6 +292,70 @@ Add the list-cicles CSS items to the bottom of your RMD file in a CSS code chunk
 
 ````
 
+	
+	
+Necessary CSS elements from the R Epidemics Hub website:
+	
+
+````
+/* --- Lists of circles --- */
+
+div {
+    display: block;
+}
+  
+.list-circles {
+  text-align: center;
+}
+
+@media only screen and (min-width: 1200px) {
+  .list-circles {
+    width: 150%;
+    margin-left: -25%;
+  }
+}
+
+
+.list-circles-item {
+  display: inline-block;
+  width: 240px;
+  vertical-align: top;
+  margin: 0;
+  padding: 20px;
+}
+
+.list-circles-item:hover {
+  background: #fafafa;
+}
+
+.list-circles-item .item-img {
+  max-width: 200px;
+  height: 200px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  border: 1px solid #777;
+}
+
+.list-circles-item .item-desc {
+  font-size: 16px;
+}
+
+.list-circles-item .item-links {
+  margin-top: 5px;
+}
+
+.list-circles-item .item-link {
+  margin:0 3px;
+  color: #314f96;
+  text-decoration: none !important;
+}
+
+.list-circles-item .item-link:hover {
+  color: #042265;
+}
+````
+	
 <br>
 <hr>
 <br>
