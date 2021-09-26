@@ -544,7 +544,7 @@ Consider creating a GitHub site to host a portfolio of projects you are working 
 
 You can add the CV and your code-through assignments to the site. 
 
-**Note, you might want to highlight projects you have done in this program but do NOT share solutions to any labs or assignments in a public archive.** 
+Note, you might want to highlight projects you have done in this program but **do NOT share solutions to any labs or assignments** in a public archive. 
   
 ### Challenge Question 
 
