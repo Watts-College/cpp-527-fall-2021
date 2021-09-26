@@ -23,12 +23,12 @@ labs:
   lab-03:  'Thursday, September 9th'
   lab-04:  'Tuesday, September 14th'
   lab-05:  'Tuesday, September 21st'
-  lab-06:  'Tuesday, September 28th'
+  lab-06:  'Friday, October 1st'
   
   
 projects: 
   r-package:  'Friday, September 10th'
-  report-template:  'Tuesday, October 5th'
+  report-template:  'Friday, October 8th'
   code-through:  'Friday, October 8th'
   
   
