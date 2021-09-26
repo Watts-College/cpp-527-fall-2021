@@ -235,7 +235,37 @@ build_circle( WEBSITE="https://sites.google.com/site/thibautjombart/",
 )
 ```
 
-The function should return the following: 
+Your function will convert R objects to HTML using the following code logic:
+
+* add the appropriate tags to the strings using **paste0()** 
+* return the string literal from the function using **cat()** 
+
+*Note that paste0() is a convenient way to call paste( ..., sep="" ) without the extra argument since the default separator for paste() is a space (sep=" ").*
+	
+```r
+name <- "RUBY TUESDAY"
+title <- "TOP DOG" 
+
+add_tags <- function( name, title )
+{
+
+  cat( paste0( '<tag> ', name, ' </tag>' ) )
+  cat( '\n' )  # line break 
+  cat( paste0( '<div class="title"> ', title, ' </div>' ) )
+  cat( '\n' )  # line break
+
+}
+
+add_tags( name, title )  # test it: 
+	    
+<tag> RUBY TUESDAY </tag>
+<div class="title"> TOP DOG </div>
+
+```
+
+*Note that HTML tags use double quotes, so enclose them with single quotes
+
+The function should return the following HTML code with the argument names (anything in caps like WEBSITE, IMG, etc) replaced with their actual values (Thibaut Jombart, etc): 
   
 ````
 <div class="list-circles-item">
