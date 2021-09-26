@@ -32,7 +32,15 @@ An API might provide a way to change the color of a light bulb on a "smart" chri
 
 APIs let you use other people’s databases and coding wizardry to enhance your own applications or analysis scripts. For instance you might have a spreadsheet with street addresses you need to turn into GPS coordinates so you can map them.
 
-**Examples Airport Status API**
+[Data journalists explain the value of APIs.](https://medium.com/trendct-data/a-gentle-guide-to-apis-for-data-journalists-2a6b0e6fcc1a)
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/s7wmiS2mSXY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<br>
+<hr>
+<br>
+
+### Airport Status API
 
 The FAA has an API that provides information about airports, including delays and weather. You give it an airport code, like “JFK” or “BDL” for Bradley International Airport, and it tells you what’s up at that airport.
 
