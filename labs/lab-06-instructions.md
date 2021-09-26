@@ -428,6 +428,23 @@ We will explore the process by reverse-engineering a simple example that was cre
 <br>
 
 
+## Tour of an Report Template  
+
+There are three basic parts of this report:
+
+* RMD template 
+* helper R functions 
+* CSV file with the job info that gets added to the template 
+
+To see how all of the parts fit together and to preview the helper R functions see: 
+	
+[RMD Resume Template Tour](../../lectures/report-automation.html)
+
+<br>
+<hr>
+<br>
+	
+	
   
 ## Step 1
 
@@ -451,6 +468,12 @@ A quick note on the [difference between "cloning" a project and "forking" a GitH
 
 In this instance we are not contributing back to the project to improve it. We just want our own local copy to work with, so cloning is the best option. 
 
+<br>
+<hr>
+<br>
+
+	
+	
 ## Step 2
 
 After cloning the files, you should have local copies on your desktop. You will need to edit at least two files: 
@@ -466,21 +489,35 @@ You will need to adapt either "resume.Rmd" or "index.Rmd" as a template to gener
 * You can create your own section titles and content. 
 * List as many positions, projects,  or internships as you can to reach at least 2 pages. 
 
+<br>
+<hr>
+<br>
+	
+	
 ## Step 3 
 
 Delete Nick's content form the "positions.csv" file and replace it with your own professional history. *For the purpose of the assignment your positions can be aspirational, not factual. But make it obvious and add a note somewhere on the resume if the informational is fictional so that you are not accused of lying on a resume.*
+
+<br>
+<hr>
+<br>
+
 
 ## Step 4 
 
 Knit your RMD file to generate the rendered HTML version of your resume. 
 
+<br>
+<hr>
+<br>
+
 ## Step 5
 
-Go into settings and activate your GitHub page for this repository. You do not have to select a template.
+Go into settings and activate your GitHub page for this repository. Do not select a template. 
 
 You should now be able to view your HTML resume online.
 
-Update the description section at the top right of your GitHub repo and add the correct link to your resume. 
+Update the description section at the top right of your GitHub repo and add the link to your resume. 
   
 
 
