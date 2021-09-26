@@ -288,7 +288,7 @@ The **cat()** function is similar to **print()** in R.
   
   
   
-### Step 4
+## Step 4
 
 You will also need the custome CSS items contained in the [site main.css file](https://github.com/DS4PS/reconhub.github.io/blob/master/css/main.css) in order to replicate the style of the gallery: 
 
@@ -376,7 +376,7 @@ div {
   
   
 
-### Step 5
+## Step 5
 
 Render your HTML file. 
 
