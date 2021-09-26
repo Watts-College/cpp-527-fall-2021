@@ -34,8 +34,12 @@ This week you will learn how to build templates for R Markdown documents so that
   
 ### Required Reading
 
-[Automated Reporting](https://ds4ps.org/cpp-527-spr-2020/lectures/report-automation.html)
+--------
+  
+<a class="uk-button uk-button-primary" href="../report-automation.html">Building RMD Templates</a>
 
+--------
+  
 ### Background Reading
 
 [Parameterized Reports in R Markdown](https://rmarkdown.rstudio.com/developer_parameterized_reports.html%23parameter_types%2F)  
