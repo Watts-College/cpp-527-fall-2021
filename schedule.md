@@ -765,7 +765,7 @@ Also share your page link on YellowDig:
 
 **Due {{page.projects.report-template}}**
 
-<a class="uk-button uk-button-default" href="../labs/final-project-instructions/">INSTRUCTIONS</a>
+<a class="uk-button uk-button-default" href="../labs/final-project-instructions.html">INSTRUCTIONS</a>
 
 <a class="uk-button uk-button-primary" href="{{page.canvas.assignment_url}}">SUBMIT PROJECT</a>
 
