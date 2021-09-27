@@ -765,6 +765,8 @@ Also share your page link on YellowDig:
 
 **Due {{page.projects.report-template}}**
 
+<a class="uk-button uk-button-default" href="../labs/final-project-instructions/">INSTRUCTIONS</a>
+
 <a class="uk-button uk-button-primary" href="{{page.canvas.assignment_url}}">SUBMIT PROJECT</a>
 
 <hr>
@@ -774,8 +776,6 @@ Also share your page link on YellowDig:
 
 **Due {{page.projects.code-through}}**
 
-
-**Code-Through**
 
 Since you are sharing your code-through with your classmates on Yellowdig, it will serve as your discussion topic this week.
 
