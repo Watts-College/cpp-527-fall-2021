@@ -23,12 +23,12 @@ labs:
   lab-03:  'Thursday, September 9th'
   lab-04:  'Tuesday, September 14th'
   lab-05:  'Tuesday, September 21st'
-  lab-06:  'Tuesday, September 28th'
+  lab-06:  'Friday, October 1st'
   
   
 projects: 
   r-package:  'Friday, September 10th'
-  report-template:  'Tuesday, October 5th'
+  report-template:  'Friday, October 8th'
   code-through:  'Friday, October 8th'
   
   
@@ -690,7 +690,7 @@ Also share your page link on YellowDig:
 -->
 
 
-#  Week 6 - Data APIs 
+#  Week 6 - Creating Report Templates
 
 
 
@@ -701,246 +701,78 @@ Also share your page link on YellowDig:
 <a class="uk-button uk-button-default" href="../lectures/week-06/">LECTURE NOTES</a>
 
 <hr>  
-
-<br>
-
-**Introduction to APIs:**
-
-[Data journalists explain the value of APIs.](https://medium.com/trendct-data/a-gentle-guide-to-apis-for-data-journalists-2a6b0e6fcc1a)
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/s7wmiS2mSXY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-
-
-<br>
-<br>
-<br>
 <br>
 
 
-## Lab 06: Scaling Analysis 
+## Lab 06: Creating RMD Templates  
+
+<hr>
 
 **Due {{page.labs.lab-06}}**
 
-<br>
-
-
-**Scaling Your Analysis w Functions and Loops**
-
-If you recall from CPP 526 we discussed the example where Ben Balter, [GitHub’s official government evangelist](https://readwrite.com/2014/08/14/github-government-ben-balter-open-source/), created a project to make Washington DC open GIS files more accessible and useful by converting them all to a format more amenable to open-source projects (geoJSON files).
-
-Ben wrote a script that downloaded all of Washington DC’s open data files, converted them to better formats, then uploaded them to GitHub so others have access:
-
-[https://github.com/benbalter/dc-maps](https://github.com/benbalter/dc-maps)
-
-The geoJSON files can also be read into R directly from GitHub, making it easy to incorporate the spatial maps and data into a wide variety of projects:
-
-```r
-library( geojsonio )
-library( sp )
-github <- "https://raw.githubusercontent.com/benbalter/dc-maps/master/maps/2006-traffic-volume.geojson"
-traffic <- geojson_read( x=github, what="sp" )
-plot( traffic, col="steelblue" )
-```
-
-Recall the lab where you created one Dorling cartogram for your neighborhood clustering project:
-
-![](file:///C:/Users/jdlecy/Dropbox/00%20-%20PEDA/00%20-%20GITHUB/COURSE-CPP-529-PRACTICUM/cpp-529-master/LABS/lab-03-tutorial_files/figure-html/unnamed-chunk-21-1.png)
-
-
-
-```r
-library( geojsonio )   # read shapefiles
-library( sp )          # work with shapefiles
-library( sf )          # work with shapefiles - simple features format
-library( tmap )        # theme maps
-library( dplyr )       # data wrangling
-library( pander )      # nice tables 
-
-
-crosswalk <- "https://raw.githubusercontent.com/DS4PS/cpp-529-master/master/data/cbsatocountycrosswalk.csv"
-crosswalk <- read.csv( crosswalk, stringsAsFactors=F, colClasses="character" )
-
-# search for citie names by strings, use the ^ anchor for "begins with" 
-grep( "^MIN", crosswalk$msaname, value=TRUE ) 
-
-# select all FIPS for Minneapolis
-these.minneapolis <- crosswalk$msaname == "MINNEAPOLIS-ST. PAUL, MN-WI"
-these.fips <- crosswalk$fipscounty[ these.minneapolis ]
-these.fips <- na.omit( these.fips )
-
-state.fips <- substr( these.fips, 1, 2 )
-county.fips <- substr( these.fips, 3, 5 )
-
-dat <- data.frame( name="MINNEAPOLIS-ST. PAUL, MN-WI",
-                   state.fips, county.fips, fips=these.fips )               
-dat
-```
-
-|name                        |state.fips |county.fips |fips  |
-|:---------------------------|:----------|:-----------|:-----|
-|MINNEAPOLIS-ST. PAUL, MN-WI |27         |003         |27003 |
-|MINNEAPOLIS-ST. PAUL, MN-WI |27         |019         |27019 |
-|MINNEAPOLIS-ST. PAUL, MN-WI |27         |025         |27025 |
-|MINNEAPOLIS-ST. PAUL, MN-WI |27         |037         |27037 |
-|MINNEAPOLIS-ST. PAUL, MN-WI |27         |053         |27053 |
-|MINNEAPOLIS-ST. PAUL, MN-WI |27         |059         |27059 |
-|MINNEAPOLIS-ST. PAUL, MN-WI |27         |123         |27123 |
-|MINNEAPOLIS-ST. PAUL, MN-WI |27         |139         |27139 |
-|MINNEAPOLIS-ST. PAUL, MN-WI |27         |141         |27141 |
-|MINNEAPOLIS-ST. PAUL, MN-WI |27         |163         |27163 |
-|MINNEAPOLIS-ST. PAUL, MN-WI |27         |171         |27171 |
-|MINNEAPOLIS-ST. PAUL, MN-WI |55         |093         |55093 |
-|MINNEAPOLIS-ST. PAUL, MN-WI |55         |109         |55109 |
-
-
-Now download shapefiles with Census data:
-
-```r
-library( tidycensus )
-
-# census_api_key("YOUR KEY GOES HERE")
-# key <- "abc123"
-# census_api_key( key )
-
-
-# Minneapolis metro area spans two states - 
-# Minnesota = 27
-# Wisconsin = 55
-
-msp.pop1 <-
-get_acs( geography = "tract", variables = "B01003_001",
-         state = "27", county = county.fips[state.fips=="27"], geometry = TRUE ) %>% 
-         select( GEOID, estimate ) %>%
-         rename( POP=estimate )
-
-msp.pop2 <-
-get_acs( geography = "tract", variables = "B01003_001",
-         state = "55", county = county.fips[state.fips=="55"], geometry = TRUE ) %>% 
-         select( GEOID, estimate ) %>%
-         rename( POP=estimate )
-
-msp.pop <- rbind( msp.pop1, msp.pop2 )
-
-plot( msp.pop )
-```
-
-![](file:///C:/Users/jdlecy/Dropbox/00%20-%20PEDA/00%20-%20GITHUB/COURSE-CPP-529-PRACTICUM/cpp-529-master/LABS/lab-04-instructions_files/figure-html/unnamed-chunk-9-1.png)
-
-Convert to a Dorling cartogram: 
-
-```r
-# convert sf map object to an sp version
-msp.sp <- as_Spatial( msp )
-class( msp.sp )
-
-# project map and remove empty tracts
-msp.sp <- spTransform( msp.sp, CRS("+init=epsg:3395"))
-msp.sp <- msp.sp[ msp.sp$POP != 0 & (! is.na( msp.sp$POP )) , ]
-
-# convert census tract polygons to dorling cartogram
-# no idea why k=0.03 works, but it does - default is k=5
-msp.sp$pop.w <- msp.sp$POP / 9000 # max(msp.sp$POP)   # standardizes it to max of 1.5
-msp_dorling <- cartogram_dorling( x=msp.sp, weight="pop.w", k=0.05 )
-plot( msp_dorling )
-```
-
-![](file:///C:/Users/jdlecy/Dropbox/00%20-%20PEDA/00%20-%20GITHUB/COURSE-CPP-529-PRACTICUM/cpp-529-master/LABS/lab-04-instructions_files/figure-html/unnamed-chunk-9-2.png)
-
-**Instructions:** 
-
-1. Create an R script that will convert all US Metro Area shapefiles into Dorling cartograms, one new shapefile for each metro area.  
-2. Save each Dorling cartogram as a geoJSON file. 
-3. Create a dorling-msa-geojson GitHub repository. 
-4. Upload the files and add instructions to the README for people to use them as alternatives to regular Census tract maps to improve the visualization of demographic data in urban environments. 
-
-For example, once you have finished it will be possible to do the following: 
-
-```r
-# dorling cartogram of Phoenix Census Tracts
-github.url <- "https://raw.githubusercontent.com/DS4PS/cpp-529-master/master/data/phx_dorling.geojson"
-phx <- geojson_read( x=github.url,  what="sp" )
-plot( phx )
-```
-
-Start with pseudo-code and write down the steps. I would recommend writing a couple of functions: 
-
-* Select and parse state and county FIPS codes based upon a city name, return a data frame. 
-* Using the MSA data frame you just created, download the census data and shapefile. 
-* Convert a current MSA object to a Dorling cartogram object. 
-
-Test your code with a single city until it is functional:
-
-```r
-these.minneapolis <- crosswalk$msaname == "MINNEAPOLIS-ST. PAUL, MN-WI"
-```
-
-At that point you can scale your steps by generalizing the city name. 
-
-```r
-city.names <- unique( crosswalk$cbsaname )
-
-for( i in city.names )
-{
-  # your code here 
-}
-```
-
-<br>
-<br>
-
-
-**Submit Solutions to Canvas:**
+<a class="uk-button uk-button-default" href="../labs/lab-06-instructions/">INSTRUCTIONS</a>
 
 <a class="uk-button uk-button-primary" href="{{page.canvas.assignment_url}}">SUBMIT LAB</a>
 
+<hr>
 <br>
-<br>
 
 
 
-
-## Practice Problems
+## Practice Problems 
 
 <hr>
+
+<a class="uk-button uk-button-default" href="../practice/week-06/">PRACTICE PROBLEMS</a>
 
 <a class="uk-button uk-button-primary" href="{{page.yellowdig_url}}">YELLOWDIG</a>
 
 **Post on {{page.yellowdig.post-07}}**
+  
+<hr>
+<br>
+
+
+
+
+
+<br>
+
+
+
+
+
+
+
+
+<!--- 
+#########################################
+#########################################
+##########
+##########         WEEK 07
+##########
+#########################################
+#########################################
+-->
+
+
+
+# Week 7 - FINAL PROJECT 
+
+
+
+## Project Details 
+
+**Due {{page.projects.report-template}}**
+
+<a class="uk-button uk-button-primary" href="{{page.canvas.assignment_url}}">SUBMIT PROJECT</a>
 
 <hr>
-
-**DATA APIs IN R:**
-
-For your YellowDig assignment this week, find an API package in R and demonstrate it's functionality.
-
-If you are curious about specific APIs I would start by finding a cool public API then searching around to see if someone has created an R package to make it easier to use. 
-
-*Public here means that the API is not a paid service behind a firewall, though many free APIs require a registered account, a key, or authentication of some sort.*
-
-Alternatively, you can visit the CRAN Task View for Web Technologies and search for API on the page:
-
-https://cran.r-project.org/web/views/WebTechnologies.html
-
-This is hardly an exhaustive list, but a good place to start. 
-
-Once you have identified an API package, show some very basic functionality by explaining what data is available, what a get_data() function looks like in the package, what the arguments do, and what the returned data looks like. 
-
-Share your insights with classmates on YellowDig. 
-
-<br>
-
-<br>
-
-
-
-
-
+<br> 
 
 ## Code-Through 
 
 **Due {{page.projects.code-through}}**
-
 
 
 **Code-Through**
@@ -1001,94 +833,10 @@ Note that these are rules related to one single vector type! It can be helpful t
 
 
 
-# Week 7 - Customized Reporting
 
 
 
-## FINAL PROJECT 
 
-Build a Report Template
-
-**Due {{page.projects.report-template}}**
-
-**Automating Report Generation**
-
-This assignment teaches you to use RMD templates to simplify and automate the process of generating reports. 
-
-We will explore the process by reverse-engineering a simple example that was created to build resumes:
-
-* [Example CV as PDF](https://github.com/DS4PS/cv/raw/master/strayer_cv.pdf)  
-* [Example CV as HTML](http://nickstrayer.me/cv/)  
-
-Begin by reading about the process:
-
-[Automated Reporting](https://ds4ps.org/cpp-527-spr-2020/lectures/report-automation.html)
-
-[Parameterized Reports in R Markdown](https://rmarkdown.rstudio.com/developer_parameterized_reports.html%23parameter_types%2F)  
-
-[GitHub Pages Jekyll Tools Library](https://github.com/cagrimmett/jekyll-tools)
-
-**Instructions** 
-
-For this assignment you will need to clone Nick Strayer's CV project: 
-
-[CV Project on GitHub](https://github.com/DS4PS/cv)
-
-You can do this in the GitHub desktop application under **File >> Clone >> URL** then type in the project URL: 
-
-https://github.com/DS4PS/cv
-
-Note, since the project is actively being developed this version on DS4PS is frozen in time for pedagogical purposes. You can follow the link to his repo to see what he has added. 
-
-A quick note on the [difference between "cloning" a project and "forking" a GitHub project](https://github.community/t5/Support-Protips/The-difference-between-forking-and-cloning-a-repository/ba-p/1372): 
-
-> A fork is a copy of a repository that allows you to freely experiment with changes without affecting the original project, althgouh a connection exists between your fork and the original repository itself. In this way, your fork acts as a bridge between the original repository and your personal copy where you can contribute back to the original project using *Pull Requests*. 
-> 
-> Unlike forking, when cloning you won't be able to pull down changes from the original repository you cloned from, and if the project is owned by someone else you won't be able to contribute back to it unless you are specifically invited as a collaborator. Cloning is ideal for instances when you need a way to quickly get your own copy of a repository where you may not be contributing to the original project.
-
-In this instance we are not contributing back to the project to improve it. We just want our own local copy to work with, so cloning is the best option. 
-
-**Build Your Resume**
-
-After cloning the files, you should have local copies on your desktop. You will need to edit at least two files: 
-
-* select either the index.Rmd file ([CV format](http://nickstrayer.me/cv/)) or resume.Rmd ([short resume format](http://nickstrayer.me/cv/resume.html)) 
-* positions.csv
-
-The "index.Rmd" and "resume.Rmd" files contains the pagedown code to generate the resume. You will need to adapt the code as appropriate for your purposes Be sure to retain the helper functions, as you are required to pull position data from the CSV file instead of hard-coding it in the file. You can create your own section titles and content. List as many positions, projects,  or internships as you can to reach at least 2 pages. 
-
-Second, delete Nick's content form the "positions.csv" file and replace it with your own content for your positions. 
-
-When you are done, knit your file to generate your HTML resume. 
-
-Create a new repository on your GitHub account called "CV". Initiate with a README file. Clone the repository to your computer, and copy all of the updated files from your project. Commit these files to GitHub so they are in the new CV repo. 
-
-Go into settings and activate your GitHub page for this repository. You do not have to select a template.
-
-You should now be able to view your HTML resume online.
-
-For the assignment submit the following: 
-
-* The URL of your GitHub CV repository 
-* The URL of your resume or CV 
-* A zipped folder with all of the files from the repor
-
-Consider creating a GitHub site to host a portfolio of projects you are working on. You can add the CV and your code-through assignments to the site. 
-
-*Side note:* If you want to take this exercise to the next level consider developing [A/B Testing for your resume](https://davidlindelof.com/a-b-testing-my-resume/), which you can do when your resume is generated from templates. 
-
-*How would you create a template for the following resume format in R Markdown?* [**two page resume**](https://davidlindelof.com/wp-content/uploads/2020/11/Lindelof_CV.pdf)
-
----
-
-**Submit to Canvas:**
-
-<a class="uk-button uk-button-primary" href="{{page.canvas.assignment_url}}">SUBMIT PROJECT</a>
-
----
-
-<br>
-<br>
 
 
 
