@@ -36,7 +36,7 @@ This week you will learn how to build templates for R Markdown documents so that
 
 --------
   
-<a class="uk-button uk-button-primary" href="../report-automation.html">Building RMD Templates</a>
+<a class="uk-button uk-button-default" href="../report-automation.html">Building RMD Templates</a>
 
 --------
   
