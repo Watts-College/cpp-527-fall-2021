@@ -19,8 +19,10 @@ image-width: 150px
 <br>
   
   
-**Scaling Your Analysis w Functions and Loops**
+## Scaling Your Analysis w Functions and Loops
 
+### Building Community Map Files 
+  
 If you recall from CPP 526 we discussed the example where Ben Balter, [GitHub’s official government evangelist](https://readwrite.com/2014/08/14/github-government-ben-balter-open-source/), created a project to make Washington DC open GIS files more accessible and useful by converting them all to a format more amenable to open-source projects (geoJSON files).
 
 Ben wrote a script that downloaded all of Washington DC’s open data files, converted them to better formats, then uploaded them to GitHub so others have access:
@@ -37,6 +39,8 @@ traffic <- geojson_read( x=github, what="sp" )
 plot( traffic, col="steelblue" )
 ```
 
+### Dorling Lab from CPP 529 
+  
 Recall the lab where you created one Dorling cartogram for your neighborhood clustering project:
 
 ![](file:///C:/Users/jdlecy/Dropbox/00%20-%20PEDA/00%20-%20GITHUB/COURSE-CPP-529-PRACTICUM/cpp-529-master/LABS/lab-03-tutorial_files/figure-html/unnamed-chunk-21-1.png)
@@ -141,7 +145,7 @@ plot( msp_dorling )
 
 ![](file:///C:/Users/jdlecy/Dropbox/00%20-%20PEDA/00%20-%20GITHUB/COURSE-CPP-529-PRACTICUM/cpp-529-master/LABS/lab-04-instructions_files/figure-html/unnamed-chunk-9-2.png)
 
-**Instructions:** 
+## Instructions:
 
 1. Create an R script that will convert all US Metro Area shapefiles into Dorling cartograms, one new shapefile for each metro area.  
 2. Save each Dorling cartogram as a geoJSON file. 
@@ -185,7 +189,7 @@ for( i in city.names )
   
   
   
-  <br>
+<br>
 <hr>
 <br>
 
