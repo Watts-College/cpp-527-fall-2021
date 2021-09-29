@@ -29,7 +29,7 @@ labs:
 projects: 
   r-package:  'Friday, September 10th'
   report-template:  'Friday, October 8th'
-  code-through:  'Friday, October 8th'
+  code-through:  'Optional'
   
   
 ---
