@@ -36,7 +36,7 @@ This week you will learn how to build templates for R Markdown documents so that
 
 Template functions are helper functions that merge content from a data frame or file with an HTML template to control how the content is presented in the report. 
   
-Templates are often used when we need to summarize lots of pieces of information using 
+Templates are often used when we need to summarize lots of pieces of information using consistent styling.  
 
 ```r
 ### CONTENT 
