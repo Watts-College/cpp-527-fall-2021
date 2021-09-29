@@ -79,6 +79,19 @@ add_icons()
 
 
 
+## Stable Usage in Templates 
+
+```{r}
+# - convert icon svg to text 
+# - then add to HTML tags 
+# - cat() to export, need to include {r, results="asis"}
+
+fa <- as.character( icons::fontawesome("twitter") )
+x <-  paste0( "<a href='www.google.com'>  \n\n", fa, "\n\n</a>" )
+cat( x )
+```
+
+
 
 ## fontawesome package
 
@@ -131,5 +144,22 @@ cat( paste0( '<a href="google.com">', fontawesome::fa( name="github" ), '</a>' )
 ```
 
 
-<style>
-h3{ upper-}
+## Stable Usage in Templates 
+
+```{r, results="asis"}
+# - get icon svg object from font awesome 
+# - implicitly recast as text when added to HTML tags 
+# - cat() to export, need to include {r, results="asis"}
+
+fa <- fontawesome::fa( name="github" )
+x <-  paste0( '<a href="www.google.com">  \n\n', fa, '\n\n</a>' )
+cat( x )
+```
+
+
+<br>
+<br>
+<hr>
+<br>
+<br>
+<br>
