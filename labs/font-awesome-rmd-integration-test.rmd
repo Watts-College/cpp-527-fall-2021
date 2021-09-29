@@ -81,13 +81,13 @@ add_icons()
 
 ## Stable Usage in Templates 
 
-```{r}
+```{r, results="asis"}
 # - convert icon svg to text 
 # - then add to HTML tags 
 # - cat() to export, need to include {r, results="asis"}
 
 fa <- as.character( icons::fontawesome("twitter") )
-x <-  paste0( "<a href='www.google.com'>  \n\n", fa, "\n\n</a>" )
+x <-  paste0( '<a href="www.google.com">  \n\n', fa, '\n\n</a>' )
 cat( x )
 ```
 
