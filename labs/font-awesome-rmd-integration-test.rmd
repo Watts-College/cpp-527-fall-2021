@@ -1,5 +1,5 @@
 ---
-title: "FA Icon Test"
+title: "Font Awesome Icons Package Test"
 output:
   html_document:
     theme: readable
@@ -35,27 +35,36 @@ class( ic )
 str( ic )
 ```
 
-
+NO **results="asis"**. 
 
 ```{r}
 x <- paste0( "<a href='www.google.com'>  \n\n", as.character(ic), "\n\n</a>" )
 x
 ```
 
+NO **results="asis"**. 
+
 ```{r}
 cat(x)
 ```
 
 
+### results=asis 
+
+ADD **results="asis"** 
 
 ```{r, results="asis"}
-as.character(ic)   # results="asis"
+x   # results="asis"
 ```
+
+ADD **results="asis"** 
 
 ```{r, results="asis"}
-cat( as.character(ic) )  # results="asis"
+cat( x )  # results="asis"
 ```
 
+
+### Add Muliple
 
 ```{r, results="asis"}
 add_icons <- function()
@@ -67,6 +76,8 @@ add_icons <- function()
 
 add_icons()
 ```
+
+
 
 
 ## fontawesome package
