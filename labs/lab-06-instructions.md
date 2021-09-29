@@ -262,6 +262,33 @@ build_circles( WEBSITE="https://sites.google.com/site/thibautjombart/",
 ````
 
 	
+### Tips for Adding Icons
+
+You will add icons to the HTML using the fontawesome package. This will insert the icons as SVG objects (svg tags) instead of using span tags like in the example above. 
+
+Some code to get you started: 
+
+```r
+install.packages("fontawesome")
+fontawesome::fa( name="github" )
+fontawesome::fa( name="twitter" )
+fontawesome::fa( name="home" )
+```
+
+Advice on turning the fa objects into text: 
+
+```r
+# - get icon svg object from font awesome 
+# - implicitly recast as text when added to HTML tags 
+# - cat() to export HTML from the chunk
+# - make sure to include the chunk argument {r, results="asis"}
+
+fa.github <- fontawesome::fa( name="github" )
+x <- paste0( '<a href="www.google.com">', fa.github, '</a>' )
+cat( x )  
+```
+	
+
 <br>
 <hr>
 <br>
