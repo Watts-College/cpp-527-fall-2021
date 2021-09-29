@@ -757,19 +757,29 @@ Also share your page link on YellowDig:
 
 
 
-# Week 7 - FINAL PROJECT 
+# Week 7 - FINAL PROJECTS 
 
 
 
-## Project Details 
+## Project Lifecycle Lab
 
 **Due {{page.projects.report-template}}**
+
+This final project is worth 15 points, compared to 10 points for regular labs. It is not meant to be a big final project that you spend lots of time one, rather a nice well-scoped task (creating reports that break out salaries by job title and gender), but it requires data cleaning, agmentation, and wrangling in order to complete the task. It also requires the use of loops to replicate the steps across a bunch of units within an organization.
+
+It is designed to be integrative where you can see various skills you have learned throughout the semester come together into the type of work-flow needed to structure larger tasks. I have provided code for the most time-intensive tasks (creating a crosswalk from raw job descriptions to five well-structured job categories and creating a customized graphing function tailored to this data). You will need to implement functions to accomplish some steps on your own, then gather all of the functions into a "utilities" script (utils.R). The RMD document loads the data and "sources" these functions to control the work flow and execute the steps at a high level. 
+
+A key learning outcome is understanding how the basic building blocks of data programming and content packaging come together to create your deliverable. You will get more practice with these skills in CPP 528 when you do a deep dive into project management frameworks. 
+
+-------------
 
 <a class="uk-button uk-button-default" href="../labs/final-project-instructions.html">INSTRUCTIONS</a>
 
 <a class="uk-button uk-button-primary" href="{{page.canvas.assignment_url}}">SUBMIT PROJECT</a>
 
-<hr>
+---------------
+
+<br>
 <br> 
 
 ## Code-Through 
