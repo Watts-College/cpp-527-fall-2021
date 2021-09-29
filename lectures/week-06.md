@@ -32,6 +32,11 @@ This week you will learn how to build templates for R Markdown documents so that
 
 [Your Resume as an HTML Page](http://nickstrayer.me/cv/)  
 
+<br>
+<br>
+  
+  
+  
 ### Template Functions 
 
 Template functions are helper functions that merge content from a data frame or file with an HTML template to control how the content is presented in the report. 
@@ -116,7 +121,11 @@ HTML output that is added to your RMD doc during knitting:
 <a class="uk-button uk-button-default" href="../report-automation.html">Building RMD Templates</a>
 
 --------
-  
+
+<br>
+<br>
+
+
 ### Background Reading
 
 [Parameterized Reports in R Markdown](https://rmarkdown.rstudio.com/developer_parameterized_reports.html%23parameter_types%2F)  
