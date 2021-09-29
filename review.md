@@ -34,11 +34,12 @@ session:
   date:  'Mon Sept 20'  
   video: 'https://asu.zoom.us/rec/share/eE4GA71tq9XxFLnvf_vnmI10MVjuJ_W05OKQSNSdI4yeNyl2LkedM_cItc3GF_QI.toZ8G5685e4Hh17u'
   password: 'V.c1iWaj'
-- week6:
-  date:  'Mon Sept 27'  
-  video: ''
-  password: ''
   sample-code: 'week-06-data-apis.R'
+- week6:
+  date:  'Wed Sept 29'  
+  video: 'https://asu.zoom.us/rec/share/vwbX3L9CxFhkpGFxWZR8QD2nlf2sI2ldbR7C0WueqosYY6YoYvQIIxsB0NvUG6bd.0tNbZCtc4zIgQAIh Passcode: 
+  password: "8K!ViP#+'"
+
 
 ---
 
