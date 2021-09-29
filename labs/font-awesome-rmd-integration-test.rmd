@@ -15,7 +15,81 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 
-## icons package 
+
+
+
+## fontawesome package
+
+### Usage: 
+
+```{r, eval=F}
+install.packages("fontawesome")
+fontawesome::fa( name="github" )
+fontawesome::fa( name="twitter" )
+fontawesome::fa( name="home" )
+```
+
+### Output Type: 
+
+```{r}
+fa <- fontawesome::fa( name="github" )
+class( fa )
+str( fa )
+```
+
+```{r}
+fa
+```
+
+
+```{r}
+as.character(fa)
+```
+
+### results=asis
+
+NO **results="asis"**. 
+
+Prints as plain text after using paste(): 
+
+```{r}
+cat( paste0( '<a href="google.com">', fontawesome::fa( name="github" ), '</a>' ) )
+```
+
+
+<br>
+
+
+ADD **results="asis"** 
+
+Now it adds it to the RMD as HTML: 
+
+```{r, results="asis"}
+cat( paste0( '<a href="google.com">', fontawesome::fa( name="github" ), '</a>' ) )
+```
+
+
+## Stable Usage in Templates 
+
+```{r, results="asis"}
+# - get icon svg object from font awesome 
+# - implicitly recast as text when added to HTML tags 
+# - cat() to export, need to include {r, results="asis"}
+
+fa <- fontawesome::fa( name="github" )
+x <-  paste0( '<a href="www.google.com">  \n\n', fa, '\n\n</a>' )
+cat( x )
+```
+
+
+<br>
+<hr>
+<br>
+
+
+
+
+# icons package 
 
 ### Usage: 
 
@@ -81,77 +155,14 @@ add_icons()
 
 ## Stable Usage in Templates 
 
+The HTML links are still not functioning properly with this integration - use the fontawesome package above. 
+
 ```{r, results="asis"}
 # - convert icon svg to text 
 # - then add to HTML tags 
 # - cat() to export, need to include {r, results="asis"}
 
 fa <- as.character( icons::fontawesome("twitter") )
-x <-  paste0( '<a href="www.google.com">  \n\n', fa, '\n\n</a>' )
-cat( x )
-```
-
-
-
-## fontawesome package
-
-### Usage: 
-
-```{r, eval=F}
-install.packages("fontawesome")
-fontawesome::fa( name="github" )
-fontawesome::fa( name="twitter" )
-fontawesome::fa( name="home" )
-```
-
-### Output Type: 
-
-```{r}
-fa <- fontawesome::fa( name="github" )
-class( fa )
-str( fa )
-```
-
-```{r}
-fa
-```
-
-
-```{r}
-as.character(fa)
-```
-
-### results=asis
-
-NO **results="asis"**. 
-
-Prints as plain text after using paste(): 
-
-```{r}
-cat( paste0( '<a href="google.com">', fontawesome::fa( name="github" ), '</a>' ) )
-```
-
-
-<br>
-
-
-ADD **results="asis"** 
-
-Now it adds it to the RMD as HTML: 
-
-```{r, results="asis"}
-cat( paste0( '<a href="google.com">', fontawesome::fa( name="github" ), '</a>' ) )
-```
-
-
-## Stable Usage in Templates 
-
-```{r, results="asis"}
-# - get icon svg object from font awesome 
-# - implicitly recast as text when added to HTML tags 
-# - cat() to export, need to include {r, results="asis"}
-
-fa <- fontawesome::fa( name="github" )
 x <-  paste0( '<a href="www.google.com">  \n\n', fa, '\n\n</a>' )
 cat( x )
 ```
