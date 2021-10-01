@@ -47,8 +47,6 @@ These questions are similar to riddles or brain teasers that help sharpen your c
 
 You can start working on the practice problems at any time but please don't post solutions until after lab due dates so that there is sufficient time for discussions on questions from the previous week. 
   
-*I will often update questions based upon common mistakes I see in labs so questions may change slightly.*  
-  
 Each question should have it's own pin. Please group responses to one question on one pin and avoid creating new pins when the question already exists.   
   
 <a class="uk-button uk-button-primary" href="https://asu-online.yellowdig.app/community/17592351249266">YELLOWDIG</a> 
