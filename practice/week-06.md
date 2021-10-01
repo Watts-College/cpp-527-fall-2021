@@ -230,6 +230,7 @@ key=your.unique.census.key.goes.here
 The data is returned in a JSON format: 
 
 ```
+# Population of Arizona
 [["NAME","B01001_001E","state"],
 ["Arizona","6641928","04"]]
 ```
