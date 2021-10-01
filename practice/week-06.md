@@ -40,9 +40,10 @@ This is hardly an exhaustive list, but a good place to start.
 
 **Once you have found an API package report what you have learned to your classmates on YellowDig.**
   
-Describe your API package and it's primary purpose. 
-
-Describe some very basic functionality by explaining what data is available at the API, what a get_data() function looks like in the package, what the arguments do, and what the returned data looks like. 
+1. Describe your API package and it's primary purpose. 
+2. Describe the data or the tool available through the API (the google maps API converts a street address to longitude-latitude coordinates, for example).  
+3. Explain the primary *get_data()* or *do_something()* function in the package including (1) main arguments, (2) what information you need to provide, and (3) what the returned data looks like. 
+4. What is the data type of the return data (regular text, csv, json, xml, etc.)? 
   
 <br>
 <hr>
