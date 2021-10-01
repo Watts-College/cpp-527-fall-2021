@@ -357,9 +357,7 @@ Necessary CSS elements from the R Epidemics Hub website:
 ````
 /* --- Lists of circles --- */
 
-div {
-    display: block;
-}
+div { display: block } 
   
 .list-circles {
   text-align: center;
@@ -396,10 +394,15 @@ div {
 
 .list-circles-item .item-desc {
   font-size: 16px;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 .list-circles-item .item-links {
-  margin-top: 5px;
+  margin-top: 10px;
+  padding-right: 5px;
+  display: flex; 
+  justify-content: center; 
+  align-items: center;
 }
 
 .list-circles-item .item-link {
@@ -410,6 +413,11 @@ div {
 
 .list-circles-item .item-link:hover {
   color: #042265;
+}
+
+.svg-icon {
+  display: inline-flex;
+  align-self: center;
 }
 ````
 	
