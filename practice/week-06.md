@@ -22,7 +22,32 @@ image-width: 150px
 
 <br>
   
+## YellowDig Instructions 
+
+**DATA APIs IN R:**
+
+For your YellowDig assignment this week, find an API package in R and demonstrate it's functionality.
+
+If you are curious about specific APIs I would start by finding a cool public API then searching around to see if someone has created an R package to make it easier to use. 
+
+*Public here means that the API is not a paid service behind a firewall, though many free APIs require a registered account, a key, or authentication of some sort.*
+
+Alternatively, you can visit the CRAN Task View for Web Technologies and search for API on the page:
+
+[https://cran.r-project.org/web/views/WebTechnologies.html](https://cran.r-project.org/web/views/WebTechnologies.html)
+
+This is hardly an exhaustive list, but a good place to start. 
+
+**Once you have found an API package report what you have learned to your classmates on YellowDig.**
   
+Describe your API package and it's primary purpose. 
+
+Describe some very basic functionality by explaining what data is available at the API, what a get_data() function looks like in the package, what the arguments do, and what the returned data looks like. 
+  
+<br>
+<hr>
+<br>
+<br>
   
 ## What is an API?
 
@@ -39,6 +64,25 @@ APIs let you use other people’s databases and coding wizardry to enhance your 
 <br>
 <hr>
 <br>
+
+
+
+
+## Example APIs:
+
+There is one API that you likely use every single day: Google. Your query takes the form of the search words you type into the box, and the data is sent back as a nicely-formatted list of websites: the page title, URL, and the first few sentences of text on the page. 
+
+The Data Science Toolkit site has a lot of nice examples of these type of APIs in action. 
+
+These mostly have user interfaces where you paste some input data into a search box and it returns data based upon your inputs. 
+
+For example, you can type an address and it will return a set of latitude and longitude coordinates. 
+
+
+The original website [Data Science Toolkit](http://www.datasciencetoolkit.org/) is not defunct but all of the APIs have all been added to an R package called RDSTK (R data science toolkit): 
+
+[RDSTK](https://cran.r-project.org/web/packages/RDSTK/RDSTK.pdf) 
+  
 
 ### Airport Status API
 
@@ -86,33 +130,30 @@ The response looks like this, a JSON string:
 
 > Side note, what would this data look like as a tidy dataframe? 
 
-<br>
-<hr>
-<br>
+### Music API (Artists, Albums, & Lyrics) 
 
-
-## Example APIs:
-
-There is one API that you likely use every single day: Google. Your query takes the form of the search words you type into the box, and the data is sent back as a nicely-formatted list of websites: the page title, URL, and the first few sentences of text on the page. 
-
-The Data Science Toolkit site has a lot of nice examples of these type of APIs in action. 
-
-These mostly have user interfaces where you paste some input data into a search box and it returns data based upon your inputs. 
-
-For example, you can type an address and it will return a set of latitude and longitude coordinates. 
-
-
-The original website [Data Science Toolkit](http://www.datasciencetoolkit.org/) is not defunct but all of the APIs have all been added to an R package called RDSTK (R data science toolkit): 
-
-[RDSTK](https://cran.r-project.org/web/packages/RDSTK/RDSTK.pdf) 
+Recall the vignette that introduced text analysis by analyzing the vocabulary of rap artists: 
   
-**News APIs:**
+[Unique Words Used Within Artist’s First 35,000 Lyrics](https://pudding.cool/projects/vocabulary/index.html) 
+  
+This analysis was done by importing song lyrics from the **Genius** music API. 
+
+An R wrapper for the API has been created and packaged as **geniusr**: 
+  
+[geniusr: the basics](https://ewenme.github.io/geniusr/articles/geniusr.html) 
+  
+### News APIs
   
 If you want to query news sources for stories on specific topics check out: 
 
 [News API Examples](https://newsapi.org/)  
 
 
+<br>
+<hr>
+<br>
+  
+  
 ## How do APIs Work?
 
 APIs function like calls to a database. You send parameters, and the server sends the appropriate response - the data that matches your query. 
@@ -378,32 +419,7 @@ If you have an important dataset that you would like to share with the world, yo
   
   
   
-<br>
-<hr>
-<br>
-<br>
-  
-# YellowDig Instructions 
 
-**DATA APIs IN R:**
-
-For your YellowDig assignment this week, find an API package in R and demonstrate it's functionality.
-
-If you are curious about specific APIs I would start by finding a cool public API then searching around to see if someone has created an R package to make it easier to use. 
-
-*Public here means that the API is not a paid service behind a firewall, though many free APIs require a registered account, a key, or authentication of some sort.*
-
-Alternatively, you can visit the CRAN Task View for Web Technologies and search for API on the page:
-
-[https://cran.r-project.org/web/views/WebTechnologies.html](https://cran.r-project.org/web/views/WebTechnologies.html)
-
-This is hardly an exhaustive list, but a good place to start. 
-
-**Once you have found an API package report what you have learned to your classmates on YellowDig.**
-  
-Describe your API package and it's primary purpose. 
-
-Describe some very basic functionality by explaining what data is available at the API, what a get_data() function looks like in the package, what the arguments do, and what the returned data looks like. 
   
 
   
