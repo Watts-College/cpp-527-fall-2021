@@ -27,7 +27,7 @@ session:
 - week4:
   date:  'Mon Sept 13'  
   video: 'https://asu.zoom.us/rec/share/hfjqWi4xGzslm0c0Puig8viw2AOA_RK4L-ci9aTPwZmdeujFbBKKgcPK9NZ6m7MA.952pSGmuLyFKqJIg'
-  password: 'Passcode: 0%yvn!50'
+  password: '0%yvn!50'
   sample-code: 'week-03-regular-expressions.R'
   session-code: 'week-03-regular-expressions.Rhistory'
 - week5:
@@ -37,8 +37,8 @@ session:
   sample-code: 'week-06-data-apis.R'
 - week6:
   date:  'Wed Sept 29'  
-  video: 'https://asu.zoom.us/rec/share/vwbX3L9CxFhkpGFxWZR8QD2nlf2sI2ldbR7C0WueqosYY6YoYvQIIxsB0NvUG6bd.0tNbZCtc4zIgQAIh Passcode: 
-  password: "8K!ViP#+'"
+  video: 'https://asu.zoom.us/rec/share/vwbX3L9CxFhkpGFxWZR8QD2nlf2sI2ldbR7C0WueqosYY6YoYvQIIxsB0NvUG6bd.0tNbZCtc4zIgQAIh'
+  password: "8K!ViP#+"
 
 
 ---
