@@ -291,8 +291,8 @@ cat( x )
 
 ````
 <a href="https://github.com/thibautjombart/">
-<svg><path d="..."/></svg>   /* --- abbreviated fa.github svg --- */
-</svg></a>
+<svg><path></svg>   /* --- abbreviated fa.github svg --- */
+</a>
 ````
 
 The full SVG+PATH tag will contain coordinates that the browser uses to draw the icon. It will look something like this: 
