@@ -467,7 +467,41 @@ Knit your HTML file.
 * Include a chunk with your loop to add all profiles to the page. 
 
 You will submit your RMD file and rendered HTML file for this step. 
-  
+
+
+
+<br>
+<hr>
+<br>
+
+
+
+
+## Challenge
+
+Instead of creating your data frame manually from YAML table items, write a custom parser that reads the table as text and returns a well-structured data frame: 
+	
+````
+x <- 
+c("
+  - name: Thibaut Jombart
+    img: /img/people/thibaut-jombart.jpg
+    desc: Founder of RECON. Statistician and R programmer specialized in outbreak analysis. Imperial College London, UK.
+    website: https://sites.google.com/site/thibautjombart/
+    url: https://sites.google.com/site/thibautjombart/
+    github: https://github.com/thibautjombart/
+    twitter: https://twitter.com/TeebzR
+  - name: Dean Attali
+    img: /img/people/dean-attali.jpg
+    desc: Web and R developer, designer of the RECON website. Canada.
+    website: http://deanattali.com/
+    url: http://deanattali.com/
+    github: https://github.com/daattali/
+    twitter: https://twitter.com/daattali" ) 
+
+yaml_to_df( x )
+````  
+	
 <br>  
 <br>
 <hr>
