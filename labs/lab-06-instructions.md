@@ -283,13 +283,14 @@ Advice on turning the fa objects into text:
 # - cat() to export HTML from the chunk
 # - make sure to include the chunk argument {r, results="asis"}
 
+GITHUB <- "https://github.com/thibautjombart/"
 fa.github <- fontawesome::fa( name="github" )
-x <- paste0( '<a href="www.google.com">', fa.github, '</a>' )
+x <- paste0( '<a href="', GITHUB, '">', fa.github, '</a>' )
 cat( x )  
 ```
 
 ````
-<a href="www.google.com">
+<a href="https://github.com/thibautjombart/">
 <svg><path d="..."/></svg>   /* --- abbreviated fa.github svg --- */
 </svg></a>
 ````
@@ -297,7 +298,7 @@ cat( x )
 The full SVG+PATH tag will contain coordinates that the browser uses to draw the icon. It will look something like this: 
 
 ````
-<a href="www.google.com">
+<a href="https://github.com/thibautjombart/">
 
 /* --- start fa.github svg --- */
 <svg aria-hidden="true" role="img" viewBox="0 0 496 512" style="height:1em;width:0.97em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;">
