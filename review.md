@@ -39,7 +39,10 @@ session:
   date:  'Wed Sept 29'  
   video: 'https://asu.zoom.us/rec/share/vwbX3L9CxFhkpGFxWZR8QD2nlf2sI2ldbR7C0WueqosYY6YoYvQIIxsB0NvUG6bd.0tNbZCtc4zIgQAIh'
   password: "8K!ViP#+"
-
+- week7:
+  date:  'Mon Oct 4'  
+  video: 'https://asu.zoom.us/rec/share/op8G3P2DujEmSyZqlO6TVuKvMSrSt7_EjZKQzAnmxNrcUDaoEKVe7oG7QyZ33Ag2.44G6KxPd14JaG6-l'
+  password: "cuj..JG3"
 
 ---
 
