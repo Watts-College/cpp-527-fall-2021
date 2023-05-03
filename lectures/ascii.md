@@ -51,6 +51,8 @@ Each character is stored as a separate code in an ASCII hash table, the universa
 
 Each character is represented by several codes because different systems will use different representations. 
 
+> [Cool news story about ASCII and encryption](https://ig.ft.com/quantum-computing/)
+
 Your computer will use the BIN (8 bit or one byte binary version) to store a character in memory (a combination of eight 1's and 0's). HTML browsers will use the "HTML number": 
 
 ![image](https://user-images.githubusercontent.com/1209099/132139336-18a57418-d091-4055-869a-3c7836095441.png)
